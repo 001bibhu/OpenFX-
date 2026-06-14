@@ -1,12 +1,25 @@
+---
+pageClass: sf-api-doc
+---
+
 # API overview
 
-The SyntheticFi API lets partners, enterprise firms, and developers integrate portfolio liquidity into custom workflows, CRM systems, advisor tools, mortgage platforms, and internal dashboards.
+The SyntheticFi REST API lets partners and developers integrate portfolio liquidity into CRM systems, advisor tools, mortgage platforms, and internal dashboards.
 
-This page covers base concepts, environments, and how to get started.
+<div class="sf-api-banner">
+  <span><strong>Sandbox base URL</strong> <code>https://api.sandbox.syntheticfi.com/v1</code></span>
+  <span><strong>Production</strong> <code>https://api.syntheticfi.com/v1</code></span>
+</div>
+
+<ApiSection method="GET" path="/clients" sample="list-clients">
+
+Use the **Code examples** tab for cURL, Node.js, Python, Ruby, Java, C++, Go, PHP, HTML, and JSON samples. Switch to **Try it** to send a request and inspect the response.
+
+</ApiSection>
 
 ---
 
-## What you can do with the API
+## What you can build
 
 | Capability | Description |
 |------------|-------------|
@@ -19,17 +32,6 @@ This page covers base concepts, environments, and how to get started.
 
 ---
 
-## Base URL
-
-| Environment | Base URL |
-|-------------|----------|
-| **Production** | `https://api.syntheticfi.com/v1` |
-| **Sandbox** | `https://api.sandbox.syntheticfi.com/v1` |
-
-All requests use HTTPS. JSON request and response bodies unless noted.
-
----
-
 ## Quick start
 
 ### 1. Obtain credentials
@@ -38,48 +40,40 @@ Enterprise and partner accounts receive API keys from the dashboard or account m
 
 **Settings → API → Create key**
 
-You'll receive:
-
-- `client_id`
-- `client_secret` (shown once)
-- Optional webhook signing secret
-
-See [Authentication](./authentication.md) for token exchange.
+You receive a `client_id`, `client_secret` (shown once), and optional webhook signing secret. See [Authentication](./authentication.md).
 
 ### 2. Authenticate
 
-```bash
-curl -X POST https://api.sandbox.syntheticfi.com/v1/oauth/token \
-  -H "Content-Type: application/json" \
-  -d '{
-    "grant_type": "client_credentials",
-    "client_id": "sf_live_xxxxxxxx",
-    "client_secret": "sf_secret_xxxxxxxx",
-    "scope": "read write"
-  }'
-```
+<ApiEndpoint
+  method="POST"
+  path="/oauth/token"
+  sample="oauth-token"
+  try-body='{"grant_type":"client_credentials","client_id":"sf_live_xxxxxxxx","client_secret":"sf_secret_xxxxxxxx","scope":"read write"}'
+>
 
-Response:
+Exchange client credentials for a Bearer token.
 
-```json
-{
-  "access_token": "eyJhbG...",
-  "token_type": "Bearer",
-  "expires_in": 3600,
-  "scope": "read write"
-}
-```
+**Response fields**
+
+| Field | Description |
+|-------|-------------|
+| `access_token` | JWT used in the `Authorization` header |
+| `expires_in` | Lifetime in seconds (default 3600) |
+| `scope` | Granted scopes |
+
+</ApiEndpoint>
 
 ### 3. Make your first request
 
-```bash
-curl https://api.sandbox.syntheticfi.com/v1/clients \
-  -H "Authorization: Bearer eyJhbG..."
-```
+<ApiEndpoint method="GET" path="/clients" sample="list-clients">
+
+List client records with your access token. Use sandbox credentials while developing.
+
+</ApiEndpoint>
 
 ---
 
-## API design principles
+## API design
 
 - **RESTful** resources with predictable URLs
 - **Idempotent** `POST` with `Idempotency-Key` header for origination
@@ -92,17 +86,17 @@ curl https://api.sandbox.syntheticfi.com/v1/clients \
 ## Core resources
 
 ```
-/clients              Client records
-/clients/{id}/accounts   Linked brokerage accounts
-/eligibility          Portfolio capacity checks
-/term-sheets          Financing proposals
-/financings           Active and historical financings
-/margin-events        Warnings and calls
-/webhooks             Event subscriptions
-/firm/users           Team management (admin scope)
+/clients                    Client records
+/clients/{id}/accounts      Linked brokerage accounts
+/eligibility                Portfolio capacity checks
+/term-sheets                Financing proposals
+/financings                 Active and historical financings
+/margin-events              Warnings and calls
+/webhooks                   Event subscriptions
+/firm/users                 Team management (admin scope)
 ```
 
-Full reference: [API reference](./api-reference.md)
+Full endpoint catalog: [API reference](./api-reference.md)
 
 ---
 
@@ -132,39 +126,23 @@ Webhook payloads are signed with `X-SyntheticFi-Signature`. Verify before proces
 | Standard | 300 |
 | Enterprise | Custom |
 
-Rate limit headers: `X-RateLimit-Limit`, `X-RateLimit-Remaining`, `X-RateLimit-Reset`
-
-`429 Too Many Requests` includes `Retry-After`.
+Response headers: `X-RateLimit-Limit`, `X-RateLimit-Remaining`, `X-RateLimit-Reset`. A `429 Too Many Requests` response includes `Retry-After`.
 
 ---
 
 ## Sandbox
 
-The sandbox environment uses simulated portfolios and mock executions:
+The sandbox uses simulated portfolios and mock executions:
 
 - No real money or market trades
 - Test margin scenarios with `/sandbox/simulate-margin-drop`
 - Reset data with `/sandbox/reset`
 
-Use sandbox for development and CI; promote to production after certification review.
-
----
-
-## SDKs and tools
-
-Official SDKs *(roadmap / partner program)*:
-
-- TypeScript / Node.js
-- Python
-- C# (.NET)
-
-Community tools and OpenAPI spec: available on request via [support](../support/contact-support.md).
+Use sandbox for development and CI. Promote to production after certification review.
 
 ---
 
 ## Error handling
-
-Example error response:
 
 ```json
 {
@@ -197,7 +175,7 @@ Details: [Authentication](./authentication.md)
 ## Next steps
 
 - [Authentication](./authentication.md), OAuth, scopes, and tokens
-- [API reference](./api-reference.md), Endpoint catalog
+- [API reference](./api-reference.md), Endpoint catalog with code samples
 - [Integrations overview](../integrations/overview.md), Custodian and brokerage data flow
 
 Questions? [Create a support ticket](../support/create-ticket.md) and select **API / Developer**.

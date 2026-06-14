@@ -1,32 +1,46 @@
+---
+pageClass: sf-api-doc
+---
+
 # API reference
 
-Complete reference for SyntheticFi REST API v1. For concepts and setup, see [API overview](./api-overview.md).
+Complete reference for SyntheticFi REST API v1. Each endpoint includes multi-language code samples and an interactive **Try it** console on the right.
 
-**Base URL:** `https://api.syntheticfi.com/v1`
+<div class="sf-api-banner">
+  <span><strong>Base URL</strong> <code>https://api.syntheticfi.com/v1</code></span>
+  <span><strong>Sandbox</strong> <code>https://api.sandbox.syntheticfi.com/v1</code></span>
+</div>
+
+All endpoints require `Authorization: Bearer {access_token}` unless marked *Public*. See [Authentication](./authentication.md).
 
 ---
 
 ## Authentication
 
-All endpoints require a Bearer token unless marked *Public*.
+<ApiEndpoint
+  method="POST"
+  path="/oauth/token"
+  sample="oauth-token"
+  try-body='{"grant_type":"client_credentials","client_id":"sf_live_xxxxxxxx","client_secret":"sf_secret_xxxxxxxx","scope":"read write"}'
+>
 
-```
-Authorization: Bearer {access_token}
-```
+### Obtain access token
 
-See [Authentication](./authentication.md).
+*Public endpoint.* Exchange client credentials for a Bearer token.
+
+</ApiEndpoint>
 
 ---
 
 ## Clients
 
+<ApiEndpoint method="GET" path="/clients" sample="list-clients">
+
 ### List clients
 
-```http
-GET /clients
-```
+Returns a paginated list of client records.
 
-**Query parameters:**
+#### Query parameters
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
@@ -34,7 +48,7 @@ GET /clients
 | `cursor` | string | Pagination cursor |
 | `advisor_id` | string | Filter by advisor |
 
-**Response `200`:**
+**Response `200`**
 
 ```json
 {
@@ -54,35 +68,30 @@ GET /clients
 }
 ```
 
----
+</ApiEndpoint>
+
+<ApiEndpoint
+  method="POST"
+  path="/clients"
+  sample="create-client"
+  try-body='{"email":"client@example.com","first_name":"Jane","last_name":"Investor","advisor_id":"adv_123","external_id":"crm-998877"}'
+>
 
 ### Create client
 
-```http
-POST /clients
-```
-
-**Body:**
-
-```json
-{
-  "email": "client@example.com",
-  "first_name": "Jane",
-  "last_name": "Investor",
-  "advisor_id": "adv_123",
-  "external_id": "crm-998877"
-}
-```
+Creates a new client record linked to an advisor.
 
 **Response `201`:** Client object
 
----
+</ApiEndpoint>
 
 ### Get client
 
 ```http
 GET /clients/{client_id}
 ```
+
+Returns a single client by ID.
 
 ---
 
@@ -145,20 +154,16 @@ Redirect the user to `link_url` to complete OAuth.
 
 ## Eligibility
 
+<ApiEndpoint
+  method="POST"
+  path="/eligibility/check"
+  sample="check-eligibility"
+  try-body='{"account_id":"acc_4d5e6f7a","requested_amount":500000.00}'
+>
+
 ### Check eligibility
 
-```http
-POST /eligibility/check
-```
-
-**Body:**
-
-```json
-{
-  "account_id": "acc_4d5e6f7a",
-  "requested_amount": 500000.00
-}
-```
+Evaluates portfolio capacity for a requested financing amount.
 
 **Response `200`:**
 
@@ -177,6 +182,8 @@ POST /eligibility/check
   ]
 }
 ```
+
+</ApiEndpoint>
 
 ---
 
@@ -234,6 +241,8 @@ GET /term-sheets/{term_sheet_id}
 
 ## Financings
 
+<ApiSection method="GET" path="/financings" :show-samples="false">
+
 ### List financings
 
 ```http
@@ -241,6 +250,8 @@ GET /financings
 ```
 
 **Query parameters:** `client_id`, `status` (`active`, `closed`, `pending`), `limit`, `cursor`
+
+</ApiSection>
 
 ---
 

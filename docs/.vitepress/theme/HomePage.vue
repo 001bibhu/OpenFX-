@@ -143,9 +143,6 @@ function href(path: string) {
             <a :href="TALK_TO_US_URL" class="sf-btn-primary" target="_blank" rel="noopener noreferrer">
               Talk to Us
             </a>
-            <a :href="href('/feature-ideas/')" class="sf-btn-secondary">
-              Suggest a feature
-            </a>
           </div>
         </div>
         <div class="sf-support-form">
@@ -165,7 +162,6 @@ function href(path: string) {
             <a :href="href('/feature-ideas/')">community ideas page</a>.
           </p>
         </div>
-        <a :href="href('/feature-ideas/')" class="sf-btn-secondary">Suggest a feature</a>
       </div>
     </section>
   </div>
