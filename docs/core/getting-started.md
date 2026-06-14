@@ -56,9 +56,9 @@ Certification is required before originating client financings.
 1. **Create a client record** in the advisor dashboard
 2. **Send a secure link** for the client to connect their account
 3. **Review eligibility** once holdings sync
-4. **Generate a term sheet** — amount, cost, term, margin thresholds
+4. **Generate a term sheet**, amount, cost, term, margin thresholds
 5. **Client e-signs** disclosures and term sheet
-6. **Submit for execution** — SyntheticFi structures and delivers cash
+6. **Submit for execution**, SyntheticFi structures and delivers cash
 
 **Timeline:** Same-day eligibility review for connected accounts; 1–3 business days to funding after acceptance.
 
@@ -95,11 +95,11 @@ Your advisor guides suitability, amount, and ongoing monitoring.
 Where direct access is offered:
 
 1. **Create an account** at [app.syntheticfi.com](https://app.syntheticfi.com) *(placeholder)*
-2. **Verify identity** — ID upload and address confirmation
-3. **Link your brokerage** — Select institution and authorize read/trade access
-4. **Review financing proposal** — Amount, fixed cost, term, margin requirements
+2. **Verify identity**, ID upload and address confirmation
+3. **Link your brokerage**, Select institution and authorize read/trade access
+4. **Review financing proposal**, Amount, fixed cost, term, margin requirements
 5. **Accept terms** and confirm understanding of margin risk
-6. **Funding** — Cash deposited per your selected destination
+6. **Funding**, Cash deposited per your selected destination
 
 **Timeline:** Identity verification same day; funding 1–5 business days after acceptance.
 
@@ -133,4 +133,4 @@ Where direct access is offered:
 - **Account linking:** [Brokerage integrations](../integrations/brokerages.md)
 - **Support ticket:** [Create a ticket](../support/create-ticket.md)
 
-Use the **feedback widget** on any page to tell us if this guide was helpful—we use 👍 👎 responses to improve onboarding content.
+Use the **feedback widget** on any page to tell us if this guide was helpful, we use 👍 👎 responses to improve onboarding content.

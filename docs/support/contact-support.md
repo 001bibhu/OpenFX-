@@ -1,6 +1,8 @@
 # Contact support
 
-Reach the SyntheticFi team for help with your account, partnership inquiries, or press requests. Choose the channel that best fits your need.
+Reach the SyntheticFi team for help with your account, partnership inquiries, or press requests.
+
+**Want to speak with someone on our team?** [**Talk to Us**](https://calendly.com/d/cxdj-6k9-z9w), schedule a call with SyntheticFi.
 
 ---
 
@@ -8,6 +10,7 @@ Reach the SyntheticFi team for help with your account, partnership inquiries, or
 
 | Channel | Best for | Availability |
 |---------|----------|--------------|
+| **[Talk to Us](https://calendly.com/d/cxdj-6k9-z9w)** | Speak with the SyntheticFi team | Book a time online |
 | **[Support ticket](./create-ticket.md)** | Technical issues, financing questions, API help | 24/7 submission; responses per SLA |
 | **Email** | General inquiries, non-urgent follow-ups | support@syntheticfi.com |
 | **Phone** | Urgent margin matters, enterprise clients | See dashboard for priority line |
@@ -75,7 +78,7 @@ Most questions are answered in documentation:
 | Account linking | [Troubleshooting](../core/troubleshooting.md) |
 | API | [API overview](../platform/api-overview.md) |
 
-Use **AI-powered search** on any page—try natural language questions like *"How do I add collateral?"*
+Use **AI-powered search** on any page, try natural language questions like *"How do I add collateral?"*
 
 ---
 
@@ -108,7 +111,7 @@ Speed up resolution by preparing:
 Report suspicious activity immediately:
 
 - **Email:** security@syntheticfi.com
-- **Subject line:** URGENT — Security concern
+- **Subject line:** URGENT, Security concern
 
 Do **not** share passwords, full account numbers, or API secrets in email or chat. SyntheticFi staff will never ask for your password.
 
@@ -116,7 +119,7 @@ Do **not** share passwords, full account numbers, or API secrets in email or cha
 
 ## Feedback on documentation
 
-Doc improvements go through the **feedback widget** on each page—not support email. We track:
+Doc improvements go through the **feedback widget** on each page, not support email. We track:
 
 - Page views (aggregated)
 - 👍 / 👎 helpfulness ratings
@@ -132,14 +135,14 @@ SyntheticFi, Inc. *(placeholder)*
 100 Financial Way, Suite 500  
 New York, NY 10004
 
-Corporate and legal notices only—not for support requests.
+Corporate and legal notices only, not for support requests.
 
 ---
 
 ## Related
 
-- [Create a support ticket](./create-ticket.md) — Recommended for trackable issues
-- [Feature requests](./feature-requests.md) — Product ideas
+- [Create a support ticket](./create-ticket.md), Recommended for trackable issues
+- [Feature requests](./feature-requests.md), Product ideas
 - [FAQ](../core/faq.md)
 
 We're here to help you use SyntheticFi with confidence.

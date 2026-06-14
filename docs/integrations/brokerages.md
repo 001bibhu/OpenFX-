@@ -13,7 +13,7 @@ SyntheticFi connects to major retail and direct-access brokerages so individual 
 | **Fidelity** | OAuth | Available | Brokerage and managed account programs |
 | **E*TRADE (Morgan Stanley)** | OAuth | Beta | Rolling availability by region |
 | **Vanguard** | OAuth | Roadmap | Partner waitlist |
-| **Robinhood** | — | Not supported | Eligibility restrictions |
+| **Robinhood** | N/A | Not supported | Eligibility restrictions |
 
 List updated quarterly. [Contact support](../support/contact-support.md) for current status.
 
@@ -25,7 +25,7 @@ List updated quarterly. [Contact support](../support/contact-support.md) for cur
 
 1. User clicks **Connect account** in SyntheticFi (or partner app)
 2. Selects brokerage from list
-3. Redirected to brokerage login (OAuth)—credentials entered **only** on brokerage site
+3. Redirected to brokerage login (OAuth), credentials entered **only** on brokerage site
 4. User approves data sharing permissions
 5. Redirected back to SyntheticFi; sync begins automatically
 
@@ -144,7 +144,7 @@ Users can disconnect at **Settings → Integrations → Disconnect**.
 
 **Important:** You cannot disconnect while an **active financing** exists. Repay or close financing first.
 
-Revoking access at the brokerage site also stops sync but may leave financing in non-compliant state—always close through SyntheticFi first.
+Revoking access at the brokerage site also stops sync but may leave financing in non-compliant state, always close through SyntheticFi first.
 
 ---
 
@@ -183,7 +183,7 @@ See [API reference](../platform/api-reference.md#initiate-account-link).
 ## Related resources
 
 - [Integrations overview](./overview.md)
-- [Custodians](./custodians.md) — Institutional programs
+- [Custodians](./custodians.md), Institutional programs
 - [Getting started](../core/getting-started.md)
 - [Authentication](../platform/authentication.md)
 

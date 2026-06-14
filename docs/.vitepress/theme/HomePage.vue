@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { withBase } from 'vitepress'
+import { TALK_TO_US_URL } from '../utils/links'
 import AiSearch from './AiSearch.vue'
 import SupportTicketForm from './SupportTicketForm.vue'
 
@@ -8,7 +9,6 @@ const guideLinks = [
   { title: 'Getting started', desc: 'Onboarding for advisors and investors', path: '/core/getting-started' },
   { title: 'FAQ', desc: 'Quick answers to common questions', path: '/core/faq' },
   { title: 'Admin guide', desc: 'Firm settings, roles, and compliance', path: '/core/admin-guide' },
-  { title: "What's new", desc: 'Release notes and product updates', path: '/core/whats-new' },
   { title: 'Troubleshooting', desc: 'Resolve linking, margin, and dashboard issues', path: '/core/troubleshooting' },
 ]
 
@@ -47,10 +47,28 @@ function href(path: string) {
         <AiSearch />
         <div class="sf-hero-actions">
           <a :href="href('/core/getting-started')" class="sf-btn-primary">Get started</a>
-          <a :href="href('/core/overview')" class="sf-btn-secondary">Read overview</a>
+          <a :href="TALK_TO_US_URL" class="sf-btn-secondary" target="_blank" rel="noopener noreferrer">
+            Talk to Us
+          </a>
+          <a :href="href('/core/overview')" class="sf-btn-ghost">Read overview</a>
         </div>
       </div>
     </header>
+
+    <!-- What's new, featured section -->
+    <section class="sf-whats-new">
+      <div class="sf-whats-new-inner">
+        <div class="sf-whats-new-copy">
+          <span class="sf-whats-new-badge">Latest</span>
+          <h2>What's new</h2>
+          <p>
+            Release notes, product updates, and documentation changes, stay current
+            with SyntheticFi platform improvements and integrations.
+          </p>
+        </div>
+        <a :href="href('/whats-new/')" class="sf-btn-primary">View release notes</a>
+      </div>
+    </section>
 
     <!-- Doc sections -->
     <section class="sf-sections">
@@ -118,14 +136,16 @@ function href(path: string) {
           <h2>Need help?</h2>
           <p>
             Submit a support ticket and our team will respond within one business day.
-            Every documentation page also includes a floating feedback widget — your
+            Every documentation page also includes a floating feedback widget, your
             👍 👎 ratings help us improve content.
           </p>
           <div class="sf-support-links">
-            <a :href="href('/support/feature-requests')" class="sf-btn-secondary">
-              Request a feature
+            <a :href="TALK_TO_US_URL" class="sf-btn-primary" target="_blank" rel="noopener noreferrer">
+              Talk to Us
             </a>
-            <a :href="href('/support/contact-support')" class="sf-text-link">Contact support →</a>
+            <a :href="href('/feature-ideas/')" class="sf-btn-secondary">
+              Suggest a feature
+            </a>
           </div>
         </div>
         <div class="sf-support-form">
@@ -135,17 +155,17 @@ function href(path: string) {
       </div>
     </section>
 
-    <!-- Analytics note -->
+    <!-- Footer note -->
     <section class="sf-analytics-banner">
       <div class="sf-analytics-banner-inner">
         <div>
-          <h3>Documentation analytics</h3>
+          <h3>Have an idea?</h3>
           <p>
-            Track page views, feedback sentiment, and support trends from the
-            <a :href="href('/admin/analytics')">analytics dashboard</a>.
+            Submit feature suggestions and vote on ideas from other firms on the
+            <a :href="href('/feature-ideas/')">community ideas page</a>.
           </p>
         </div>
-        <a :href="href('/admin/analytics')" class="sf-btn-secondary">View analytics</a>
+        <a :href="href('/feature-ideas/')" class="sf-btn-secondary">Suggest a feature</a>
       </div>
     </section>
   </div>

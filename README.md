@@ -1,6 +1,6 @@
 # SyntheticFi Documentation Site
 
-Static documentation built with [VitePress](https://vitepress.dev/) — professional landing page, AI search UI, feedback widgets, and analytics dashboard.
+Static documentation built with [VitePress](https://vitepress.dev/), professional landing page, AI search UI, feedback widgets, and analytics dashboard.
 
 ## Local development
 
@@ -28,8 +28,8 @@ Set `VP_BASE_PATH` to match your repo name (default: `/SyntheticFi/`).
 
 | Feature | Location |
 |---------|----------|
-| **Landing page** | `/` — hero, AI search, doc sections, ticket form |
-| **Guides** | `/core/*` — overview, getting started, FAQ, admin, what's new, troubleshooting |
+| **Landing page** | `/`, hero, AI search, doc sections, ticket form |
+| **Guides** | `/core/*`, overview, getting started, FAQ, admin, what's new, troubleshooting |
 | **API reference** | `/platform/*` |
 | **Integrations** | `/integrations/*` |
 | **Support ticket** | Home page + `/support/create-ticket` |
@@ -39,9 +39,9 @@ Set `VP_BASE_PATH` to match your repo name (default: `/SyntheticFi/`).
 
 ## Production notes
 
-- **AI search** — Currently uses local doc index + smart routing. Swap `docSearch.ts` for your LLM/RAG API.
-- **Analytics** — Stored in `localStorage` for demo. Wire `analytics.ts` to your backend (PostHog, Plausible, custom API).
-- **Tickets & features** — Form submissions saved locally; connect to Zendesk, Linear, or your support API.
+- **AI search**, Currently uses local doc index + smart routing. Swap `docSearch.ts` for your LLM/RAG API.
+- **Analytics**, Stored in `localStorage` for demo. Wire `analytics.ts` to your backend (PostHog, Plausible, custom API).
+- **Tickets & features**, Form submissions saved locally; connect to Zendesk, Linear, or your support API.
 
 ## Why VitePress?
 

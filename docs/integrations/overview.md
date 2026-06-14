@@ -148,7 +148,7 @@ Start here: [API overview](../platform/api-overview.md)
 2. Map rep codes and advisor assignments
 3. Clients link accounts via secure onboarding link
 
-See [Getting started — advisors](../core/getting-started.md#for-financial-advisors)
+See [Getting started, advisors](../core/getting-started.md#for-financial-advisors)
 
 ### For partners
 
@@ -162,8 +162,8 @@ See [Getting started — advisors](../core/getting-started.md#for-financial-advi
 
 | Issue | Resource |
 |-------|----------|
-| Connection failed | [Troubleshooting — account linking](../core/troubleshooting.md#account-linking) |
-| Missing holdings | [Brokerages](./brokerages.md) — asset eligibility |
-| Rep code mapping | [Custodians](./custodians.md) — institutional setup |
+| Connection failed | [Troubleshooting, account linking](../core/troubleshooting.md#account-linking) |
+| Missing holdings | [Brokerages](./brokerages.md), asset eligibility |
+| Rep code mapping | [Custodians](./custodians.md), institutional setup |
 
 [Create a support ticket →](../support/create-ticket.md)

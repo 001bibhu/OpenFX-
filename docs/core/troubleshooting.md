@@ -16,7 +16,7 @@ Resolve common issues with SyntheticFi account linking, financing status, and pl
 2. Use the same login you use for the brokerage website (not a read-only sub-account if trade access is required)
 3. Disable browser extensions that block pop-ups or third-party cookies
 4. Revoke and re-authorize: **Settings → Integrations → Disconnect → Reconnect**
-5. Wait 15 minutes and retry—some custodians rate-limit API connections
+5. Wait 15 minutes and retry, some custodians rate-limit API connections
 
 **Still failing?** Include the error message and brokerage name in a [support ticket](../support/create-ticket.md).
 
@@ -26,7 +26,7 @@ Resolve common issues with SyntheticFi account linking, financing status, and pl
 
 **Try these steps:**
 
-1. Click **Refresh holdings** in the dashboard (or wait for the next scheduled sync—typically every 15–60 minutes)
+1. Click **Refresh holdings** in the dashboard (or wait for the next scheduled sync, typically every 15–60 minutes)
 2. Verify the connected account holds eligible securities
 3. Confirm recent transfers have settled at the custodian
 
@@ -77,7 +77,7 @@ Repayment confirmation can take 1–2 business days to process. If locks persist
 
 1. Log in to the dashboard and review **current coverage ratio**
 2. Choose an action: add collateral, partial repayment, or contact your advisor
-3. Do not ignore follow-up notifications—escalation timelines are in your term sheet
+3. Do not ignore follow-up notifications, escalation timelines are in your term sheet
 
 See [What happens if the market drops](./how-it-works.md#what-happens-if-the-market-drops).
 
@@ -113,7 +113,7 @@ Use **Forgot password** on the login page. Reset links expire in 24 hours.
 
 - Ensure device time is synced (TOTP codes are time-sensitive)
 - Use backup codes stored at enrollment
-- Contact support if locked out—identity verification required
+- Contact support if locked out, identity verification required
 
 ### Session expires quickly
 
@@ -125,7 +125,7 @@ Firm security policies may enforce short sessions. Re-login or contact your firm
 
 | Issue | Resource |
 |-------|----------|
-| 401 Unauthorized | [Authentication](../platform/authentication.md) — refresh token |
+| 401 Unauthorized | [Authentication](../platform/authentication.md), refresh token |
 | 429 Rate limited | Reduce request frequency; see API overview |
 | Webhook not received | Verify endpoint URL and signing secret |
 

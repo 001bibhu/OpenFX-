@@ -1,6 +1,6 @@
 # Admin guide
 
-This guide is for **firm administrators** and compliance leads managing SyntheticFi at the organization level—RIAs, wealth managers, and broker-dealers.
+This guide is for **firm administrators** and compliance leads managing SyntheticFi at the organization level, RIAs, wealth managers, and broker-dealers.
 
 ---
 
@@ -23,10 +23,10 @@ Assign roles under **Settings → Team → Invite user**.
 
 ### Initial configuration
 
-1. **Firm profile** — Legal entity, CRD/IARD, primary address
-2. **Compliance contacts** — Designated compliance officer email
-3. **Disclosure templates** — Firm-specific language appended to SyntheticFi standard disclosures (where permitted)
-4. **Approval workflows** — Optional second approver for financings above threshold
+1. **Firm profile**, Legal entity, CRD/IARD, primary address
+2. **Compliance contacts**, Designated compliance officer email
+3. **Disclosure templates**, Firm-specific language appended to SyntheticFi standard disclosures (where permitted)
+4. **Approval workflows**, Optional second approver for financings above threshold
 
 ### Integration management
 
@@ -59,10 +59,10 @@ Admins view certification status in **Team → Compliance**. Advisors with expir
 
 ### Dashboard views
 
-- **Active financings** — Amount, term, margin status, advisor of record
-- **Margin alerts** — Firm-wide warnings and calls
-- **Pipeline** — Pending term sheets and signatures
-- **Closed** — Historical financings for reporting
+- **Active financings**, Amount, term, margin status, advisor of record
+- **Margin alerts**, Firm-wide warnings and calls
+- **Pipeline**, Pending term sheets and signatures
+- **Closed**, Historical financings for reporting
 
 ### Export and reporting
 
@@ -164,7 +164,7 @@ Firm admins can provision API keys for internal systems:
 
 1. **Settings → API → Create key**
 2. Assign scopes (read-only vs. origination)
-3. Store client secret securely—shown once
+3. Store client secret securely, shown once
 
 Documentation: [API overview](../platform/api-overview.md) | [Authentication](../platform/authentication.md)
 
@@ -189,13 +189,13 @@ Contact SyntheticFi enterprise support to wind down active financings and export
 | Priority | Scenario | Contact |
 |----------|----------|---------|
 | P1 | Active margin call unresolved | Priority line in dashboard |
-| P2 | Integration outage | [Create ticket](../support/create-ticket.md) — mark "Firm admin" |
+| P2 | Integration outage | [Create ticket](../support/create-ticket.md), mark "Firm admin" |
 | P3 | General admin questions | Account manager or support |
 
 ---
 
 ## Related resources
 
-- [Getting started — advisors](./getting-started.md#for-financial-advisors)
+- [Getting started, advisors](./getting-started.md#for-financial-advisors)
 - [How it works](./how-it-works.md)
 - [Admin API endpoints](../platform/api-reference.md#firm-administration)

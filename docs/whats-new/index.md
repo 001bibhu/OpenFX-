@@ -14,9 +14,9 @@ Product updates, release notes, and documentation changes for SyntheticFi.
 
 ### Platform
 
-- **API v1.1** — Webhook events for margin warnings and sandbox margin simulation
-- **Schwab Advisor** — Real-time holdings sync for advisor-led accounts
-- **Margin alerts** — Email and in-app notifications with clearer action steps
+- **API v1.1**, Webhook events for margin warnings and sandbox margin simulation
+- **Schwab Advisor**, Real-time holdings sync for advisor-led accounts
+- **Margin alerts**, Email and in-app notifications with clearer action steps
 
 ### Coming soon
 
@@ -53,9 +53,9 @@ Initial public API release:
 
 ### Integrations
 
-- Interactive Brokers — full API sync
-- Fidelity Institutional — rep code mapping
-- Pershing — collateral hold automation
+- Interactive Brokers, full API sync
+- Fidelity Institutional, rep code mapping
+- Pershing, collateral hold automation
 
 ---
 

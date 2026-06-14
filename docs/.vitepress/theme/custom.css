@@ -150,6 +150,18 @@
   color: #fff;
 }
 
+.sf-btn-ghost {
+  background: transparent;
+  color: #94a3b8;
+  border: 1px solid transparent;
+  padding: 0.65rem 1rem;
+}
+
+.sf-btn-ghost:hover {
+  color: #e2e8f0;
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
 .sf-text-link {
   color: var(--sf-brand);
   text-decoration: none;
@@ -304,6 +316,51 @@
   letter-spacing: 0.06em;
   color: #64748b;
   margin-right: 0.5rem;
+}
+
+/* What's new featured section */
+.sf-whats-new {
+  background: linear-gradient(135deg, rgba(3, 146, 241, 0.12), rgba(3, 146, 241, 0.04));
+  border-top: 1px solid rgba(3, 146, 241, 0.2);
+  border-bottom: 1px solid rgba(3, 146, 241, 0.2);
+  padding: 2.5rem 1.5rem;
+}
+
+.sf-whats-new-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.sf-whats-new-badge {
+  display: inline-block;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sf-brand);
+  background: rgba(3, 146, 241, 0.15);
+  border-radius: 999px;
+  padding: 0.3rem 0.65rem;
+  margin-bottom: 0.65rem;
+}
+
+.sf-whats-new-copy h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.sf-whats-new-copy p {
+  margin: 0;
+  color: var(--vp-c-text-2);
+  max-width: 520px;
+  line-height: 1.6;
+  font-size: 0.9375rem;
 }
 
 /* Doc sections grid */
@@ -855,4 +912,330 @@
 
 .VPDoc .sf-analytics {
   padding-top: 0;
+}
+
+/* Feature ideas community page */
+.sf-feature-ideas {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0 0 2rem;
+}
+
+.sf-ideas-hero {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.sf-ideas-hero h1 {
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.75rem;
+}
+
+.sf-ideas-hero p {
+  margin: 0 auto;
+  max-width: 560px;
+  color: var(--vp-c-text-2);
+  line-height: 1.65;
+  font-size: 1.0625rem;
+}
+
+.sf-ideas-list-section h2,
+.sf-ideas-form-section h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0 0 0.35rem;
+}
+
+.sf-ideas-list-head {
+  margin-bottom: 1.25rem;
+}
+
+.sf-ideas-list-head p {
+  margin: 0;
+  color: var(--vp-c-text-2);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+.sf-ideas-form-lead {
+  color: var(--vp-c-text-2);
+  margin: 0 0 1.25rem;
+  font-size: 0.9375rem;
+}
+
+.sf-ideas-divider {
+  height: 1px;
+  background: var(--vp-c-divider);
+  margin: 2.5rem 0;
+}
+
+.sf-ideas-form {
+  padding: 1.75rem;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 14px;
+  background: var(--vp-c-bg-alt);
+}
+
+.sf-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem 1rem;
+}
+
+.sf-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin: 0;
+}
+
+.sf-field-full {
+  grid-column: 1 / -1;
+}
+
+.sf-field-label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--vp-c-text-1);
+}
+
+.sf-field-hint {
+  font-size: 0.8125rem;
+  color: var(--vp-c-text-3);
+  margin-top: -0.15rem;
+}
+
+.sf-field input,
+.sf-field textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 10px;
+  background: var(--vp-c-bg);
+  color: var(--vp-c-text-1);
+  font-size: 0.9375rem;
+  font-family: inherit;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.sf-field input:focus,
+.sf-field textarea:focus {
+  outline: none;
+  border-color: var(--sf-brand);
+  box-shadow: 0 0 0 3px rgba(3, 146, 241, 0.15);
+}
+
+.sf-field-textarea textarea {
+  margin-top: 0.25rem;
+  min-height: 8rem;
+  resize: vertical;
+  line-height: 1.55;
+}
+
+.sf-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1.25rem;
+}
+
+.sf-form-error {
+  color: #ef4444;
+  font-size: 0.875rem;
+  margin: 1rem 0 0;
+}
+
+.sf-ideas-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.sf-idea-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem 1.25rem;
+  align-items: start;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 14px;
+  padding: 1.25rem 1.35rem;
+  background: var(--vp-c-bg);
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.sf-idea-card:hover {
+  border-color: rgba(3, 146, 241, 0.35);
+  box-shadow: 0 4px 20px rgba(3, 146, 241, 0.06);
+}
+
+.sf-vote-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 5rem;
+  padding: 0.75rem 0.85rem;
+  border: 2px solid var(--sf-brand);
+  border-radius: 12px;
+  background: rgba(3, 146, 241, 0.08);
+  cursor: pointer;
+  transition: background 0.15s, transform 0.15s;
+  font-family: inherit;
+  color: var(--sf-brand);
+}
+
+.sf-vote-btn:hover:not(:disabled) {
+  background: rgba(3, 146, 241, 0.18);
+  transform: translateY(-1px);
+}
+
+.sf-vote-btn.voted,
+.sf-vote-btn:disabled {
+  background: var(--sf-brand);
+  color: #fff;
+  cursor: default;
+  transform: none;
+}
+
+.sf-vote-btn.voted .sf-vote-count,
+.sf-vote-btn:disabled .sf-vote-count {
+  color: #fff;
+}
+
+.sf-vote-btn.voted .sf-vote-label,
+.sf-vote-btn:disabled .sf-vote-label {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.sf-vote-arrow {
+  font-size: 0.625rem;
+  line-height: 1;
+  margin-bottom: 0.15rem;
+  opacity: 0.85;
+}
+
+.sf-vote-count {
+  font-size: 1.375rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.sf-vote-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 0.2rem;
+}
+
+.sf-idea-body h3 {
+  margin: 0 0 0.45rem;
+  font-size: 1.0625rem;
+  font-weight: 600;
+}
+
+.sf-idea-body p {
+  margin: 0 0 0.65rem;
+  color: var(--vp-c-text-2);
+  line-height: 1.6;
+  font-size: 0.9375rem;
+}
+
+.sf-idea-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  font-size: 0.8125rem;
+  color: var(--vp-c-text-3);
+}
+
+.sf-idea-meta span:first-child {
+  font-weight: 500;
+  color: var(--vp-c-text-2);
+}
+
+.sf-empty {
+  color: var(--vp-c-text-2);
+  font-size: 0.9375rem;
+  text-align: center;
+  padding: 2rem;
+  border: 1px dashed var(--vp-c-divider);
+  border-radius: 12px;
+}
+
+@media (max-width: 640px) {
+  .sf-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sf-idea-card {
+    grid-template-columns: 1fr;
+  }
+
+  .sf-vote-btn {
+    flex-direction: row;
+    gap: 0.65rem;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .sf-vote-arrow {
+    margin-bottom: 0;
+  }
+}
+
+/* Content admin footer link (all pages) */
+.sf-admin-footer {
+  text-align: center;
+  padding: 0.75rem 1rem 1.25rem;
+  font-size: 0.8125rem;
+  color: var(--vp-c-text-3);
+  border-top: 1px solid var(--vp-c-divider);
+  background: var(--vp-c-bg-alt);
+}
+
+.sf-admin-footer a {
+  color: var(--vp-c-text-2);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.sf-admin-footer a:hover {
+  color: var(--sf-brand);
+}
+
+.sf-admin-note {
+  margin-left: 0.25rem;
+  color: var(--vp-c-text-3);
+}
+
+.sf-admin-footer-inline {
+  width: 100%;
+  text-align: center;
+  margin: 1.25rem 0 0;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--vp-c-divider);
+  font-size: 0.8125rem;
+  color: var(--vp-c-text-3);
+}
+
+.sf-admin-footer-inline a {
+  color: var(--vp-c-text-2);
+  text-decoration: underline;
+}
+
+.sf-admin-footer-inline span {
+  margin-left: 0.2rem;
+}
+
+/* Home page is full-bleed, admin link sits above default footer */
+.sf-home + .sf-admin-footer,
+.VPPage.page .sf-admin-footer {
+  margin-top: 0;
 }

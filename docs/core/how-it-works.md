@@ -1,6 +1,6 @@
 # How it works
 
-This guide explains how SyntheticFi turns an investment portfolio into cash—what happens to your holdings, how financing is structured, and what to expect from start to finish.
+This guide explains how SyntheticFi turns an investment portfolio into cash, what happens to your holdings, how financing is structured, and what to expect from start to finish.
 
 ---
 
@@ -24,12 +24,12 @@ Your portfolio stays invested. SyntheticFi uses it as backing for structured fin
 
 Your brokerage or custodian account holds stocks, ETFs, and other eligible assets. SyntheticFi evaluates:
 
-- **Total portfolio value** — Current market value of eligible holdings
-- **Composition** — Which assets qualify (some holdings may be excluded)
-- **Concentration** — Over-weighted single positions may require adjustment
-- **Liquidity** — How easily holdings can be valued and monitored
+- **Total portfolio value**, Current market value of eligible holdings
+- **Composition**, Which assets qualify (some holdings may be excluded)
+- **Concentration**, Over-weighted single positions may require adjustment
+- **Liquidity**, How easily holdings can be valued and monitored
 
-Based on this review, SyntheticFi determines how much financing the portfolio can support—similar in concept to a **loan-to-value (LTV) ratio**, but applied to securities rather than real estate.
+Based on this review, SyntheticFi determines how much financing the portfolio can support, similar in concept to a **loan-to-value (LTV) ratio**, but applied to securities rather than real estate.
 
 ### What stays the same
 
@@ -64,9 +64,9 @@ You **can** usually:
 Locking protects the financing structure. When you **repay and close**, locks are removed and full control returns to normal account operations.
 
 ```
-Before financing:     [ Portfolio — full flexibility ]
-During financing:     [ Portfolio — pledged portion LOCKED ]
-After repayment:      [ Portfolio — full flexibility restored ]
+Before financing:     [ Portfolio, full flexibility ]
+During financing:     [ Portfolio, pledged portion LOCKED ]
+After repayment:      [ Portfolio, full flexibility restored ]
 ```
 
 ---
@@ -95,7 +95,7 @@ You do not trade these instruments yourself. SyntheticFi's infrastructure and ap
 
 ### Step 4: Deliver cash
 
-Once structured and confirmed, cash is sent to the designated account—often the same brokerage account or a linked bank account, depending on program setup.
+Once structured and confirmed, cash is sent to the designated account, often the same brokerage account or a linked bank account, depending on program setup.
 
 **No deep math required on your part.** You receive disclosures showing cash received, total cost, key dates, and margin requirements.
 
@@ -149,21 +149,21 @@ Portfolio value fluctuates. If your portfolio **declines**, collateral coverage 
 
 ```
 Healthy        →  Portfolio comfortably covers financing
-Warning        →  Approaching minimum coverage — action recommended
-Margin call    →  Coverage below required level — action required
+Warning        →  Approaching minimum coverage, action recommended
+Margin call    →  Coverage below required level, action required
 Remediation    →  Add collateral, partial repayment, or restructure
 ```
 
 ### Your options when notified
 
-1. **Add collateral** — Transfer additional eligible securities or cash into the account
-2. **Partial repayment** — Reduce the outstanding financing amount
-3. **Restructure** — Work with SyntheticFi and your advisor to adjust terms (if available)
-4. **Liquidation (last resort)** — If no action is taken, pledged holdings may be sold to restore required coverage
+1. **Add collateral**, Transfer additional eligible securities or cash into the account
+2. **Partial repayment**, Reduce the outstanding financing amount
+3. **Restructure**, Work with SyntheticFi and your advisor to adjust terms (if available)
+4. **Liquidation (last resort)**, If no action is taken, pledged holdings may be sold to restore required coverage
 
 SyntheticFi sends notifications by email and in-platform alerts. Advisors receive parallel notifications for client accounts they manage.
 
-**Important:** Margin events are not failures—they are a normal part of portfolio-backed financing. Proactive monitoring reduces the risk of forced liquidation.
+**Important:** Margin events are not failures, they are a normal part of portfolio-backed financing. Proactive monitoring reduces the risk of forced liquidation.
 
 ---
 
@@ -203,8 +203,8 @@ SyntheticFi reads portfolio data through secure, read-only (and where required, 
 
 ## Related reading
 
-- [Overview](./overview.md) — Product introduction and key concepts
-- [Getting started](./getting-started.md) — Onboarding steps
-- [Use cases](./use-cases.md) — When to use portfolio liquidity
-- [FAQ](./faq.md) — Common questions
-- [Troubleshooting](./troubleshooting.md) — Resolve issues
+- [Overview](./overview.md), Product introduction and key concepts
+- [Getting started](./getting-started.md), Onboarding steps
+- [Use cases](./use-cases.md), When to use portfolio liquidity
+- [FAQ](./faq.md), Common questions
+- [Troubleshooting](./troubleshooting.md), Resolve issues

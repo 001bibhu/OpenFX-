@@ -8,7 +8,7 @@ Quick answers to common questions about SyntheticFi. For deeper explanations, se
 
 ### Is SyntheticFi a bank or a lender?
 
-No. SyntheticFi is **financial infrastructure**—a platform that structures portfolio-backed financing using public markets. It is not a bank and does not offer traditional deposit or lending products.
+No. SyntheticFi is **financial infrastructure**, a platform that structures portfolio-backed financing using public markets. It is not a bank and does not offer traditional deposit or lending products.
 
 ### Who can use SyntheticFi?
 
@@ -24,7 +24,7 @@ Taxable brokerage accounts and certain trust structures at [supported brokerages
 
 ### Do I have to sell my stocks?
 
-**No.** That is the primary purpose of SyntheticFi—access cash while keeping investments in place.
+**No.** That is the primary purpose of SyntheticFi, access cash while keeping investments in place.
 
 ### What does "locking" my portfolio mean?
 
@@ -32,7 +32,7 @@ A portion of your holdings is pledged as collateral and cannot be sold or transf
 
 ### How is the cost determined?
 
-Cost is set at origination based on amount, term, portfolio composition, and market conditions. You receive a **fixed total cost** (or clearly defined structure) before accepting—no surprise compounding.
+Cost is set at origination based on amount, term, portfolio composition, and market conditions. You receive a **fixed total cost** (or clearly defined structure) before accepting, no surprise compounding.
 
 ### What are box spreads and do I need to understand them?
 
@@ -52,7 +52,7 @@ Financing is structured to limit exposure, but market events and failure to resp
 
 ### How quickly do I need to respond to a margin call?
 
-Timelines are specified in your term sheet—typically 24–72 hours for initial response, depending on severity. Contact your advisor or support immediately if you receive a margin alert.
+Timelines are specified in your term sheet, typically 24–72 hours for initial response, depending on severity. Contact your advisor or support immediately if you receive a margin alert.
 
 ---
 
@@ -76,7 +76,7 @@ Advisors must complete SyntheticFi certification covering product mechanics, sui
 
 ### How does account linking work?
 
-Secure OAuth or API token exchange—**never** share passwords with SyntheticFi. See [Authentication](../platform/authentication.md).
+Secure OAuth or API token exchange, **never** share passwords with SyntheticFi. See [Authentication](../platform/authentication.md).
 
 ### Which brokerages are supported?
 

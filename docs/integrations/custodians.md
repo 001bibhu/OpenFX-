@@ -121,7 +121,7 @@ Trust and entity registrations require additional review:
 - Trustee signatures on SyntheticFi disclosures
 - Some custodians require manual approval for holds on trust accounts
 
-Start trust onboarding early—add 3–5 business days to standard timelines.
+Start trust onboarding early, add 3–5 business days to standard timelines.
 
 ---
 
@@ -171,8 +171,8 @@ Some custodian programs use end-of-day files:
 ## Related resources
 
 - [Integrations overview](./overview.md)
-- [Brokerages](./brokerages.md) — Retail account connections
-- [Admin guide](../core/admin-guide.md) — Firm configuration
-- [Authentication](../platform/authentication.md) — API and OAuth
+- [Brokerages](./brokerages.md), Retail account connections
+- [Admin guide](../core/admin-guide.md), Firm configuration
+- [Authentication](../platform/authentication.md), API and OAuth
 
 Questions about a specific custodian? [Contact support](../support/contact-support.md) and include your firm name and custodian.

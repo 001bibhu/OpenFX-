@@ -1,6 +1,6 @@
 # API overview
 
-The SyntheticFi API lets partners, enterprise firms, and developers integrate portfolio liquidity into custom workflows—CRM systems, advisor tools, mortgage platforms, and internal dashboards.
+The SyntheticFi API lets partners, enterprise firms, and developers integrate portfolio liquidity into custom workflows, CRM systems, advisor tools, mortgage platforms, and internal dashboards.
 
 This page covers base concepts, environments, and how to get started.
 
@@ -196,8 +196,8 @@ Details: [Authentication](./authentication.md)
 
 ## Next steps
 
-- [Authentication](./authentication.md) — OAuth, scopes, and tokens
-- [API reference](./api-reference.md) — Endpoint catalog
-- [Integrations overview](../integrations/overview.md) — Custodian and brokerage data flow
+- [Authentication](./authentication.md), OAuth, scopes, and tokens
+- [API reference](./api-reference.md), Endpoint catalog
+- [Integrations overview](../integrations/overview.md), Custodian and brokerage data flow
 
 Questions? [Create a support ticket](../support/create-ticket.md) and select **API / Developer**.

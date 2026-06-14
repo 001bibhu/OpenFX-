@@ -6,6 +6,8 @@ sidebar: false
 
 # Documentation analytics
 
-Monitor page views, reader feedback, and support submissions across the SyntheticFi documentation site.
+**Content admin only**, this page is not linked in the public navigation. Bookmark this URL for internal use.
+
+Monitor page views, reader feedback, support tickets, and community feature idea votes.
 
 <AnalyticsDashboard />

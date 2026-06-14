@@ -38,9 +38,15 @@ const DOC_INDEX: DocResult[] = [
   },
   {
     title: "What's new",
-    path: '/core/whats-new',
-    section: 'Guides',
+    path: '/whats-new/',
+    section: 'Updates',
     excerpt: 'Release notes, product updates, and documentation changes.',
+  },
+  {
+    title: 'Suggest a feature',
+    path: '/feature-ideas/',
+    section: 'Community',
+    excerpt: 'Submit product ideas and vote on requests from other advisors and partners.',
   },
   {
     title: 'Troubleshooting',
@@ -135,7 +141,7 @@ export function aiAnswer(query: string): { answer: string; sources: DocResult[] 
 
   return {
     answer:
-      'I could not find an exact match. Try searching for "margin", "getting started", "API", or "integrations" — or browse the guide sections below.',
+      'I could not find an exact match. Try searching for "margin", "getting started", "API", or "integrations", or browse the guide sections below.',
     sources: [],
   }
 }

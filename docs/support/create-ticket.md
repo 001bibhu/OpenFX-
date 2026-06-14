@@ -21,7 +21,7 @@ Report an issue, ask for help with your account, or escalate a financing concern
 
 ## Urgent margin call?
 
-Select category **Margin** and priority details in your description. Do not wait for a reply before taking action — review [margin options](/core/how-it-works#what-happens-if-the-market-drops) immediately.
+Select category **Margin** and priority details in your description. Do not wait for a reply before taking action, review [margin options](/core/how-it-works#what-happens-if-the-market-drops) immediately.
 
 ## Response expectations
 

@@ -1,6 +1,6 @@
 # Overview
 
-SyntheticFi is a financial infrastructure platform that helps advisors and investors access **liquidity**—cash—using an investment portfolio as **collateral**, without selling the underlying assets.
+SyntheticFi is a financial infrastructure platform that helps advisors and investors access **liquidity**, cash, using an investment portfolio as **collateral**, without selling the underlying assets.
 
 This page explains what SyntheticFi is, who uses it, and how it fits into a broader financial plan. No prior knowledge of advanced trading strategies is required.
 
@@ -10,7 +10,7 @@ This page explains what SyntheticFi is, who uses it, and how it fits into a broa
 
 SyntheticFi is **not a traditional lender**.
 
-Traditional lenders evaluate your credit score, income, and debt ratios. They may require a home or other assets as collateral. SyntheticFi works differently: it uses your **investment portfolio**—stocks, ETFs, and similar holdings—as the basis for structured financing.
+Traditional lenders evaluate your credit score, income, and debt ratios. They may require a home or other assets as collateral. SyntheticFi works differently: it uses your **investment portfolio**, stocks, ETFs, and similar holdings, as the basis for structured financing.
 
 In plain terms:
 
@@ -18,7 +18,7 @@ In plain terms:
 2. You do not want to sell investments, which can trigger taxes and disrupt a long-term strategy.
 3. SyntheticFi structures financing backed by the portfolio, delivers cash upfront, and sets a fixed cost for repayment later.
 
-SyntheticFi handles the **structuring and infrastructure**—connecting to brokerages and custodians, managing collateral, and coordinating the financing lifecycle. Your advisor or firm remains the primary relationship for the client.
+SyntheticFi handles the **structuring and infrastructure**, connecting to brokerages and custodians, managing collateral, and coordinating the financing lifecycle. Your advisor or firm remains the primary relationship for the client.
 
 ---
 
@@ -76,15 +76,15 @@ These terms appear throughout the documentation. Each is explained simply here; 
 
 ### Collateral
 
-**Collateral** is an asset pledged to secure financing. If you cannot meet repayment or margin requirements, the collateral may be used to satisfy obligations. With SyntheticFi, your **portfolio holdings** serve as collateral—not your home or personal property (unless separately agreed in a specific program).
+**Collateral** is an asset pledged to secure financing. If you cannot meet repayment or margin requirements, the collateral may be used to satisfy obligations. With SyntheticFi, your **portfolio holdings** serve as collateral, not your home or personal property (unless separately agreed in a specific program).
 
 ### Locking
 
-When financing is active, a portion of the portfolio may be **locked**—meaning those holdings cannot be sold or transferred freely until the financing is repaid or adjusted. Locking protects both the investor and the financing structure. See [How it works](./how-it-works.md#what-locking-means) for details.
+When financing is active, a portion of the portfolio may be **locked**, meaning those holdings cannot be sold or transferred freely until the financing is repaid or adjusted. Locking protects both the investor and the financing structure. See [How it works](./how-it-works.md#what-locking-means) for details.
 
 ### Fixed cost
 
-SyntheticFi structures financing with a **known cost** for the term—not open-ended interest that compounds unpredictably. Exact terms depend on portfolio size, duration, and market conditions at origination.
+SyntheticFi structures financing with a **known cost** for the term, not open-ended interest that compounds unpredictably. Exact terms depend on portfolio size, duration, and market conditions at origination.
 
 ### Margin risk
 
@@ -108,7 +108,7 @@ SyntheticFi is **financial infrastructure**, not a replacement for every type of
 
 ## What happens behind the scenes (without the jargon)
 
-SyntheticFi structures financing using established public-market mechanisms—including options-based strategies such as box spreads—to create a predictable cash outcome tied to portfolio collateral. You do not need to understand these instruments to use the platform; your advisor or SyntheticFi's team handles execution.
+SyntheticFi structures financing using established public-market mechanisms, including options-based strategies such as box spreads, to create a predictable cash outcome tied to portfolio collateral. You do not need to understand these instruments to use the platform; your advisor or SyntheticFi's team handles execution.
 
 If you want a deeper explanation of the lifecycle, collateral mechanics, and margin calls, continue to [How it works](./how-it-works.md).
 

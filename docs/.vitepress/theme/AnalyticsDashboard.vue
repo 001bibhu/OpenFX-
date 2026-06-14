@@ -1,11 +1,14 @@
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue'
 import { getAnalyticsSummary, clearAnalytics } from '../utils/analytics'
+import { getFeatureIdeas, resetFeatureIdeas } from '../utils/featureIdeas'
 
 const summary = ref(getAnalyticsSummary())
+const featureIdeas = ref(getFeatureIdeas())
 
 function refresh() {
   summary.value = getAnalyticsSummary()
+  featureIdeas.value = getFeatureIdeas()
 }
 
 onMounted(refresh)
@@ -22,8 +25,9 @@ function formatDate(ts: number) {
 }
 
 function resetData() {
-  if (confirm('Clear all locally stored analytics, feedback, and tickets?')) {
+  if (confirm('Clear all locally stored analytics, feedback, tickets, and feature ideas?')) {
     clearAnalytics()
+    resetFeatureIdeas()
     refresh()
   }
 }
@@ -116,28 +120,30 @@ function resetData() {
     </section>
 
     <section class="sf-analytics-section">
-      <h2>Feature requests</h2>
-      <div v-if="summary.data.featureRequests.length" class="sf-table-wrap">
+      <h2>Community feature ideas</h2>
+      <div v-if="featureIdeas.length" class="sf-table-wrap">
         <table>
           <thead>
             <tr>
               <th>Title</th>
-              <th>Category</th>
-              <th>From</th>
+              <th>Company</th>
+              <th>Votes</th>
+              <th>Email</th>
               <th>Date</th>
             </tr>
           </thead>
           <tbody>
-            <tr v-for="r in summary.data.featureRequests" :key="r.id">
+            <tr v-for="r in featureIdeas" :key="r.id">
               <td>{{ r.title }}</td>
-              <td>{{ r.category }}</td>
+              <td>{{ r.company }}</td>
+              <td>{{ r.votes }}</td>
               <td>{{ r.email }}</td>
               <td>{{ formatDate(r.timestamp) }}</td>
             </tr>
           </tbody>
         </table>
       </div>
-      <p v-else class="sf-empty">No feature requests submitted from this browser.</p>
+      <p v-else class="sf-empty">No feature ideas stored in this browser.</p>
     </section>
 
     <button type="button" class="sf-btn-danger" @click="resetData">Reset local analytics</button>

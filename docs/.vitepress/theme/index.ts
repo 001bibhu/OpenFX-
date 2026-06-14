@@ -5,7 +5,8 @@ import PageTracker from './PageTracker.vue'
 import HomePage from './HomePage.vue'
 import AnalyticsDashboard from './AnalyticsDashboard.vue'
 import SupportTicketForm from './SupportTicketForm.vue'
-import FeatureRequestForm from './FeatureRequestForm.vue'
+import FeatureIdeasBoard from './FeatureIdeasBoard.vue'
+import AdminFooterLink from './AdminFooterLink.vue'
 import './custom.css'
 
 export default {
@@ -16,11 +17,12 @@ export default {
     app.component('PageTracker', PageTracker)
     app.component('AnalyticsDashboard', AnalyticsDashboard)
     app.component('SupportTicketForm', SupportTicketForm)
-    app.component('FeatureRequestForm', FeatureRequestForm)
+    app.component('FeatureIdeasBoard', FeatureIdeasBoard)
+    app.component('AdminFooterLink', AdminFooterLink)
   },
   Layout() {
     return h(DefaultTheme.Layout, null, {
-      'layout-bottom': () => [h(PageTracker), h(FeedbackWidget)],
+      'layout-bottom': () => [h(PageTracker), h(FeedbackWidget), h(AdminFooterLink)],
     })
   },
 }

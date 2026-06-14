@@ -49,7 +49,7 @@ Access cash **by the payment deadline** without realizing gains on core holdings
 
 ### The challenge
 
-Entrepreneurs and executives hold wealth in public securities but need capital for a business investment, acquisition, or operating bridge—without liquidating a concentrated or legacy position.
+Entrepreneurs and executives hold wealth in public securities but need capital for a business investment, acquisition, or operating bridge, without liquidating a concentrated or legacy position.
 
 ### How SyntheticFi helps
 
@@ -71,7 +71,7 @@ Short-term gap between two events: selling one property before buying another, w
 
 ### How SyntheticFi helps
 
-**Temporary liquidity** with a defined term and fixed cost—designed to be repaid when the next event completes.
+**Temporary liquidity** with a defined term and fixed cost, designed to be repaid when the next event completes.
 
 ### Considerations
 
@@ -89,7 +89,7 @@ Bridge financing is not indefinite leverage. Plan repayment before origination.
 
 ### The challenge
 
-An investor wants or needs cash but believes strongly in retaining specific holdings—low basis stock, employer equity, or a concentrated legacy position.
+An investor wants or needs cash but believes strongly in retaining specific holdings, low basis stock, employer equity, or a concentrated legacy position.
 
 ### How SyntheticFi helps
 
@@ -99,7 +99,7 @@ The portfolio (including concentrated positions, subject to eligibility) serves 
 
 - **Concentration limits** may cap financing on single-name holdings
 - **Margin sensitivity** is higher when portfolio is less diversified
-- **Estate and gifting plans** may interact with pledged collateral—consult advisors
+- **Estate and gifting plans** may interact with pledged collateral, consult advisors
 
 This is SyntheticFi's core value proposition: **liquidity without liquidation**.
 
@@ -136,8 +136,8 @@ It may **not** be appropriate when:
 
 ## Next steps
 
-- [How it works](./how-it-works.md) — Mechanics and lifecycle
-- [Getting started](./getting-started.md) — Onboarding
-- [FAQ](./faq.md) — Common questions by scenario
+- [How it works](./how-it-works.md), Mechanics and lifecycle
+- [Getting started](./getting-started.md), Onboarding
+- [FAQ](./faq.md), Common questions by scenario
 
 Discuss your specific situation with your financial advisor or [contact support](../support/contact-support.md).

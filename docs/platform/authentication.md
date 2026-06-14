@@ -55,7 +55,7 @@ Authorization: Bearer eyJhbGciOiJSUzI1NiIs...
 
 ### Token refresh
 
-Client credential tokens expire after **3600 seconds** (1 hour). Request a new token before expiry. There is no refresh token for machine-to-machine flows—re-authenticate with `client_credentials`.
+Client credential tokens expire after **3600 seconds** (1 hour). Request a new token before expiry. There is no refresh token for machine-to-machine flows, re-authenticate with `client_credentials`.
 
 ---
 
@@ -95,7 +95,7 @@ Session cookies are `HttpOnly`, `Secure`, and `SameSite=Lax`.
 
 ## Brokerage account linking (OAuth)
 
-Account linking uses a **delegated OAuth flow**—users authorize SyntheticFi at their custodian without sharing passwords.
+Account linking uses a **delegated OAuth flow**, users authorize SyntheticFi at their custodian without sharing passwords.
 
 ### Flow
 

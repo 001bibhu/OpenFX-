@@ -6,7 +6,7 @@ export default defineConfig({
   base,
   title: 'SyntheticFi Docs',
   description:
-    'Documentation for SyntheticFi — portfolio-backed liquidity for advisors and investors.',
+    'Documentation for SyntheticFi, portfolio-backed liquidity for advisors and investors.',
   lang: 'en-US',
   cleanUrls: true,
   lastUpdated: true,
@@ -32,6 +32,7 @@ export default defineConfig({
     siteTitle: 'Docs',
 
     nav: [
+      { text: "What's new", link: '/whats-new/' },
       {
         text: 'Guides',
         items: [
@@ -39,7 +40,6 @@ export default defineConfig({
           { text: 'Getting started', link: '/core/getting-started' },
           { text: 'FAQ', link: '/core/faq' },
           { text: 'Admin guide', link: '/core/admin-guide' },
-          { text: "What's new", link: '/core/whats-new' },
           { text: 'Troubleshooting', link: '/core/troubleshooting' },
         ],
       },
@@ -62,12 +62,14 @@ export default defineConfig({
       {
         text: 'Support',
         items: [
+          { text: 'Talk to Us', link: 'https://calendly.com/d/cxdj-6k9-z9w' },
           { text: 'Create ticket', link: '/support/create-ticket' },
-          { text: 'Feature requests', link: '/support/feature-requests' },
+          { text: 'Suggest a feature', link: '/feature-ideas/' },
           { text: 'Contact', link: '/support/contact-support' },
         ],
       },
-      { text: 'Analytics', link: '/admin/analytics' },
+      { text: 'Talk to Us', link: 'https://calendly.com/d/cxdj-6k9-z9w' },
+      { text: 'Suggest a feature', link: '/feature-ideas/' },
     ],
 
     sidebar: {
@@ -82,9 +84,15 @@ export default defineConfig({
             { text: 'Use cases', link: '/core/use-cases' },
             { text: 'FAQ', link: '/core/faq' },
             { text: 'Admin guide', link: '/core/admin-guide' },
-            { text: "What's new", link: '/core/whats-new' },
             { text: 'Troubleshooting', link: '/core/troubleshooting' },
           ],
+        },
+      ],
+      '/whats-new/': [
+        {
+          text: "What's new",
+          collapsed: false,
+          items: [{ text: 'Release notes & updates', link: '/whats-new/' }],
         },
       ],
       '/platform/': [
@@ -109,13 +117,21 @@ export default defineConfig({
           ],
         },
       ],
+      '/feature-ideas/': [
+        {
+          text: 'Community',
+          collapsed: false,
+          items: [{ text: 'Suggest a feature', link: '/feature-ideas/' }],
+        },
+      ],
       '/support/': [
         {
           text: 'Support',
           collapsed: false,
           items: [
+            { text: 'Talk to Us', link: 'https://calendly.com/d/cxdj-6k9-z9w' },
             { text: 'Create a ticket', link: '/support/create-ticket' },
-            { text: 'Feature requests', link: '/support/feature-requests' },
+            { text: 'Suggest a feature', link: '/feature-ideas/' },
             { text: 'Contact support', link: '/support/contact-support' },
           ],
         },
@@ -136,7 +152,7 @@ export default defineConfig({
     socialLinks: [{ icon: 'globe', link: 'https://www.syntheticfi.com/' }],
 
     footer: {
-      message: 'SyntheticFi — financial infrastructure for portfolio liquidity.',
+      message: 'SyntheticFi, financial infrastructure for portfolio liquidity.',
       copyright: 'Copyright © 2026 SyntheticFi, Inc.',
     },
 
