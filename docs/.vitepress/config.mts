@@ -26,11 +26,11 @@ export default defineConfig({
 
   themeConfig: {
     logo: {
-      light: '/logo.svg',
-      dark: '/logo-light.svg',
+      light: '/openfx-logo.svg',
+      dark: '/openfx-logo-dark.svg',
       alt: 'OpenFX',
     },
-    siteTitle: 'Docs',
+    siteTitle: false,
 
     nav: [
       { text: "What's new", link: '/whats-new/' },

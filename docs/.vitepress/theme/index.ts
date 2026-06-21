@@ -16,6 +16,7 @@ import RoleTabs from './RoleTabs.vue'
 import OverviewAudienceTabs from './OverviewAudienceTabs.vue'
 import AccordionGroup from './AccordionGroup.vue'
 import AccordionItem from './AccordionItem.vue'
+import OpenFxNavBrand from './OpenFxNavBrand.vue'
 import './custom.css'
 
 export default {
@@ -41,6 +42,7 @@ export default {
   Layout() {
     return h(DefaultTheme.Layout, null, {
       'layout-top': () => h(CommunityTopBanner),
+      'nav-bar-title-before': () => h(OpenFxNavBrand),
       'layout-bottom': () => [h(PageTracker), h(FeedbackWidget)],
     })
   },

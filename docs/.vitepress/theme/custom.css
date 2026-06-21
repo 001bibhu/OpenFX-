@@ -64,8 +64,49 @@
   width: auto !important;
 }
 
-.VPNavBarTitle .title {
+/* OpenFX nav brand (replaces default SyntheticFi/VitePress title) */
+.VPNavBar .title > .VPNavBarTitle,
+.VPNavScreenMenu .VPNavBarTitle {
+  display: none !important;
+}
+
+.openfx-nav-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.openfx-nav-logo {
+  display: block;
+  height: 26px;
+  width: auto;
+  max-width: 120px;
+}
+
+.openfx-nav-logo-dark {
+  display: none;
+}
+
+.dark .openfx-nav-logo-light {
+  display: none;
+}
+
+.dark .openfx-nav-logo-dark {
+  display: block;
+}
+
+.openfx-nav-docs {
+  font-size: 1rem;
   font-weight: 600;
+  color: var(--vp-c-text-2);
+  letter-spacing: -0.01em;
+}
+
+.openfx-nav-brand:hover .openfx-nav-docs {
+  color: var(--vp-c-text-1);
 }
 
 .sf-hero-eyebrow {
