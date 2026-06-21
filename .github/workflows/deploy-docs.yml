@@ -52,3 +52,7 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      # If this step fails with "Ensure GitHub Pages has been enabled":
+      # Repo → Settings → Pages → Build and deployment → Source: GitHub Actions
+      # Then re-run this workflow from the Actions tab.

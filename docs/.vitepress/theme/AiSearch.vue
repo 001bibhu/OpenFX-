@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
-import { withBase, useData } from 'vitepress'
+import { withBase } from 'vitepress'
 import { aiAnswer } from '../utils/docSearch'
 
 const query = ref('')
@@ -8,10 +8,10 @@ const loading = ref(false)
 const result = ref<{ answer: string; sources: { title: string; path: string; section: string }[] } | null>(null)
 
 const suggestions = [
-  'What happens if my portfolio drops in value?',
-  'How do advisors onboard a client?',
-  'How does API authentication work?',
-  'Which brokerages are supported?',
+  'How fast are trades settled on OpenFX?',
+  'Does OpenFX support USDC and USDT?',
+  'What is OpenFX pricing compared to banks?',
+  'How do I get started and access the sandbox?',
 ]
 
 async function search() {
@@ -59,7 +59,7 @@ const hasResult = computed(() => result.value !== null)
 
     <div v-if="loading" class="sf-ai-result sf-ai-loading">
       <div class="sf-ai-pulse" />
-      <p>Finding the best answer across guides, API docs, and integrations…</p>
+      <p>Finding the best answer across guides, API docs, and solutions…</p>
     </div>
 
     <div v-if="result && !loading" class="sf-ai-result">
