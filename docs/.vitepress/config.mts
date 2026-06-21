@@ -13,6 +13,7 @@ export default defineConfig({
 
   head: [
     ['meta', { name: 'theme-color', content: '#0392F1' }],
+    ['meta', { property: 'og:site_name', content: 'OpenFX Docs' }],
     ['link', { rel: 'icon', href: `${base}favicon.svg` }],
     [
       'link',
@@ -164,7 +165,7 @@ export default defineConfig({
     socialLinks: [{ icon: 'globe', link: 'https://www.openfx.com/' }],
 
     footer: {
-      message: 'OpenFX - making money move as freely as data.',
+      message: 'Making money move as freely as data.',
       copyright: 'Copyright © 2026 Red Envelope Delta, Inc. (OpenFX)',
     },
 
