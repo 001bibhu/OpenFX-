@@ -14,4 +14,4 @@ Our product team reviews top-voted ideas regularly. Voting does not guarantee de
 
 For bugs or account issues, use [Create a ticket](/support/create-ticket) instead.
 
-Want to speak with someone directly? [**Talk to Us**](https://calendly.com/d/cxdj-6k9-z9w).
+Want to speak with someone directly? [**Get a demo**](https://www.openfx.com/).

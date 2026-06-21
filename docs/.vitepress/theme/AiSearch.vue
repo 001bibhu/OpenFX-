@@ -37,7 +37,7 @@ const hasResult = computed(() => result.value !== null)
       <input
         v-model="query"
         type="text"
-        placeholder="Ask anything about SyntheticFi…"
+        placeholder="Ask anything about OpenFX…"
         aria-label="AI documentation search"
       />
       <button type="submit" :disabled="loading || !query.trim()">

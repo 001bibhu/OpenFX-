@@ -1,6 +1,6 @@
 # What's new
 
-Product updates, release notes, and documentation changes for SyntheticFi.
+Product updates, release notes, and documentation changes for OpenFX.
 
 ---
 
@@ -9,53 +9,56 @@ Product updates, release notes, and documentation changes for SyntheticFi.
 ### Documentation site launch
 
 - New documentation hub with AI-powered search, feedback widgets, and analytics dashboard
-- Reorganized guides into **Guides**, **API Reference**, and **Integrations**
+- Reorganized guides into **Guides**, **API Reference**, and **Solutions**
 - Added support ticket and feature request flows
 
 ### Platform
 
-- **API v1.1**, Webhook events for margin warnings and sandbox margin simulation
-- **Schwab Advisor**, Real-time holdings sync for advisor-led accounts
-- **Margin alerts**, Email and in-app notifications with clearer action steps
+- **$94M Series A** — Announced funding to expand geographic coverage and product capabilities
+- **$70B+ TPV milestone** — Automated treasury features driving scale
+- **New corridors** — PHP (Philippine Peso) launched; COP, ARS in beta
+- **Trading API v1.1** — Webhook events for trade settlement and withdrawal completion
 
 ### Coming soon
 
-- Vanguard brokerage integration (partner preview)
-- Mobile margin alert notifications
-- CSV export for margin events by date range
+- Virtual account solutions for named client accounts
+- Additional emerging market currencies
+- Enhanced treasury management and reporting tools
 
 ---
 
 ## April 2026
 
-### API v1.1 (beta)
+### Trading API v1.1 (beta)
 
-- `margin.warning` and `margin.call` webhook events
-- `POST /sandbox/simulate-margin-drop` for integration testing
-- Improved error codes on eligibility endpoint
+- `trade.settled` and `withdrawal.completed` webhook events
+- Streaming quote support for high-frequency integrations
+- Improved error codes on quote and trade endpoints
 
-### Dashboard
+### Platform
 
-- Firm-wide margin alert view for compliance officers
-- Export active financing summary to PDF
+- Multi-currency dashboard with real-time balance tracking
+- Enterprise role management controls
+- After-hours withdrawal processing under 60 minutes
 
 ---
 
 ## January 2026
 
-### API v1.0
+### Trading API v1.0
 
 Initial public API release:
 
-- Clients, accounts, eligibility, term sheets, financings
+- Quotes, trades, deposits, withdrawals, balances
 - OAuth client credentials flow
 - Sandbox environment
 
-### Integrations
+### Coverage
 
-- Interactive Brokers, full API sync
-- Fidelity Institutional, rep code mapping
-- Pershing, collateral hold automation
+- 40+ currency pairs across G20 and emerging markets
+- 25+ local payment rails
+- USDC and USDT stablecoin support
+- SEPA Instant, Faster Payments, and NPP rails
 
 ---
 
@@ -63,4 +66,6 @@ Initial public API release:
 
 Want release notes by email? [Contact support](../support/contact-support.md) and ask to join the product updates list.
 
-For API breaking changes, subscribe to the API changelog via your account manager or `developers@syntheticfi.com`.
+For API breaking changes, subscribe to the API changelog via your account manager or hello@openfx.com.
+
+Follow the [OpenFX blog](https://www.openfx.com/blog) for industry perspectives on FX, liquidity, and cross-border payments.

@@ -1,4 +1,4 @@
-# SyntheticFi Documentation Site
+# OpenFX Documentation Site
 
 Static documentation built with [VitePress](https://vitepress.dev/), professional landing page, AI search UI, feedback widgets, and analytics dashboard.
 
@@ -22,7 +22,65 @@ npm run docs:preview
 2. **Settings → Pages → Source:** GitHub Actions
 3. Workflow deploys on push to `main` / `master`
 
-Set `VP_BASE_PATH` to match your repo name (default: `/SyntheticFi/`).
+Set `VP_BASE_PATH` to match your repo name (default: `/OpenFX-/` for [001bibhu/OpenFX-](https://github.com/001bibhu/OpenFX-)).
+
+## Publish on GitHub Pages (simple steps)
+
+Your repo already includes a GitHub Actions workflow (`.github/workflows/deploy-docs.yml`) that builds and publishes the site automatically.
+
+### 1. Push code to GitHub
+
+```bash
+git init
+git add .
+git commit -m "OpenFX documentation site"
+git branch -M main
+git remote add origin https://github.com/001bibhu/OpenFX-.git
+git push -u origin main
+```
+
+If the repo already exists, just push your latest changes:
+
+```bash
+git add .
+git commit -m "Add developer community and OpenFX docs"
+git push
+```
+
+### 2. Turn on GitHub Pages
+
+1. Open your repo on GitHub: **https://github.com/001bibhu/OpenFX-**
+2. Go to **Settings → Pages**
+3. Under **Build and deployment**, set **Source** to **GitHub Actions** (not “Deploy from a branch”)
+
+### 3. Wait for the workflow
+
+1. Go to the **Actions** tab in your repo
+2. You should see **Deploy docs to GitHub Pages** running (triggered by your push)
+3. When it finishes with a green checkmark, your site is live
+
+### 4. Open your site
+
+Because the repo is named `OpenFX-`, the URL will be:
+
+**https://001bibhu.github.io/OpenFX-/**
+
+The home page is at that URL. The developer community is at:
+
+**https://001bibhu.github.io/OpenFX-/developer-community/**
+
+### Troubleshooting
+
+| Problem | Fix |
+|---------|-----|
+| Site shows 404 | Wait 2–5 minutes after the Action completes. Confirm Pages source is **GitHub Actions**. |
+| Broken styles or images | The base path must match the repo name. This repo uses `/OpenFX-/` — already set in the workflow. |
+| Action failed | Open the failed run in **Actions**, read the error log, fix locally, push again. |
+| Wrong URL path | If you rename the repo, update `VP_BASE_PATH` in `.github/workflows/deploy-docs.yml` to `/{repo-name}/`. |
+
+### Moderator login (developer community)
+
+On the community page, expand **Moderator login** and sign in with password `openfx-admin` to approve, reject, pin, or delete posts. Change this in `docs/.vitepress/utils/developerCommunity.ts` before going to production, or connect a real backend.
 
 ## Site features
 
@@ -31,9 +89,9 @@ Set `VP_BASE_PATH` to match your repo name (default: `/SyntheticFi/`).
 | **Landing page** | `/`, hero, AI search, doc sections, ticket form |
 | **Guides** | `/core/*`, overview, getting started, FAQ, admin, what's new, troubleshooting |
 | **API reference** | `/platform/*` |
-| **Integrations** | `/integrations/*` |
+| **Solutions** | `/integrations/*` |
 | **Support ticket** | Home page + `/support/create-ticket` |
-| **Feature requests** | `/support/feature-requests` |
+| **Developer community** | `/developer-community/` — posts, likes, moderator approval |
 | **Analytics dashboard** | `/admin/analytics` |
 | **Floating feedback** | Every doc page (👍 👎 + comment) |
 

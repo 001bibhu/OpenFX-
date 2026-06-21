@@ -1,123 +1,117 @@
 # FAQ
 
-Quick answers to common questions about SyntheticFi. For deeper explanations, see [Overview](./overview.md) and [How it works](./how-it-works.md).
+Quick answers to common questions about OpenFX. For deeper explanations, see [Overview](./overview.md) and [How it works](./how-it-works.md).
 
 ---
 
-## General
+## General & onboarding
 
-### Is SyntheticFi a bank or a lender?
+### What is OpenFX?
 
-No. SyntheticFi is **financial infrastructure**, a platform that structures portfolio-backed financing using public markets. It is not a bank and does not offer traditional deposit or lending products.
+OpenFX is a next-generation cross-border payment infrastructure provider. We enable institutions to move money globally with near-instant settlement, deep liquidity, and exceptional cost efficiency. Our infrastructure combines the reliability of traditional finance with the speed and programmability of modern blockchain rails.
 
-### Who can use SyntheticFi?
+### Who can use OpenFX?
 
-Financial advisors serving qualified clients, high-net-worth individual investors, and partner firms. Minimum portfolio requirements and eligibility rules apply.
+We work exclusively with **institutional clients**: remittance companies, fintechs, payment processors, digital banks, brokers, and investment platforms. If you require real-time settlement across fiat and stablecoin rails, OpenFX is purpose-built for your needs.
 
-### What types of accounts are supported?
+### Can I use OpenFX for personal transactions?
 
-Taxable brokerage accounts and certain trust structures at [supported brokerages and custodians](../integrations/brokerages.md). IRA and 401(k) accounts are generally **not** eligible.
+No. We are designed for businesses and enterprises. Our current focus is on serving institutional and corporate clients.
 
----
+### How do I get started?
 
-## How it works
+Schedule a demo at [openfx.com](https://www.openfx.com/), complete KYC, and our team will guide you through onboarding — typically within 72 hours.
 
-### Do I have to sell my stocks?
+### How do you compare to other FX providers?
 
-**No.** That is the primary purpose of SyntheticFi, access cash while keeping investments in place.
-
-### What does "locking" my portfolio mean?
-
-A portion of your holdings is pledged as collateral and cannot be sold or transferred until financing is repaid. See [Step 2: Lock a portion of the portfolio](./how-it-works.md#step-2-lock-a-portion-of-the-portfolio).
-
-### How is the cost determined?
-
-Cost is set at origination based on amount, term, portfolio composition, and market conditions. You receive a **fixed total cost** (or clearly defined structure) before accepting, no surprise compounding.
-
-### What are box spreads and do I need to understand them?
-
-Box spreads are one type of public-market instrument SyntheticFi may use to structure financing. **You do not need to understand them** to use the product. Execution is handled by the platform.
+OpenFX stands out for laser focus on speed, cost-efficiency, and transparency. We do not offer services beyond core FX and money movement, allowing us to maintain a highly specialized platform. Our liquidity management — leveraging stablecoins and dynamic balance sheet allocation — delivers unparalleled pricing and settlement times compared to traditional banks.
 
 ---
 
-## Margin and risk
+## Product & features
 
-### What happens if my portfolio drops in value?
+### Do you support stablecoin transactions?
 
-SyntheticFi monitors collateral coverage. If value falls below required thresholds, you receive a **margin notification** with options: add collateral, repay partially, or restructure. See [Step 6: Handle market movements](./how-it-works.md#step-6-handle-market-movements).
+Yes. We support **USDC and USDT** for on-ramping, off-ramping, and cross-border transfers.
 
-### Can I lose more than my collateral?
+### How fast are trades settled?
 
-Financing is structured to limit exposure, but market events and failure to respond to margin calls can result in liquidation of pledged assets. Review all disclosures before accepting terms.
+90% of trades settle in **under 60 minutes**; 30% in under 10 minutes. This is significantly faster than the 2–7 day timelines typical of traditional FX providers.
 
-### How quickly do I need to respond to a margin call?
+### What currencies and payment rails do you support?
 
-Timelines are specified in your term sheet, typically 24–72 hours for initial response, depending on severity. Contact your advisor or support immediately if you receive a margin alert.
+We support major G20 currencies and many emerging markets, with banking infrastructure in the US, UK, Europe, UAE, Mexico, Brazil, and Southeast Asia. Local rails include SEPA Instant (EUR), Faster Payments (GBP), and NPP (AUD).
 
----
+### Can I integrate your API into my platform?
 
-## Advisors and firms
+Absolutely. We have robust REST APIs for quotes, trades, deposits, and withdrawals. See [API overview](../platform/api-overview.md).
 
-### How do I register my RIA or broker-dealer?
+### Can trades be canceled once confirmed?
 
-Start at the advisor portal or contact [enterprise support](../support/contact-support.md). Firm verification requires CRD/IARD and compliance documentation.
+Once confirmed, trades cannot be canceled. You may reverse the position by executing a new trade in the opposite direction.
 
-### Can I see all client financings in one dashboard?
+### Do you support chat-based trading (Telegram or Slack)?
 
-Yes. Firm admins and authorized advisors access a consolidated view with margin alerts and reporting. See [Admin guide](./admin-guide.md).
+No. All trades must be executed via our secure web GUI or Trading API.
 
-### What training is required?
+### How quickly will my deposit reflect?
 
-Advisors must complete SyntheticFi certification covering product mechanics, suitability, and margin risk before originating client transactions.
+Fiat deposits typically reflect within **20 minutes** once received. Crypto deposits settle in near real-time.
 
----
+### Do you offer reporting or analytics?
 
-## Integrations and technical
-
-### How does account linking work?
-
-Secure OAuth or API token exchange, **never** share passwords with SyntheticFi. See [Authentication](../platform/authentication.md).
-
-### Which brokerages are supported?
-
-Interactive Brokers, Charles Schwab, Fidelity, and others. Full list: [Brokerages](../integrations/brokerages.md).
-
-### Is there an API for custom integrations?
-
-Yes. Partners and enterprise firms can use the SyntheticFi API. Start with [API overview](../platform/api-overview.md).
+Yes. We provide detailed reporting and real-time analytics on your transactions, deposits, and settlements.
 
 ---
 
-## Repayment and taxes
+## Pricing & fees
 
-### Can I repay early?
+### What is your pricing model?
 
-Often yes, with terms defined at origination. Early repayment economics may differ from holding to full term.
+Pricing is based on the mid-market rate plus a small spread: **3–5 bps for G20**, **10–12 bps for emerging markets**. No additional fees or markups. Volume-based tiers provide better rates at scale.
 
-### Are there tax implications?
+### Do you have minimum volume requirements?
 
-SyntheticFi financing may have tax consequences depending on your situation. SyntheticFi provides informational documents; **consult your CPA or tax advisor** for personal guidance.
+No strict minimums, but most clients benefit from volume-based pricing tiers. Clients doing $30–500M monthly can expect spreads in the 3–5 bps range.
 
-### What happens at the end of the term?
+### Can I try the platform before committing?
 
-You repay principal plus agreed cost. Collateral locks are released and your account returns to normal operation.
-
----
-
-## Support and documentation
-
-### How do I get help?
-
-- [Create a support ticket](../support/create-ticket.md)
-- [Contact support](../support/contact-support.md)
-- Search this documentation using the AI-powered search bar
-
-### How can I suggest documentation improvements?
-
-Use the **feedback widget** (👍 👎 + comment) at the bottom of any page. We review feedback regularly to prioritize updates.
+Yes. We offer a **sandbox environment** to test the platform, execute sample trades, and see pricing in real-time.
 
 ---
 
-## Still have questions?
+## Security & compliance
 
-[Contact support](../support/contact-support.md) or ask the documentation search: *"Your question in plain English."*
+### How secure is your platform?
+
+Security is a top priority. We use industry-leading protocols, encryption, multi-factor authentication, and regular penetration testing.
+
+### How do you handle AML/KYC?
+
+We partner with licensed and regulated entities in each market. We perform due diligence on senders and receivers and integrate with clients' existing compliance workflows.
+
+### How do you maintain liquidity?
+
+We maintain a dynamic balance sheet allocated across currencies and markets. Our market-making engine continuously hedges currency exposures using a diverse network of banks, FX brokers, and stablecoin OTC desks.
+
+---
+
+## Support
+
+### What is your support availability?
+
+Our client support team is available **24/7/365**.
+
+### How do I scale as my business grows?
+
+Our platform handles high-volume transactions without disruption. We scale infrastructure, liquidity, and support to meet increasing needs with consistent pricing.
+
+---
+
+## Next steps
+
+- [Overview](./overview.md): Product introduction
+- [Getting started](./getting-started.md): Onboarding guide
+- [Contact support](../support/contact-support.md): Reach the OpenFX team
+
+For the full FAQ from OpenFX, visit [openfx.com/faq](https://www.openfx.com/faq).

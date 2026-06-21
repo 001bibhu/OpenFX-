@@ -1,146 +1,174 @@
 # Troubleshooting
 
-Resolve common issues with SyntheticFi account linking, financing status, and platform access. If your issue is not listed, [create a support ticket](../support/create-ticket.md).
+Resolve common issues with OpenFX account setup, trades, settlements, and API integration. If your issue is not listed, [create a support ticket](../support/create-ticket.md).
 
 ---
 
-## Account linking
+## Account and onboarding
 
-### Brokerage connection fails
+### KYC verification delayed
 
-**Symptoms:** Error during OAuth; account does not appear in dashboard.
-
-**Try these steps:**
-
-1. Confirm your brokerage is on the [supported list](../integrations/brokerages.md)
-2. Use the same login you use for the brokerage website (not a read-only sub-account if trade access is required)
-3. Disable browser extensions that block pop-ups or third-party cookies
-4. Revoke and re-authorize: **Settings → Integrations → Disconnect → Reconnect**
-5. Wait 15 minutes and retry, some custodians rate-limit API connections
-
-**Still failing?** Include the error message and brokerage name in a [support ticket](../support/create-ticket.md).
-
-### Holdings not syncing
-
-**Symptoms:** Portfolio value shows $0 or is missing recent trades.
+**Symptoms:** Onboarding stuck in pending status beyond 72 hours.
 
 **Try these steps:**
 
-1. Click **Refresh holdings** in the dashboard (or wait for the next scheduled sync, typically every 15–60 minutes)
-2. Verify the connected account holds eligible securities
-3. Confirm recent transfers have settled at the custodian
+1. Confirm all required documents were submitted (entity registration, authorized signatory ID)
+2. Check for follow-up emails from the compliance team requesting additional information
+3. Verify entity details match official registration documents exactly
 
-**Note:** Manual accounts or unsupported asset types may not sync automatically.
+**Still pending?** Contact your account manager or [support](../support/contact-support.md) with your organization ID.
+
+### Cannot log in to the platform
+
+**Symptoms:** Login fails or MFA not received.
+
+**Try these steps:**
+
+1. Confirm you are using the email address registered during onboarding
+2. Check spam/junk folder for MFA codes
+3. Reset password via **Forgot password** on the login page
+4. Ensure your account has not been deactivated by an org admin
 
 ---
 
-## Eligibility and term sheets
+## Deposits and funding
 
-### "Portfolio not eligible" message
+### Fiat deposit not reflecting
+
+**Symptoms:** Sent funds but balance has not updated after 20+ minutes.
+
+**Try these steps:**
+
+1. Confirm you sent to the correct account details shown in **Deposits**
+2. Verify the sending institution has processed the transfer
+3. Check that the deposit rail matches (SEPA Instant vs standard SEPA, etc.)
+4. Allow additional time for cross-border wire transfers
+
+**Note:** Some counterparties impose business-hour limitations even on instant rails.
+
+### Crypto deposit delayed
+
+**Symptoms:** USDC/USDT deposit not credited.
+
+**Try these steps:**
+
+1. Confirm the transaction has sufficient blockchain confirmations
+2. Verify you sent to the correct network and wallet address
+3. Check for blockchain congestion affecting confirmation times
+
+---
+
+## Trades and quotes
+
+### Quote expired before execution
+
+**Symptoms:** Error when confirming a trade; quote no longer valid.
+
+**Action:** Request a new quote. Quotes have a time-lock window; market conditions may change the rate.
+
+### Trade stuck in processing
+
+**Symptoms:** Trade status shows "Processing" beyond expected settlement time.
+
+**Try these steps:**
+
+1. Check real-time status in the dashboard or via `GET /trades/{id}`
+2. Review platform status page for any ongoing incidents
+3. Most trades settle within 60 minutes; allow up to 120 minutes before escalating
+
+**Still processing?** Include the trade ID in a [support ticket](../support/create-ticket.md).
+
+### Unexpected spread or pricing
+
+**Symptoms:** Executed rate differs from expected mid-market rate.
+
+**Remember:** OpenFX pricing is mid-market plus spread (3–5 bps G20, 10–12 bps emerging markets). During acute liquidity constraints, spreads may widen temporarily with transparency provided at quote time.
+
+---
+
+## Withdrawals
+
+### Withdrawal delayed
+
+**Symptoms:** Withdrawal requested but funds not received at destination.
+
+**Try these steps:**
+
+1. Confirm withdrawal status in the dashboard (Requested → Processing → Complete)
+2. Verify destination bank details are correct
+3. Check if the destination rail has business-hour limitations
+4. Allow up to 60 minutes for after-hours processing
+
+### Withdrawal rejected
 
 **Common causes:**
 
 | Cause | Action |
 |-------|--------|
-| Below minimum portfolio value | Review minimums with your advisor or support |
-| Ineligible holdings (options, crypto, etc.) | Adjust portfolio or reduce requested amount |
-| Concentration limits exceeded | Add diversification or lower financing request |
-| Account type not supported | Confirm taxable brokerage or eligible trust |
-
-### Term sheet expired
-
-Term sheets are valid for a limited window (typically 48–72 hours). Request a new term sheet from the dashboard if market conditions or portfolio value changed.
+| Unverified destination | Complete destination verification in Settings |
+| Insufficient settled balance | Confirm trade has fully settled before withdrawing |
+| Compliance hold | Contact support for review status |
+| Incorrect bank details | Update destination and retry |
 
 ---
 
-## Financing execution
+## API integration
 
-### Funding delayed
+### Authentication failures (401)
 
-**Expected:** 1–5 business days after acceptance.
+**Try these steps:**
 
-**If delayed beyond 5 business days:**
+1. Confirm `client_id` and `client_secret` are correct and not expired
+2. Verify the access token has not expired (default 3600 seconds)
+3. Check that the token is included as `Authorization: Bearer {token}`
+4. Ensure you are using the correct environment (sandbox vs production)
 
-1. Check dashboard for outstanding action items (signatures, compliance holds)
-2. Verify cash destination account is verified
-3. Contact support with your financing ID
+See [Authentication](../platform/authentication.md).
 
-### Collateral not unlocking after repayment
+### Rate limiting (429)
 
-Repayment confirmation can take 1–2 business days to process. If locks persist beyond 2 business days after confirmed repayment, [create a ticket](../support/create-ticket.md) with payment confirmation attached.
+**Symptoms:** `429 Too Many Requests` responses.
 
----
+**Action:** Check `Retry-After` header and implement exponential backoff. Contact your account manager if you need higher rate limits.
 
-## Margin alerts
+### Webhook delivery failures
 
-### Received a margin warning
+**Try these steps:**
 
-1. Log in to the dashboard and review **current coverage ratio**
-2. Choose an action: add collateral, partial repayment, or contact your advisor
-3. Do not ignore follow-up notifications, escalation timelines are in your term sheet
-
-See [Step 6: Handle market movements](./how-it-works.md#step-6-handle-market-movements).
-
-### Alert seems incorrect
-
-Market data may lag briefly during volatile sessions. Wait 30 minutes and refresh. If the alert persists and you believe it is wrong, open a ticket with screenshots and financing ID.
+1. Verify your endpoint returns `2xx` within timeout
+2. Confirm webhook signature verification uses the correct signing secret
+3. Review failed deliveries at **Settings → Webhooks → Deliveries**
+4. Retry failed deliveries or re-register the endpoint
 
 ---
 
-## Advisor dashboard
+## Dashboard and reporting
 
-### Client not visible
+### Balances not updating
 
-- Confirm the client completed the onboarding link
-- Verify you have permission for that client's household in **Settings → Team**
-- Check if client is under a different rep code mapping
+**Symptoms:** Dashboard shows stale balance after recent trade or deposit.
 
-### Cannot originate financing
+**Try these steps:**
 
-- Confirm advisor certification is current
-- Verify firm compliance status is active
-- Ensure client account is linked and eligible
+1. Refresh the page or wait for the next sync cycle
+2. Check individual transaction status for pending items
+3. Use the API (`GET /balances`) for programmatic verification
 
----
+### Missing transactions in reports
 
-## Login and access
-
-### Forgot password
-
-Use **Forgot password** on the login page. Reset links expire in 24 hours.
-
-### Two-factor authentication issues
-
-- Ensure device time is synced (TOTP codes are time-sensitive)
-- Use backup codes stored at enrollment
-- Contact support if locked out, identity verification required
-
-### Session expires quickly
-
-Firm security policies may enforce short sessions. Re-login or contact your firm admin for policy details.
+**Action:** Adjust date range filters and confirm the transaction status (pending trades may not appear in settled reports).
 
 ---
 
-## API and integrations (developers)
+## Getting help
 
-| Issue | Resource |
-|-------|----------|
-| 401 Unauthorized | [Authentication](../platform/authentication.md), refresh token |
-| 429 Rate limited | Reduce request frequency; see API overview |
-| Webhook not received | Verify endpoint URL and signing secret |
+OpenFX support is available **24/7/365**.
 
----
+| Channel | Best for |
+|---------|----------|
+| **[Create a ticket](../support/create-ticket.md)** | Technical issues, trade disputes |
+| **Account manager** | Strategic questions, volume pricing |
+| **hello@openfx.com** | General inquiries |
+| **[Get a demo](https://www.openfx.com/)** | New corridor or product questions |
 
-## Before contacting support
-
-Gather this information to speed resolution:
-
-- [ ] SyntheticFi account email
-- [ ] Financing or client ID (if applicable)
-- [ ] Brokerage/custodian name
-- [ ] Error message (screenshot helpful)
-- [ ] Steps already attempted
-
-[Create a support ticket →](../support/create-ticket.md)
-
-We track common troubleshooting page views to improve this guide. If this page helped, tap 👍 on the feedback widget.
+Include your organization ID, trade ID (`trd_`), or withdrawal ID (`wd_`) in support requests for faster resolution.

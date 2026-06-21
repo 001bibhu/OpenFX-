@@ -36,7 +36,7 @@ export interface AnalyticsStore {
   featureRequests: FeatureRequestEntry[]
 }
 
-const STORAGE_KEY = 'syntheticfi-docs-analytics'
+const STORAGE_KEY = 'openfx-docs-analytics'
 
 function uid(): string {
   return `${Date.now()}-${Math.random().toString(36).slice(2, 9)}`

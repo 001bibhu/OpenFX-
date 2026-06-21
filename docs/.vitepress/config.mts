@@ -1,12 +1,12 @@
 import { defineConfig } from 'vitepress'
 
-const base = process.env.VP_BASE_PATH ?? '/SyntheticFi/'
+const base = process.env.VP_BASE_PATH ?? '/OpenFX-/'
 
 export default defineConfig({
   base,
-  title: 'SyntheticFi Docs',
+  title: 'OpenFX Docs',
   description:
-    'Documentation for SyntheticFi, portfolio-backed liquidity for advisors and investors.',
+    'Documentation for OpenFX, cross-border FX liquidity and payment infrastructure for institutions.',
   lang: 'en-US',
   cleanUrls: true,
   lastUpdated: true,
@@ -27,12 +27,13 @@ export default defineConfig({
     logo: {
       light: '/logo.svg',
       dark: '/logo-light.svg',
-      alt: 'SyntheticFi',
+      alt: 'OpenFX',
     },
     siteTitle: 'Docs',
 
     nav: [
       { text: "What's new", link: '/whats-new/' },
+      { text: 'Developer Community', link: '/developer-community/' },
       {
         text: 'Guides',
         items: [
@@ -52,23 +53,25 @@ export default defineConfig({
         ],
       },
       {
-        text: 'Integrations',
+        text: 'Solutions',
         items: [
           { text: 'Overview', link: '/integrations/overview' },
-          { text: 'Brokerages', link: '/integrations/brokerages' },
-          { text: 'Custodians', link: '/integrations/custodians' },
+          { text: 'Remittance companies', link: '/integrations/remittance-companies' },
+          { text: 'Payment service providers', link: '/integrations/payment-service-providers' },
+          { text: 'On and off ramps', link: '/integrations/on-and-off-ramps' },
         ],
       },
       {
         text: 'Support',
         items: [
-          { text: 'Talk to Us', link: 'https://calendly.com/d/cxdj-6k9-z9w' },
+          { text: 'Get a demo', link: 'https://www.openfx.com/' },
           { text: 'Create ticket', link: '/support/create-ticket' },
           { text: 'Suggest a feature', link: '/feature-ideas/' },
+          { text: 'Developer Community', link: '/developer-community/' },
           { text: 'Contact', link: '/support/contact-support' },
         ],
       },
-      { text: 'Talk to Us', link: 'https://calendly.com/d/cxdj-6k9-z9w' },
+      { text: 'Get a demo', link: 'https://www.openfx.com/' },
       { text: 'Suggest a feature', link: '/feature-ideas/' },
     ],
 
@@ -78,8 +81,8 @@ export default defineConfig({
           text: 'Guides',
           collapsed: false,
           items: [
-            { text: 'SyntheticFi Overview', link: '/core/overview' },
-            { text: 'Getting started with SyntheticFi', link: '/core/getting-started' },
+            { text: 'OpenFX Overview', link: '/core/overview' },
+            { text: 'Getting started with OpenFX', link: '/core/getting-started' },
             { text: 'How it works', link: '/core/how-it-works' },
             { text: 'Use cases', link: '/core/use-cases' },
             { text: 'FAQ', link: '/core/faq' },
@@ -108,13 +111,21 @@ export default defineConfig({
       ],
       '/integrations/': [
         {
-          text: 'Integrations',
+          text: 'Solutions',
           collapsed: false,
           items: [
             { text: 'Overview', link: '/integrations/overview' },
-            { text: 'Brokerages', link: '/integrations/brokerages' },
-            { text: 'Custodians', link: '/integrations/custodians' },
+            { text: 'Remittance companies', link: '/integrations/remittance-companies' },
+            { text: 'Payment service providers', link: '/integrations/payment-service-providers' },
+            { text: 'On and off ramps', link: '/integrations/on-and-off-ramps' },
           ],
+        },
+      ],
+      '/developer-community/': [
+        {
+          text: 'Community',
+          collapsed: false,
+          items: [{ text: 'Developer Community', link: '/developer-community/' }],
         },
       ],
       '/feature-ideas/': [
@@ -129,7 +140,7 @@ export default defineConfig({
           text: 'Support',
           collapsed: false,
           items: [
-            { text: 'Talk to Us', link: 'https://calendly.com/d/cxdj-6k9-z9w' },
+            { text: 'Get a demo', link: 'https://www.openfx.com/' },
             { text: 'Create a ticket', link: '/support/create-ticket' },
             { text: 'Suggest a feature', link: '/feature-ideas/' },
             { text: 'Contact support', link: '/support/contact-support' },
@@ -149,11 +160,11 @@ export default defineConfig({
       options: { detailedView: true },
     },
 
-    socialLinks: [{ icon: 'globe', link: 'https://www.syntheticfi.com/' }],
+    socialLinks: [{ icon: 'globe', link: 'https://www.openfx.com/' }],
 
     footer: {
-      message: 'SyntheticFi, financial infrastructure for portfolio liquidity.',
-      copyright: 'Copyright © 2026 SyntheticFi, Inc.',
+      message: 'OpenFX — making money move as freely as data.',
+      copyright: 'Copyright © 2026 Red Envelope Delta, Inc. (OpenFX)',
     },
 
     docFooter: { prev: 'Previous', next: 'Next' },

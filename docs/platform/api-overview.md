@@ -4,14 +4,14 @@ pageClass: sf-api-doc
 
 # API overview
 
-The SyntheticFi REST API lets partners and developers integrate portfolio liquidity into CRM systems, advisor tools, mortgage platforms, and internal dashboards.
+The OpenFX Trading API lets partners and developers integrate cross-border FX liquidity into payment platforms, remittance systems, treasury tools, and internal dashboards.
 
 <div class="sf-api-banner">
-  <span><strong>Sandbox base URL</strong> <code>https://api.sandbox.syntheticfi.com/v1</code></span>
-  <span><strong>Production</strong> <code>https://api.syntheticfi.com/v1</code></span>
+  <span><strong>Sandbox base URL</strong> <code>https://api.sandbox.openfx.com/v1</code></span>
+  <span><strong>Production</strong> <code>https://api.openfx.com/v1</code></span>
 </div>
 
-<ApiSection method="GET" path="/clients" sample="list-clients">
+<ApiSection method="GET" path="/balances" sample="list-balances">
 
 Use the **Code examples** tab for cURL, Node.js, Python, Ruby, Java, C++, Go, PHP, HTML, and JSON samples. Switch to **Try it** to send a request and inspect the response.
 
@@ -23,12 +23,12 @@ Use the **Code examples** tab for cURL, Node.js, Python, Ruby, Java, C++, Go, PH
 
 | Capability | Description |
 |------------|-------------|
-| **Account linking** | Initiate OAuth flows and verify connection status |
-| **Eligibility** | Check portfolio capacity and generate term sheets |
-| **Origination** | Submit financings for execution after client acceptance |
-| **Monitoring** | Read financing status, margin levels, and alerts |
-| **Webhooks** | Receive real-time events (margin warnings, funding complete) |
-| **Firm admin** | Manage users, clients, and reports programmatically |
+| **Quotes** | Lock FX rates with time-lock guarantee |
+| **Trades** | Execute currency conversions programmatically |
+| **Deposits** | Track and initiate account funding |
+| **Withdrawals** | Pay out to local rails and wallets |
+| **Balances** | Query multi-currency account positions |
+| **Webhooks** | Receive real-time settlement and status events |
 
 ---
 
@@ -36,7 +36,7 @@ Use the **Code examples** tab for cURL, Node.js, Python, Ruby, Java, C++, Go, PH
 
 ### 1. Obtain credentials
 
-Enterprise and partner accounts receive API keys from the dashboard or account manager:
+Institutional accounts receive API keys from the dashboard or account manager:
 
 **Settings → API → Create key**
 
@@ -48,7 +48,7 @@ You receive a `client_id`, `client_secret` (shown once), and optional webhook si
   method="POST"
   path="/oauth/token"
   sample="oauth-token"
-  try-body='{"grant_type":"client_credentials","client_id":"sf_live_xxxxxxxx","client_secret":"sf_secret_xxxxxxxx","scope":"read write"}'
+  try-body='{"grant_type":"client_credentials","client_id":"ofx_live_xxxxxxxx","client_secret":"ofx_secret_xxxxxxxx","scope":"read write"}'
 >
 
 Exchange client credentials for a Bearer token.
@@ -65,9 +65,9 @@ Exchange client credentials for a Bearer token.
 
 ### 3. Make your first request
 
-<ApiEndpoint method="GET" path="/clients" sample="list-clients">
+<ApiEndpoint method="GET" path="/balances" sample="list-balances">
 
-List client records with your access token. Use sandbox credentials while developing.
+List account balances with your access token. Use sandbox credentials while developing.
 
 </ApiEndpoint>
 
@@ -76,7 +76,7 @@ List client records with your access token. Use sandbox credentials while develo
 ## API design
 
 - **RESTful** resources with predictable URLs
-- **Idempotent** `POST` with `Idempotency-Key` header for origination
+- **Idempotent** `POST` with `Idempotency-Key` header for trades and withdrawals
 - **Versioned** via URL path (`/v1`)
 - **Paginated** list endpoints with `cursor` and `limit`
 - **Consistent errors** with machine-readable `code` and human `message`
@@ -86,14 +86,13 @@ List client records with your access token. Use sandbox credentials while develo
 ## Core resources
 
 ```
-/clients                    Client records
-/clients/{id}/accounts      Linked brokerage accounts
-/eligibility                Portfolio capacity checks
-/term-sheets                Financing proposals
-/financings                 Active and historical financings
-/margin-events              Warnings and calls
-/webhooks                   Event subscriptions
-/firm/users                 Team management (admin scope)
+/balances                  Multi-currency account balances
+/quotes                    FX rate quotes with time-lock
+/trades                    Executed currency conversions
+/deposits                  Incoming fund transfers
+/withdrawals               Outgoing payouts to local rails
+/webhooks                  Event subscriptions
+/organization/users        Team management (admin scope)
 ```
 
 Full endpoint catalog: [API reference](./api-reference.md)
@@ -106,15 +105,14 @@ Subscribe to events instead of polling:
 
 | Event | When fired |
 |-------|------------|
-| `account.linked` | Brokerage connection successful |
-| `eligibility.updated` | Portfolio sync changed capacity |
-| `term_sheet.accepted` | Client signed term sheet |
-| `financing.funded` | Cash delivered |
-| `margin.warning` | Coverage below warning threshold |
-| `margin.call` | Coverage below required level |
-| `financing.closed` | Repayment complete |
+| `deposit.received` | Funds credited to your account |
+| `quote.expired` | Quote window closed without execution |
+| `trade.executed` | Trade confirmed and processing |
+| `trade.settled` | Settlement complete |
+| `withdrawal.completed` | Funds delivered to destination |
+| `withdrawal.failed` | Withdrawal rejected or returned |
 
-Webhook payloads are signed with `X-SyntheticFi-Signature`. Verify before processing.
+Webhook payloads are signed with `X-OpenFX-Signature`. Verify before processing.
 
 ---
 
@@ -132,10 +130,10 @@ Response headers: `X-RateLimit-Limit`, `X-RateLimit-Remaining`, `X-RateLimit-Res
 
 ## Sandbox
 
-The sandbox uses simulated portfolios and mock executions:
+The sandbox uses simulated balances and mock settlements:
 
 - No real money or market trades
-- Test margin scenarios with `/sandbox/simulate-margin-drop`
+- Test full quote → trade → withdraw workflows
 - Reset data with `/sandbox/reset`
 
 Use sandbox for development and CI. Promote to production after certification review.
@@ -147,17 +145,18 @@ Use sandbox for development and CI. Promote to production after certification re
 ```json
 {
   "error": {
-    "code": "portfolio_ineligible",
-    "message": "Portfolio value below minimum threshold.",
+    "code": "insufficient_balance",
+    "message": "Account balance insufficient for requested trade amount.",
     "details": {
-      "minimum_required": 500000,
-      "current_value": 420000
+      "currency": "USD",
+      "available": 1250000.00,
+      "requested": 2000000.00
     }
   }
 }
 ```
 
-Common codes: `unauthorized`, `forbidden`, `not_found`, `validation_error`, `rate_limited`.
+Common codes: `unauthorized`, `forbidden`, `not_found`, `validation_error`, `quote_expired`, `rate_limited`.
 
 ---
 
@@ -174,8 +173,8 @@ Details: [Authentication](./authentication.md)
 
 ## Next steps
 
-- [Authentication](./authentication.md), OAuth, scopes, and tokens
-- [API reference](./api-reference.md), Endpoint catalog with code samples
-- [Integrations overview](../integrations/overview.md), Custodian and brokerage data flow
+- [Authentication](./authentication.md): OAuth, scopes, and tokens
+- [API reference](./api-reference.md): Endpoint catalog with code samples
+- [Integrations overview](../integrations/overview.md): Architecture patterns
 
 Questions? [Create a support ticket](../support/create-ticket.md) and select **API / Developer**.

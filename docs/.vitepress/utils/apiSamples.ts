@@ -23,7 +23,7 @@ export const API_LANGUAGES: { id: ApiLanguage; label: string }[] = [
   { id: 'json', label: 'JSON' },
 ]
 
-const SANDBOX = 'https://api.sandbox.syntheticfi.com/v1'
+const SANDBOX = 'https://api.sandbox.openfx.com/v1'
 
 export interface ApiSampleSet {
   title?: string
@@ -38,8 +38,8 @@ const samples: Record<string, ApiSampleSet> = {
   -H "Content-Type: application/json" \\
   -d '{
     "grant_type": "client_credentials",
-    "client_id": "sf_live_xxxxxxxx",
-    "client_secret": "sf_secret_xxxxxxxx",
+    "client_id": "ofx_live_xxxxxxxx",
+    "client_secret": "ofx_secret_xxxxxxxx",
     "scope": "read write"
   }'`,
       javascript: `const response = await fetch('${SANDBOX}/oauth/token', {
@@ -47,8 +47,8 @@ const samples: Record<string, ApiSampleSet> = {
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify({
     grant_type: 'client_credentials',
-    client_id: 'sf_live_xxxxxxxx',
-    client_secret: 'sf_secret_xxxxxxxx',
+    client_id: 'ofx_live_xxxxxxxx',
+    client_secret: 'ofx_secret_xxxxxxxx',
     scope: 'read write',
   }),
 });
@@ -61,8 +61,8 @@ response = requests.post(
     "${SANDBOX}/oauth/token",
     json={
         "grant_type": "client_credentials",
-        "client_id": "sf_live_xxxxxxxx",
-        "client_secret": "sf_secret_xxxxxxxx",
+        "client_id": "ofx_live_xxxxxxxx",
+        "client_secret": "ofx_secret_xxxxxxxx",
         "scope": "read write",
     },
 )
@@ -76,8 +76,8 @@ req = Net::HTTP::Post.new(uri)
 req["Content-Type"] = "application/json"
 req.body = {
   grant_type: "client_credentials",
-  client_id: "sf_live_xxxxxxxx",
-  client_secret: "sf_secret_xxxxxxxx",
+  client_id: "ofx_live_xxxxxxxx",
+  client_secret: "ofx_secret_xxxxxxxx",
   scope: "read write"
 }.to_json
 
@@ -90,8 +90,8 @@ HttpRequest request = HttpRequest.newBuilder()
     .POST(HttpRequest.BodyPublishers.ofString("""
         {
           "grant_type": "client_credentials",
-          "client_id": "sf_live_xxxxxxxx",
-          "client_secret": "sf_secret_xxxxxxxx",
+          "client_id": "ofx_live_xxxxxxxx",
+          "client_secret": "ofx_secret_xxxxxxxx",
           "scope": "read write"
         }
         """))
@@ -111,7 +111,7 @@ static size_t WriteCallback(void* contents, size_t size, size_t nmemb, std::stri
 int main() {
   CURL* curl = curl_easy_init();
   std::string response;
-  const char* json = R"({"grant_type":"client_credentials","client_id":"sf_live_xxxxxxxx","client_secret":"sf_secret_xxxxxxxx","scope":"read write"})";
+  const char* json = R"({"grant_type":"client_credentials","client_id":"ofx_live_xxxxxxxx","client_secret":"ofx_secret_xxxxxxxx","scope":"read write"})";
 
   struct curl_slist* headers = nullptr;
   headers = curl_slist_append(headers, "Content-Type: application/json");
@@ -130,8 +130,8 @@ int main() {
 }`,
       go: `payload := strings.NewReader(\`{
   "grant_type": "client_credentials",
-  "client_id": "sf_live_xxxxxxxx",
-  "client_secret": "sf_secret_xxxxxxxx",
+  "client_id": "ofx_live_xxxxxxxx",
+  "client_secret": "ofx_secret_xxxxxxxx",
   "scope": "read write"
 }\`)
 
@@ -148,8 +148,8 @@ curl_setopt_array($ch, [
   CURLOPT_HTTPHEADER => ["Content-Type: application/json"],
   CURLOPT_POSTFIELDS => json_encode([
     "grant_type" => "client_credentials",
-    "client_id" => "sf_live_xxxxxxxx",
-    "client_secret" => "sf_secret_xxxxxxxx",
+    "client_id" => "ofx_live_xxxxxxxx",
+    "client_secret" => "ofx_secret_xxxxxxxx",
     "scope" => "read write",
   ]),
   CURLOPT_RETURNTRANSFER => true,
@@ -166,8 +166,8 @@ echo $response;`,
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           grant_type: "client_credentials",
-          client_id: "sf_live_xxxxxxxx",
-          client_secret: "sf_secret_xxxxxxxx",
+          client_id: "ofx_live_xxxxxxxx",
+          client_secret: "ofx_secret_xxxxxxxx",
           scope: "read write",
         }),
       })
@@ -178,18 +178,18 @@ echo $response;`,
 </html>`,
       json: `{
   "grant_type": "client_credentials",
-  "client_id": "sf_live_xxxxxxxx",
-  "client_secret": "sf_secret_xxxxxxxx",
+  "client_id": "ofx_live_xxxxxxxx",
+  "client_secret": "ofx_secret_xxxxxxxx",
   "scope": "read write"
 }`,
     },
   },
-  'list-clients': {
-    title: 'List clients',
+  'list-balances': {
+    title: 'List balances',
     samples: {
-      curl: `curl "${SANDBOX}/clients?limit=20" \\
+      curl: `curl "${SANDBOX}/balances" \\
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN"`,
-      javascript: `const response = await fetch('${SANDBOX}/clients?limit=20', {
+      javascript: `const response = await fetch('${SANDBOX}/balances', {
   headers: { Authorization: 'Bearer YOUR_ACCESS_TOKEN' },
 });
 const { data } = await response.json();
@@ -197,48 +197,44 @@ console.log(data);`,
       python: `import requests
 
 headers = {"Authorization": "Bearer YOUR_ACCESS_TOKEN"}
-response = requests.get("${SANDBOX}/clients", params={"limit": 20}, headers=headers)
+response = requests.get("${SANDBOX}/balances", headers=headers)
 response.raise_for_status()
 print(response.json())`,
-      ruby: `uri = URI("${SANDBOX}/clients?limit=20")
+      ruby: `uri = URI("${SANDBOX}/balances")
 req = Net::HTTP::Get.new(uri)
 req["Authorization"] = "Bearer YOUR_ACCESS_TOKEN"
 
 res = Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) { |http| http.request(req) }
 puts res.body`,
       java: `HttpRequest request = HttpRequest.newBuilder()
-    .uri(URI.create("${SANDBOX}/clients?limit=20"))
+    .uri(URI.create("${SANDBOX}/balances"))
     .header("Authorization", "Bearer YOUR_ACCESS_TOKEN")
     .GET()
     .build();
 
 HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());`,
       cpp: `#include <curl/curl.h>
-#include <iostream>
-#include <string>
 
 int main() {
   CURL* curl = curl_easy_init();
   struct curl_slist* headers = nullptr;
   headers = curl_slist_append(headers, "Authorization: Bearer YOUR_ACCESS_TOKEN");
-
-  curl_easy_setopt(curl, CURLOPT_URL, "${SANDBOX}/clients?limit=20");
+  curl_easy_setopt(curl, CURLOPT_URL, "${SANDBOX}/balances");
   curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
-
-  CURLcode res = curl_easy_perform(curl);
+  curl_easy_perform(curl);
   curl_slist_free_all(headers);
   curl_easy_cleanup(curl);
-  return res == CURLE_OK ? 0 : 1;
+  return 0;
 }`,
-      go: `req, _ := http.NewRequest("GET", "${SANDBOX}/clients?limit=20", nil)
+      go: `req, _ := http.NewRequest("GET", "${SANDBOX}/balances", nil)
 req.Header.Set("Authorization", "Bearer YOUR_ACCESS_TOKEN")
 resp, _ := http.DefaultClient.Do(req)`,
-      php: `$ch = curl_init("${SANDBOX}/clients?limit=20");
+      php: `$ch = curl_init("${SANDBOX}/balances");
 curl_setopt($ch, CURLOPT_HTTPHEADER, ["Authorization: Bearer YOUR_ACCESS_TOKEN"]);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 echo curl_exec($ch);`,
       html: `<script>
-  fetch("${SANDBOX}/clients?limit=20", {
+  fetch("${SANDBOX}/balances", {
     headers: { Authorization: "Bearer YOUR_ACCESS_TOKEN" },
   })
     .then((r) => r.json())
@@ -246,112 +242,144 @@ echo curl_exec($ch);`,
 </script>`,
       json: `{
   "data": [
-    {
-      "id": "cli_8f3a2b1c",
-      "email": "client@example.com",
-      "first_name": "Jane",
-      "last_name": "Investor",
-      "status": "active"
-    }
-  ],
-  "has_more": false,
-  "next_cursor": null
+    { "currency": "USD", "available": 5450822.00, "pending": 125000.00 },
+    { "currency": "EUR", "available": 545650.00, "pending": 0 }
+  ]
 }`,
     },
   },
-  'create-client': {
-    title: 'Create a client',
+  'create-quote': {
+    title: 'Create a quote',
     samples: {
-      curl: `curl -X POST ${SANDBOX}/clients \\
+      curl: `curl -X POST ${SANDBOX}/quotes \\
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \\
   -H "Content-Type: application/json" \\
   -d '{
-    "email": "client@example.com",
-    "first_name": "Jane",
-    "last_name": "Investor",
-    "advisor_id": "adv_123"
+    "buy": "AED",
+    "sell": "MXN",
+    "referencedUnit": "MXN",
+    "referenceAmount": 500000
   }'`,
-      javascript: `const response = await fetch('${SANDBOX}/clients', {
+      javascript: `const response = await fetch('${SANDBOX}/quotes', {
   method: 'POST',
   headers: {
     Authorization: 'Bearer YOUR_ACCESS_TOKEN',
     'Content-Type': 'application/json',
   },
   body: JSON.stringify({
-    email: 'client@example.com',
-    first_name: 'Jane',
-    last_name: 'Investor',
-    advisor_id: 'adv_123',
+    buy: 'AED',
+    sell: 'MXN',
+    referencedUnit: 'MXN',
+    referenceAmount: 500000,
   }),
 });`,
       python: `requests.post(
-    "${SANDBOX}/clients",
+    "${SANDBOX}/quotes",
     headers={"Authorization": "Bearer YOUR_ACCESS_TOKEN"},
     json={
-        "email": "client@example.com",
-        "first_name": "Jane",
-        "last_name": "Investor",
-        "advisor_id": "adv_123",
+        "buy": "AED",
+        "sell": "MXN",
+        "referencedUnit": "MXN",
+        "referenceAmount": 500000,
     },
 )`,
-      ruby: `req = Net::HTTP::Post.new(URI("${SANDBOX}/clients"))
+      ruby: `req = Net::HTTP::Post.new(URI("${SANDBOX}/quotes"))
 req["Authorization"] = "Bearer YOUR_ACCESS_TOKEN"
 req["Content-Type"] = "application/json"
-req.body = { email: "client@example.com", first_name: "Jane", last_name: "Investor" }.to_json`,
+req.body = { buy: "AED", sell: "MXN", referencedUnit: "MXN", referenceAmount: 500000 }.to_json`,
       java: `HttpRequest.newBuilder()
-    .uri(URI.create("${SANDBOX}/clients"))
+    .uri(URI.create("${SANDBOX}/quotes"))
     .header("Authorization", "Bearer YOUR_ACCESS_TOKEN")
     .header("Content-Type", "application/json")
-    .POST(HttpRequest.BodyPublishers.ofString(clientJson))
+    .POST(HttpRequest.BodyPublishers.ofString(quoteJson))
     .build();`,
-      cpp: `// POST ${SANDBOX}/clients with JSON body`,
-      go: `http.NewRequest("POST", "${SANDBOX}/clients", bytes.NewBuffer(jsonBody))`,
+      cpp: `// POST ${SANDBOX}/quotes with JSON body`,
+      go: `http.NewRequest("POST", "${SANDBOX}/quotes", bytes.NewBuffer(jsonBody))`,
       php: `curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode([...]));`,
       html: `<script>
-  fetch("${SANDBOX}/clients", {
+  fetch("${SANDBOX}/quotes", {
     method: "POST",
     headers: {
       Authorization: "Bearer YOUR_ACCESS_TOKEN",
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ email: "client@example.com" }),
+    body: JSON.stringify({ buy: "AED", sell: "MXN", referencedUnit: "MXN", referenceAmount: 500000 }),
   });
 </script>`,
       json: `{
-  "email": "client@example.com",
-  "first_name": "Jane",
-  "last_name": "Investor",
-  "advisor_id": "adv_123"
+  "buy": "AED",
+  "sell": "MXN",
+  "referencedUnit": "MXN",
+  "referenceAmount": 500000
 }`,
     },
   },
-  'check-eligibility': {
-    title: 'Check eligibility',
+  'create-trade': {
+    title: 'Execute a trade',
     samples: {
-      curl: `curl -X POST ${SANDBOX}/eligibility/check \\
+      curl: `curl -X POST ${SANDBOX}/trades \\
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \\
   -H "Content-Type: application/json" \\
-  -d '{"account_id": "acc_4d5e6f7a", "requested_amount": 500000}'`,
-      javascript: `await fetch('${SANDBOX}/eligibility/check', {
+  -H "Idempotency-Key: unique-key-12345" \\
+  -d '{"quote_id": "qt_9a8b7c6d"}'`,
+      javascript: `await fetch('${SANDBOX}/trades', {
   method: 'POST',
   headers: {
     Authorization: 'Bearer YOUR_ACCESS_TOKEN',
     'Content-Type': 'application/json',
+    'Idempotency-Key': 'unique-key-12345',
   },
-  body: JSON.stringify({ account_id: 'acc_4d5e6f7a', requested_amount: 500000 }),
+  body: JSON.stringify({ quote_id: 'qt_9a8b7c6d' }),
 });`,
-      python: `requests.post("${SANDBOX}/eligibility/check", headers=headers, json={
-    "account_id": "acc_4d5e6f7a", "requested_amount": 500000
-})`,
-      ruby: `Net::HTTP.post(uri, eligibility_body, headers)`,
-      java: `// POST ${SANDBOX}/eligibility/check`,
-      cpp: `// POST ${SANDBOX}/eligibility/check`,
-      go: `http.Post("${SANDBOX}/eligibility/check", "application/json", body)`,
-      php: `curl POST ${SANDBOX}/eligibility/check`,
-      html: `<script>fetch("${SANDBOX}/eligibility/check", { method: "POST", ... })</script>`,
+      python: `requests.post("${SANDBOX}/trades", headers={
+    "Authorization": "Bearer YOUR_ACCESS_TOKEN",
+    "Idempotency-Key": "unique-key-12345",
+}, json={"quote_id": "qt_9a8b7c6d"})`,
+      ruby: `Net::HTTP.post(uri, trade_body, headers)`,
+      java: `// POST ${SANDBOX}/trades`,
+      cpp: `// POST ${SANDBOX}/trades`,
+      go: `http.Post("${SANDBOX}/trades", "application/json", body)`,
+      php: `curl POST ${SANDBOX}/trades`,
+      html: `<script>fetch("${SANDBOX}/trades", { method: "POST", ... })</script>`,
       json: `{
-  "account_id": "acc_4d5e6f7a",
-  "requested_amount": 500000
+  "quote_id": "qt_9a8b7c6d"
+}`,
+    },
+  },
+  'create-withdrawal': {
+    title: 'Create a withdrawal',
+    samples: {
+      curl: `curl -X POST ${SANDBOX}/withdrawals \\
+  -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \\
+  -H "Content-Type: application/json" \\
+  -H "Idempotency-Key: unique-key-67890" \\
+  -d '{"currency": "GBP", "amount": 675900.00, "destination_id": "dest_abc123"}'`,
+      javascript: `await fetch('${SANDBOX}/withdrawals', {
+  method: 'POST',
+  headers: {
+    Authorization: 'Bearer YOUR_ACCESS_TOKEN',
+    'Content-Type': 'application/json',
+    'Idempotency-Key': 'unique-key-67890',
+  },
+  body: JSON.stringify({
+    currency: 'GBP',
+    amount: 675900.00,
+    destination_id: 'dest_abc123',
+  }),
+});`,
+      python: `requests.post("${SANDBOX}/withdrawals", headers=headers, json={
+    "currency": "GBP", "amount": 675900.00, "destination_id": "dest_abc123"
+})`,
+      ruby: `Net::HTTP.post(uri, withdrawal_body, headers)`,
+      java: `// POST ${SANDBOX}/withdrawals`,
+      cpp: `// POST ${SANDBOX}/withdrawals`,
+      go: `http.Post("${SANDBOX}/withdrawals", "application/json", body)`,
+      php: `curl POST ${SANDBOX}/withdrawals`,
+      html: `<script>fetch("${SANDBOX}/withdrawals", { method: "POST", ... })</script>`,
+      json: `{
+  "currency": "GBP",
+  "amount": 675900.00,
+  "destination_id": "dest_abc123"
 }`,
     },
   },
@@ -363,7 +391,7 @@ export function getApiSample(id: string): ApiSampleSet | null {
 
 export const API_BASES = {
   sandbox: SANDBOX,
-  production: 'https://api.syntheticfi.com/v1',
+  production: 'https://api.openfx.com/v1',
 }
 
 export function mockApiResponse(
@@ -385,54 +413,69 @@ export function mockApiResponse(
     }
   }
 
-  if (p === '/clients' && method === 'GET') {
+  if (p === '/balances' && method === 'GET') {
     return {
       status: 200,
       body: {
         data: [
-          {
-            id: 'cli_8f3a2b1c',
-            email: 'client@example.com',
-            first_name: 'Jane',
-            last_name: 'Investor',
-            status: 'active',
-          },
+          { currency: 'USD', available: 5450822.0, pending: 125000.0 },
+          { currency: 'EUR', available: 545650.0, pending: 0 },
         ],
-        has_more: false,
-        next_cursor: null,
       },
     }
   }
 
-  if (p === '/clients' && method === 'POST') {
+  if (p === '/quotes' && method === 'POST') {
     return {
       status: 201,
       body: {
-        id: 'cli_new_demo',
-        email: 'client@example.com',
-        status: 'active',
+        id: 'qt_9a8b7c6d',
+        buy: 'AED',
+        sell: 'MXN',
+        rate: 0.19843472,
+        buy_amount: 99217.36,
+        sell_amount: 500000.0,
+        expires_at: new Date(Date.now() + 300000).toISOString(),
+        status: 'open',
+      },
+    }
+  }
+
+  if (p === '/trades' && method === 'POST') {
+    return {
+      status: 201,
+      body: {
+        id: 'trd_1a2b3c4d',
+        quote_id: 'qt_9a8b7c6d',
+        buy: 'AED',
+        sell: 'MXN',
+        buy_amount: 99217.36,
+        sell_amount: 500000.0,
+        status: 'executed',
+        executed_at: new Date().toISOString(),
+      },
+    }
+  }
+
+  if (p === '/withdrawals' && method === 'POST') {
+    return {
+      status: 201,
+      body: {
+        id: 'wd_5e6f7a8b',
+        currency: 'GBP',
+        amount: 675900.0,
+        status: 'processing',
+        destination_id: 'dest_abc123',
         created_at: new Date().toISOString(),
       },
     }
   }
 
-  if (p === '/eligibility/check' && method === 'POST') {
+  if (p.startsWith('/trades') && method === 'GET') {
     return {
       status: 200,
       body: {
-        eligible: true,
-        max_amount: 735000,
-        advance_rate: 0.65,
-        portfolio_value: 2450000,
-      },
-    }
-  }
-
-  if (p.startsWith('/financings') && method === 'GET') {
-    return {
-      status: 200,
-      body: {
-        data: [{ id: 'fin_1a2b3c4d', status: 'active', margin_status: 'healthy' }],
+        data: [{ id: 'trd_1a2b3c4d', status: 'settled', buy: 'AED', sell: 'MXN' }],
       },
     }
   }
@@ -442,7 +485,7 @@ export function mockApiResponse(
     body: {
       error: {
         code: 'not_found',
-        message: `No mock for ${method} ${p}. Try GET /clients or POST /oauth/token.`,
+        message: `No mock for ${method} ${p}. Try GET /balances or POST /oauth/token.`,
       },
     },
   }

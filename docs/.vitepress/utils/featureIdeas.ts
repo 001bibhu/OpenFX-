@@ -10,8 +10,8 @@ export interface FeatureIdea {
   seeded?: boolean
 }
 
-const IDEAS_KEY = 'syntheticfi-feature-ideas'
-const VOTER_KEY = 'syntheticfi-feature-voter-id'
+const IDEAS_KEY = 'openfx-feature-ideas'
+const VOTER_KEY = 'openfx-feature-voter-id'
 
 function uid(): string {
   return `${Date.now()}-${Math.random().toString(36).slice(2, 9)}`
@@ -29,60 +29,60 @@ function getVoterId(): string {
 
 const SEED_IDEAS: FeatureIdea[] = [
   {
-    id: 'seed-mobile-alerts',
-    title: 'Mobile margin alert notifications',
+    id: 'seed-streaming-quotes',
+    title: 'Streaming quote API for high-frequency trading',
     description:
-      'Push notifications when a client portfolio approaches a margin warning or call, so advisors can act before market close.',
-    email: 'advisor@summitwealth.example',
-    company: 'Summit Wealth Partners',
+      'WebSocket or SSE endpoint for live FX quotes instead of polling, reducing latency for payment orchestration flows.',
+    email: 'eng@yellowcard.example',
+    company: 'Yellow Card',
     votes: 31,
     votedBy: [],
     timestamp: Date.now() - 1000 * 60 * 60 * 24 * 14,
     seeded: true,
   },
   {
-    id: 'seed-vanguard',
-    title: 'Vanguard brokerage integration',
+    id: 'seed-virtual-accounts',
+    title: 'Virtual named accounts for end clients',
     description:
-      'Connect Vanguard accounts for eligibility review and collateral sync, similar to Schwab and Fidelity.',
-    email: 'ops@ouifinancial.example',
-    company: 'Oui Financial',
+      'Issue virtual IBANs or local account numbers per end customer for easier reconciliation and compliance.',
+    email: 'ops@velafi.example',
+    company: 'VelaFi',
     votes: 28,
     votedBy: [],
     timestamp: Date.now() - 1000 * 60 * 60 * 24 * 21,
     seeded: true,
   },
   {
-    id: 'seed-margin-csv',
-    title: 'Export margin events to CSV',
+    id: 'seed-settlement-csv',
+    title: 'Export settlement history to CSV',
     description:
-      'Filter margin warnings and calls by date range and export for compliance reviews and client meetings.',
-    email: 'compliance@fortressfp.example',
-    company: 'Fortress Financial Partners',
+      'Filter trades and withdrawals by date range and corridor, then export for reconciliation and regulatory reporting.',
+    email: 'treasury@globalpay.example',
+    company: 'GlobalPay Solutions',
     votes: 19,
     votedBy: [],
     timestamp: Date.now() - 1000 * 60 * 60 * 24 * 30,
     seeded: true,
   },
   {
-    id: 'seed-advisor-dashboard',
-    title: 'Household-level financing dashboard',
+    id: 'seed-multi-withdraw',
+    title: 'Batch withdrawal API',
     description:
-      'View all active financings across a client household in one screen, including combined margin status.',
-    email: 'lia@ablewealth.example',
-    company: 'Able Wealth Management',
+      'Submit multiple payouts in a single API call for remittance corridors with high beneficiary volume.',
+    email: 'dev@remitfast.example',
+    company: 'RemitFast',
     votes: 15,
     votedBy: [],
     timestamp: Date.now() - 1000 * 60 * 60 * 24 * 45,
     seeded: true,
   },
   {
-    id: 'seed-api-webhooks',
-    title: 'Webhook for term sheet acceptance',
+    id: 'seed-webhook-retry',
+    title: 'Webhook delivery retry dashboard',
     description:
-      'Fire a webhook when a client signs a term sheet so CRM systems can update pipeline stages automatically.',
-    email: 'dev@partnerfirm.example',
-    company: 'Northbridge Advisors',
+      'View failed webhook deliveries and manually retry from the dashboard without re-registering endpoints.',
+    email: 'dev@rampco.example',
+    company: 'RampCo',
     votes: 11,
     votedBy: [],
     timestamp: Date.now() - 1000 * 60 * 60 * 24 * 60,

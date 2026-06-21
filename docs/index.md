@@ -1,6 +1,6 @@
 ---
 layout: page
-title: SyntheticFi Documentation
+title: OpenFX Documentation
 sidebar: false
 ---
 

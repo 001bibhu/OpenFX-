@@ -1,20 +1,18 @@
 # Contact support
 
-Reach the SyntheticFi team for help with your account, partnership inquiries, or press requests.
+Reach the OpenFX team for help with your account, integration questions, or partnership inquiries.
 
-**Want to speak with someone on our team?** [**Talk to Us**](https://calendly.com/d/cxdj-6k9-z9w), schedule a call with SyntheticFi.
+**Want to speak with someone on our team?** [**Get a demo**](https://www.openfx.com/) on the OpenFX website.
 
 ---
 
 ## Support channels
 
-| Channel | Best for | Availability |
-|---------|----------|--------------|
-| **[Talk to Us](https://calendly.com/d/cxdj-6k9-z9w)** | Speak with the SyntheticFi team | Book a time online |
-| **[Support ticket](./create-ticket.md)** | Technical issues, financing questions, API help | 24/7 submission; responses per SLA |
-| **Email** | General inquiries, non-urgent follow-ups | support@syntheticfi.com |
-| **Phone** | Urgent margin matters, enterprise clients | See dashboard for priority line |
-| **Live chat** | Quick questions during onboarding | Mon–Fri, 9am–6pm ET *(placeholder)* |
+| Channel | Best for | Response time |
+|---------|----------|---------------|
+| **[Get a demo](https://www.openfx.com/)** | Product walkthrough, corridor planning | Schedule online |
+| **[Create a ticket](./create-ticket.md)** | Technical issues, trade disputes | Same day |
+| **Email** | General inquiries, non-urgent follow-ups | hello@openfx.com |
 
 ---
 
@@ -22,127 +20,63 @@ Reach the SyntheticFi team for help with your account, partnership inquiries, or
 
 | Team | Email | Response time |
 |------|-------|---------------|
-| **General support** | support@syntheticfi.com | 1 business day |
-| **Advisor & enterprise** | advisors@syntheticfi.com | 1 business day |
-| **API & partnerships** | developers@syntheticfi.com | 2 business days |
-| **Security** | security@syntheticfi.com | 1 business day (critical reports prioritized) |
-| **Press** | press@syntheticfi.com | 2–3 business days |
+| **General support** | hello@openfx.com | Same day |
+| **Account management** | hello@openfx.com | Same day |
+| **API & integrations** | hello@openfx.com | 1–2 business days |
+| **Compliance** | hello@openfx.com | 1 business day |
+| **Press** | hello@openfx.com | 2–3 business days |
 
-Include your SyntheticFi account email and any relevant IDs (`fin_`, `cli_`, ticket `#SF-`) so we can locate your record quickly.
-
----
-
-## Phone support
-
-### Standard support
-
-**+1 (888) 555-0142** *(placeholder)*  
-Mon–Fri, 8am–8pm ET
-
-For account verification, have your registered email and last four digits of linked account ready.
-
-### Priority support (enterprise)
-
-Enterprise and priority-tier clients access a dedicated line in the **Support** section of the advisor dashboard. Number and PIN provided in your welcome packet.
-
-**Use priority line for:**
-
-- Active margin calls
-- Production API outages affecting client flows
-- Same-day funding deadlines
+Include your OpenFX organization ID and any relevant IDs (`trd_`, `wd_`, ticket `#OFX-`) so we can locate your record quickly.
 
 ---
 
-## Live chat
+## Support availability
 
-Click **Chat with support** in the bottom-right corner of the SyntheticFi app or documentation site *(placeholder)*.
+OpenFX support is available **24/7/365**. Our platform and support teams never close.
 
-Chat is best for:
-
-- Navigation help during onboarding
-- Quick eligibility questions
-- Routing to the right team
-
-Complex issues may be converted to a support ticket for tracking.
+Global teams operate across North America, Europe, Middle East, and Asia.
 
 ---
 
-## Self-service first
+## Before you contact us
 
-Most questions are answered in documentation:
+Gather the following to speed up resolution:
 
-| Topic | Link |
-|-------|------|
-| Product overview | [Overview](../core/overview.md) |
-| Onboarding | [Getting started](../core/getting-started.md) |
-| Account linking | [Troubleshooting](../core/troubleshooting.md) |
-| API | [API overview](../platform/api-overview.md) |
-
-Use **AI-powered search** on any page, try natural language questions like *"How do I add collateral?"*
-
----
-
-## Information to have ready
-
-Speed up resolution by preparing:
-
-### All users
-
-- Registered email address
-- Brief description of the issue
+- Organization name and account email
+- Trade ID (`trd_xxx`) or withdrawal ID (`wd_xxx`) if applicable
+- Currency pair and approximate amount
+- Steps to reproduce (for API issues)
 - Screenshots or error messages
 
-### Advisors
-
-- Firm name and CRD number
-- Client ID (if client-specific)
-- Rep code (for sync issues)
-
-### Developers
-
-- API environment (sandbox vs production)
-- Request ID from `X-Request-Id` response header
-- Timestamp of failed request (UTC)
+For API issues, include the request ID from response headers if available.
 
 ---
 
-## Security and fraud
+## Security reports
 
-Report suspicious activity immediately:
+If you discover a security vulnerability:
 
-- **Email:** security@syntheticfi.com
-- **Subject line:** URGENT, Security concern
+- **Email:** hello@openfx.com with subject "Security Report"
 
-Do **not** share passwords, full account numbers, or API secrets in email or chat. SyntheticFi staff will never ask for your password.
-
----
-
-## Feedback on documentation
-
-Doc improvements go through the **feedback widget** on each page, not support email. We track:
-
-- Page views (aggregated)
-- 👍 / 👎 helpfulness ratings
-- Optional comment text
-
-This helps us prioritize rewrites and new topics without clogging support queues.
+Do **not** share passwords, full account numbers, or API secrets in email or chat. OpenFX staff will never ask for your password.
 
 ---
 
-## Mailing address
+## Company information
 
-SyntheticFi, Inc. *(placeholder)*  
-100 Financial Way, Suite 500  
-New York, NY 10004
+Red Envelope Delta, Inc. (OpenFX)
+NMLS ID No. 2680829
 
-Corporate and legal notices only, not for support requests.
+- **Website:** [openfx.com](https://www.openfx.com/)
+- **Email:** hello@openfx.com
 
 ---
 
-## Related
+## Related resources
 
-- [Create a support ticket](./create-ticket.md), Recommended for trackable issues
-- [Feature requests](./feature-requests.md), Product ideas
-- [FAQ](../core/faq.md)
+- [FAQ](../core/faq.md): Common questions
+- [Troubleshooting](../core/troubleshooting.md): Self-service fixes
+- [Getting started](../core/getting-started.md): Onboarding guide
+- [OpenFX FAQ (website)](https://www.openfx.com/faq): Full FAQ from OpenFX
 
-We're here to help you use SyntheticFi with confidence.
+We're here to help you move money faster with confidence.

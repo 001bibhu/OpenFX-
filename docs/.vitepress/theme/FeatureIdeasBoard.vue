@@ -68,7 +68,7 @@ function formatDate(ts: number) {
     <header class="sf-ideas-hero">
       <h1>Suggest a feature</h1>
       <p>
-        Help shape SyntheticFi. Vote on ideas from other advisors and partners, then
+        Help shape OpenFX. Vote on ideas from other institutions and partners, then
         submit your own, popular requests rise to the top.
       </p>
     </header>

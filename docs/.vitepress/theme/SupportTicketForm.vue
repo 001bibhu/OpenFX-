@@ -6,18 +6,18 @@ defineProps<{ compact?: boolean }>()
 
 const name = ref('')
 const email = ref('')
-const category = ref('Account linking')
+const category = ref('Trade / Settlement')
 const subject = ref('')
 const description = ref('')
 const submitted = ref(false)
 const ticketId = ref('')
 
 const categories = [
-  'Account linking',
-  'Financing',
-  'Margin',
-  'Billing',
-  'API',
+  'Trade / Settlement',
+  'Deposits & Withdrawals',
+  'API Integration',
+  'Onboarding / KYC',
+  'Billing & Pricing',
   'Documentation',
   'Other',
 ]
@@ -39,8 +39,8 @@ function submit() {
   <div :class="['sf-ticket-form', { compact }]">
     <div v-if="submitted" class="sf-form-success">
       <strong>Ticket submitted.</strong>
-      Reference: <code>#SF-{{ ticketId }}</code>
-      <p>We'll respond within 1 business day. Check your email for updates.</p>
+      Reference: <code>#OFX-{{ ticketId }}</code>
+      <p>We'll respond as soon as possible. OpenFX support is available 24/7.</p>
     </div>
 
     <form v-else @submit.prevent="submit">
@@ -72,7 +72,7 @@ function submit() {
           v-model="description"
           required
           rows="4"
-          placeholder="What happened? Include financing ID, brokerage, and steps tried."
+          placeholder="What happened? Include trade ID (trd_), currency pair, and steps tried."
         />
       </label>
       <button type="submit" class="sf-btn-primary">Submit support ticket</button>

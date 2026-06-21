@@ -1,6 +1,6 @@
 # Create a support ticket
 
-Report an issue, ask for help with your account, or escalate a financing concern. Our team typically responds within **1 business day**.
+Report an issue, ask for help with your account, or escalate a trade or settlement concern. OpenFX support is available **24/7/365**.
 
 <SupportTicketForm />
 
@@ -14,20 +14,21 @@ Report an issue, ask for help with your account, or escalate a financing concern
 
 ## What to include
 
-- SyntheticFi account email and financing ID (`fin_xxx`) if applicable
-- Brokerage or custodian name
+- OpenFX organization name and account email
+- Trade ID (`trd_xxx`) or withdrawal ID (`wd_xxx`) if applicable
+- Currency pair and approximate amount
 - Exact error messages or screenshots
 - Steps you already tried
 
-## Urgent margin call?
+## Urgent settlement issue?
 
-Select category **Margin** and priority details in your description. Do not wait for a reply before taking action, review [margin options](/core/how-it-works#step-6-handle-market-movements) immediately.
+Select category **Trade / Settlement** and include the trade ID in your description. For time-sensitive payouts, also contact your account manager directly.
 
 ## Response expectations
 
 | Priority | First response |
 |----------|----------------|
-| Urgent (margin) | Within 2 hours (market hours) |
-| Normal | Within 1 business day |
+| Urgent (settlement) | Within 2 hours |
+| Normal | Same day |
 
 Tickets submitted here appear in the [analytics dashboard](/admin/analytics).

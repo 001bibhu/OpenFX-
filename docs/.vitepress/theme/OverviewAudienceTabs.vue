@@ -2,22 +2,22 @@
 import RoleTabs from './RoleTabs.vue'
 
 const audienceTabs = [
-  { id: 'advisors', label: 'Financial advisors' },
-  { id: 'investors', label: 'Investors' },
-  { id: 'providers', label: 'Financial service providers' },
+  { id: 'remittance', label: 'Remittance companies' },
+  { id: 'psp', label: 'Payment service providers' },
+  { id: 'ramps', label: 'On and off ramps' },
 ]
 </script>
 
 <template>
-  <RoleTabs :items="audienceTabs" aria-label="Who uses SyntheticFi">
-    <template #advisors>
-      <slot name="advisors" />
+  <RoleTabs :items="audienceTabs" aria-label="Who uses OpenFX">
+    <template #remittance>
+      <slot name="remittance" />
     </template>
-    <template #investors>
-      <slot name="investors" />
+    <template #psp>
+      <slot name="psp" />
     </template>
-    <template #providers>
-      <slot name="providers" />
+    <template #ramps>
+      <slot name="ramps" />
     </template>
   </RoleTabs>
 </template>

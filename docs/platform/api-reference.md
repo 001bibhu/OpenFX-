@@ -4,11 +4,11 @@ pageClass: sf-api-doc
 
 # API reference
 
-Complete reference for SyntheticFi REST API v1. Each endpoint includes multi-language code samples and an interactive **Try it** console on the right.
+Complete reference for OpenFX Trading API v1. Each endpoint includes multi-language code samples and an interactive **Try it** console on the right.
 
 <div class="sf-api-banner">
-  <span><strong>Base URL</strong> <code>https://api.syntheticfi.com/v1</code></span>
-  <span><strong>Sandbox</strong> <code>https://api.sandbox.syntheticfi.com/v1</code></span>
+  <span><strong>Base URL</strong> <code>https://api.openfx.com/v1</code></span>
+  <span><strong>Sandbox</strong> <code>https://api.sandbox.openfx.com/v1</code></span>
 </div>
 
 All endpoints require `Authorization: Bearer {access_token}` unless marked *Public*. See [Authentication](./authentication.md).
@@ -21,7 +21,7 @@ All endpoints require `Authorization: Bearer {access_token}` unless marked *Publ
   method="POST"
   path="/oauth/token"
   sample="oauth-token"
-  try-body='{"grant_type":"client_credentials","client_id":"sf_live_xxxxxxxx","client_secret":"sf_secret_xxxxxxxx","scope":"read write"}'
+  try-body='{"grant_type":"client_credentials","client_id":"ofx_live_xxxxxxxx","client_secret":"ofx_secret_xxxxxxxx","scope":"read write"}'
 >
 
 ### Obtain access token
@@ -32,21 +32,13 @@ All endpoints require `Authorization: Bearer {access_token}` unless marked *Publ
 
 ---
 
-## Clients
+## Balances
 
-<ApiEndpoint method="GET" path="/clients" sample="list-clients">
+<ApiEndpoint method="GET" path="/balances" sample="list-balances">
 
-### List clients
+### List balances
 
-Returns a paginated list of client records.
-
-#### Query parameters
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `limit` | integer | Max results (default 20, max 100) |
-| `cursor` | string | Pagination cursor |
-| `advisor_id` | string | Filter by advisor |
+Returns balances across all currency accounts.
 
 **Response `200`**
 
@@ -54,130 +46,16 @@ Returns a paginated list of client records.
 {
   "data": [
     {
-      "id": "cli_8f3a2b1c",
-      "email": "client@example.com",
-      "first_name": "Jane",
-      "last_name": "Investor",
-      "advisor_id": "adv_123",
-      "status": "active",
-      "created_at": "2026-01-15T10:30:00Z"
-    }
-  ],
-  "has_more": false,
-  "next_cursor": null
-}
-```
-
-</ApiEndpoint>
-
-<ApiEndpoint
-  method="POST"
-  path="/clients"
-  sample="create-client"
-  try-body='{"email":"client@example.com","first_name":"Jane","last_name":"Investor","advisor_id":"adv_123","external_id":"crm-998877"}'
->
-
-### Create client
-
-Creates a new client record linked to an advisor.
-
-**Response `201`:** Client object
-
-</ApiEndpoint>
-
-### Get client
-
-```http
-GET /clients/{client_id}
-```
-
-Returns a single client by ID.
-
----
-
-## Accounts
-
-### List linked accounts
-
-```http
-GET /clients/{client_id}/accounts
-```
-
-**Response `200`:**
-
-```json
-{
-  "data": [
-    {
-      "id": "acc_4d5e6f7a",
-      "custodian": "interactive_brokers",
-      "account_number_last4": "4821",
-      "status": "linked",
-      "portfolio_value": 2450000.00,
       "currency": "USD",
-      "last_synced_at": "2026-06-14T18:00:00Z"
-    }
-  ]
-}
-```
-
----
-
-### Initiate account link
-
-```http
-POST /clients/{client_id}/accounts/link
-```
-
-**Body:**
-
-```json
-{
-  "custodian": "schwab",
-  "redirect_uri": "https://yourapp.com/oauth/callback"
-}
-```
-
-**Response `200`:**
-
-```json
-{
-  "link_url": "https://connect.syntheticfi.com/link/sess_abc123",
-  "session_id": "sess_abc123",
-  "expires_at": "2026-06-14T19:00:00Z"
-}
-```
-
-Redirect the user to `link_url` to complete OAuth.
-
----
-
-## Eligibility
-
-<ApiEndpoint
-  method="POST"
-  path="/eligibility/check"
-  sample="check-eligibility"
-  try-body='{"account_id":"acc_4d5e6f7a","requested_amount":500000.00}'
->
-
-### Check eligibility
-
-Evaluates portfolio capacity for a requested financing amount.
-
-**Response `200`:**
-
-```json
-{
-  "eligible": true,
-  "max_amount": 735000.00,
-  "advance_rate": 0.65,
-  "portfolio_value": 2450000.00,
-  "ineligible_holdings": [],
-  "warnings": [
+      "available": 5450822.00,
+      "pending": 125000.00,
+      "updated_at": "2026-06-14T18:00:00Z"
+    },
     {
-      "code": "concentration",
-      "message": "Single position exceeds 25% of portfolio."
+      "currency": "EUR",
+      "available": 545650.00,
+      "pending": 0,
+      "updated_at": "2026-06-14T18:00:00Z"
     }
   ]
 }
@@ -187,28 +65,27 @@ Evaluates portfolio capacity for a requested financing amount.
 
 ---
 
-## Term sheets
+## Quotes
 
-### Create term sheet
+<ApiEndpoint
+  method="POST"
+  path="/quotes"
+  sample="create-quote"
+  try-body='{"buy":"AED","sell":"MXN","referencedUnit":"MXN","referenceAmount":500000}'
+>
 
-```http
-POST /term-sheets
-```
+### Create quote
 
-**Headers:**
-
-```
-Idempotency-Key: unique-key-12345
-```
+Request an FX rate quote with time-lock guarantee.
 
 **Body:**
 
 ```json
 {
-  "client_id": "cli_8f3a2b1c",
-  "account_id": "acc_4d5e6f7a",
-  "amount": 500000.00,
-  "term_months": 12
+  "buy": "AED",
+  "sell": "MXN",
+  "referencedUnit": "MXN",
+  "referenceAmount": 500000
 }
 ```
 
@@ -216,120 +93,103 @@ Idempotency-Key: unique-key-12345
 
 ```json
 {
-  "id": "ts_9a8b7c6d",
-  "status": "pending_acceptance",
-  "amount": 500000.00,
-  "total_cost": 42500.00,
-  "effective_rate_bps": 850,
-  "term_months": 12,
-  "margin_warning_threshold": 0.75,
-  "margin_call_threshold": 0.70,
-  "expires_at": "2026-06-17T10:30:00Z",
-  "accept_url": "https://app.syntheticfi.com/accept/ts_9a8b7c6d"
+  "id": "qt_9a8b7c6d",
+  "buy": "AED",
+  "sell": "MXN",
+  "rate": 0.19843472,
+  "buy_amount": 99217.36,
+  "sell_amount": 500000.00,
+  "expires_at": "2026-06-14T19:00:00Z",
+  "status": "open"
 }
 ```
 
----
-
-### Get term sheet
-
-```http
-GET /term-sheets/{term_sheet_id}
-```
+</ApiEndpoint>
 
 ---
 
-## Financings
+## Trades
 
-<ApiSection method="GET" path="/financings" :show-samples="false">
+<ApiEndpoint
+  method="POST"
+  path="/trades"
+  sample="create-trade"
+  try-body='{"quote_id":"qt_9a8b7c6d"}'
+>
 
-### List financings
+### Execute trade
 
-```http
-GET /financings
+Execute a trade against an open quote. Requires `Idempotency-Key` header.
+
+**Body:**
+
+```json
+{
+  "quote_id": "qt_9a8b7c6d"
+}
 ```
 
-**Query parameters:** `client_id`, `status` (`active`, `closed`, `pending`), `limit`, `cursor`
+**Response `201`:**
 
-</ApiSection>
+```json
+{
+  "id": "trd_1a2b3c4d",
+  "quote_id": "qt_9a8b7c6d",
+  "buy": "AED",
+  "sell": "MXN",
+  "buy_amount": 99217.36,
+  "sell_amount": 500000.00,
+  "status": "executed",
+  "executed_at": "2026-06-14T18:05:00Z"
+}
+```
 
----
+</ApiEndpoint>
 
-### Get financing
+### Get trade
 
 ```http
-GET /financings/{financing_id}
+GET /trades/{trade_id}
 ```
+
+Returns trade details including settlement status.
 
 **Response `200`:**
 
 ```json
 {
-  "id": "fin_1a2b3c4d",
-  "client_id": "cli_8f3a2b1c",
-  "account_id": "acc_4d5e6f7a",
-  "status": "active",
-  "principal": 500000.00,
-  "total_cost": 42500.00,
-  "amount_outstanding": 500000.00,
-  "term_start": "2026-06-01",
-  "term_end": "2027-06-01",
-  "collateral_value": 2380000.00,
-  "coverage_ratio": 0.82,
-  "margin_status": "healthy",
-  "funded_at": "2026-06-03T14:22:00Z"
+  "id": "trd_1a2b3c4d",
+  "status": "settled",
+  "buy": "AED",
+  "sell": "MXN",
+  "buy_amount": 99217.36,
+  "sell_amount": 500000.00,
+  "executed_at": "2026-06-14T18:05:00Z",
+  "settled_at": "2026-06-14T18:12:00Z"
 }
 ```
 
 ---
 
-### Execute financing
-
-Submit after term sheet acceptance:
+### List trades
 
 ```http
-POST /financings
+GET /trades
 ```
 
-**Body:**
-
-```json
-{
-  "term_sheet_id": "ts_9a8b7c6d"
-}
-```
-
-**Response `202`:** Financing object with `status: "processing"`
+**Query parameters:** `status` (`executed`, `settled`, `failed`), `currency`, `limit`, `cursor`
 
 ---
 
-### Record repayment
+## Deposits
+
+### List deposits
 
 ```http
-POST /financings/{financing_id}/repayments
+GET /deposits
 ```
 
-**Body:**
-
-```json
-{
-  "amount": 542500.00,
-  "method": "ach",
-  "reference": "ACH-20260601-001"
-}
-```
-
----
-
-## Margin events
-
-### List margin events
-
-```http
-GET /margin-events
-```
-
-**Query parameters:** `financing_id`, `severity` (`warning`, `call`), `limit`
+**Query parameters:** `status` (`pending`, `received`), `currency`, `limit`, `cursor`
 
 **Response `200`:**
 
@@ -337,15 +197,61 @@ GET /margin-events
 {
   "data": [
     {
-      "id": "mgn_7x8y9z",
-      "financing_id": "fin_1a2b3c4d",
-      "severity": "warning",
-      "coverage_ratio": 0.74,
-      "required_action_by": "2026-06-16T17:00:00Z",
-      "created_at": "2026-06-14T09:00:00Z"
+      "id": "dep_7x8y9z",
+      "currency": "USD",
+      "amount": 1000000.00,
+      "status": "received",
+      "rail": "wire",
+      "received_at": "2026-06-14T10:30:00Z"
     }
   ]
 }
+```
+
+---
+
+## Withdrawals
+
+<ApiEndpoint
+  method="POST"
+  path="/withdrawals"
+  sample="create-withdrawal"
+  try-body='{"currency":"GBP","amount":675900.00,"destination_id":"dest_abc123"}'
+>
+
+### Create withdrawal
+
+Initiate a withdrawal to a verified destination. Requires `Idempotency-Key` header.
+
+**Body:**
+
+```json
+{
+  "currency": "GBP",
+  "amount": 675900.00,
+  "destination_id": "dest_abc123"
+}
+```
+
+**Response `201`:**
+
+```json
+{
+  "id": "wd_5e6f7a8b",
+  "currency": "GBP",
+  "amount": 675900.00,
+  "status": "processing",
+  "destination_id": "dest_abc123",
+  "created_at": "2026-06-14T18:30:00Z"
+}
+```
+
+</ApiEndpoint>
+
+### Get withdrawal
+
+```http
+GET /withdrawals/{withdrawal_id}
 ```
 
 ---
@@ -362,8 +268,8 @@ POST /webhooks
 
 ```json
 {
-  "url": "https://yourapp.com/webhooks/syntheticfi",
-  "events": ["margin.warning", "financing.funded", "financing.closed"]
+  "url": "https://yourapp.com/webhooks/openfx",
+  "events": ["trade.settled", "withdrawal.completed", "deposit.received"]
 }
 ```
 
@@ -372,8 +278,8 @@ POST /webhooks
 ```json
 {
   "id": "wh_5e6f7a8b",
-  "url": "https://yourapp.com/webhooks/syntheticfi",
-  "events": ["margin.warning", "financing.funded", "financing.closed"],
+  "url": "https://yourapp.com/webhooks/openfx",
+  "events": ["trade.settled", "withdrawal.completed", "deposit.received"],
   "signing_secret": "whsec_xxxxxxxx"
 }
 ```
@@ -388,12 +294,12 @@ GET /webhooks/{webhook_id}/deliveries
 
 ---
 
-## Firm administration
+## Organization administration
 
-### List firm users
+### List organization users
 
 ```http
-GET /firm/users
+GET /organization/users
 ```
 
 Requires `admin` scope.
@@ -403,15 +309,15 @@ Requires `admin` scope.
 ### Invite user
 
 ```http
-POST /firm/users/invite
+POST /organization/users/invite
 ```
 
 **Body:**
 
 ```json
 {
-  "email": "advisor@firm.com",
-  "role": "advisor"
+  "email": "treasury@company.com",
+  "role": "treasury_manager"
 }
 ```
 
@@ -421,20 +327,13 @@ POST /firm/users/invite
 
 *Sandbox only*
 
-### Simulate margin drop
+### Reset sandbox data
 
 ```http
-POST /sandbox/simulate-margin-drop
+POST /sandbox/reset
 ```
 
-**Body:**
-
-```json
-{
-  "financing_id": "fin_sandbox_001",
-  "target_coverage_ratio": 0.68
-}
-```
+Clears sandbox balances and transaction history for fresh testing.
 
 ---
 
@@ -459,7 +358,7 @@ POST /sandbox/simulate-margin-drop
 
 | Version | Date | Notes |
 |---------|------|-------|
-| v1.0 | 2026-01 | Initial public API |
-| v1.1 | 2026-04 | Webhooks, sandbox margin simulation |
+| v1.0 | 2026-01 | Initial public Trading API |
+| v1.1 | 2026-04 | Webhooks, streaming quotes |
 
 Subscribe to API changelog emails via [contact support](../support/contact-support.md).

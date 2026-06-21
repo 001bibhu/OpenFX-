@@ -90,6 +90,16 @@ function formatBody(text: string): string {
 }
 
 const methods = ['GET', 'POST', 'PUT', 'PATCH', 'DELETE']
+const copiedResponse = ref(false)
+
+async function copyResponse() {
+  if (!result.value?.body) return
+  await navigator.clipboard.writeText(result.value.body)
+  copiedResponse.value = true
+  setTimeout(() => {
+    copiedResponse.value = false
+  }, 2000)
+}
 </script>
 
 <template>
@@ -149,6 +159,9 @@ const methods = ['GET', 'POST', 'PUT', 'PATCH', 'DELETE']
         </span>
         <span>{{ result.durationMs }} ms</span>
         <span v-if="result.simulated" class="sf-api-simulated">Simulated</span>
+        <button type="button" class="sf-api-copy sf-api-copy-inline" @click="copyResponse">
+          {{ copiedResponse ? 'Copied' : 'Copy response' }}
+        </button>
       </div>
       <p v-if="result.note" class="sf-api-sim-note">{{ result.note }}</p>
       <pre class="sf-api-response-body"><code>{{ result.body }}</code></pre>

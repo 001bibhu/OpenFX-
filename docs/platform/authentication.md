@@ -1,156 +1,142 @@
----
-pageClass: sf-api-doc
----
-
 # Authentication
 
-SyntheticFi uses OAuth 2.0 for API access and secure brokerage linking. This guide covers credential types, token exchange, scopes, and security best practices.
-
-<div class="sf-api-banner">
-  <span><strong>Token endpoint</strong> <code>POST /oauth/token</code></span>
-  <span><strong>Header</strong> <code>Authorization: Bearer {access_token}</code></span>
-</div>
+OpenFX uses OAuth 2.0 for API access. This guide covers credential types, token exchange, scopes, and security best practices.
 
 ---
 
 ## Credential types
 
-| Type | Used for |
-|------|----------|
-| **API client credentials** | Server-to-server API access (`client_id` + `client_secret`) |
-| **User access tokens** | Advisor dashboard and client portal sessions |
-| **Brokerage OAuth tokens** | Read/trade access to custodian accounts (stored encrypted) |
-| **Webhook signing secrets** | Verify event payload authenticity |
+| Type | Used for | How obtained |
+|------|----------|--------------|
+| **Client credentials** | Server-to-server API access | Dashboard → Settings → API |
+| **Webhook signing secret** | Verifying webhook payloads | Created with webhook endpoint |
+| **User session** | Web GUI login | Hosted login or SSO (SAML 2.0 / OIDC) |
 
-Never share credentials in email, chat, or client-side JavaScript.
+API integrations use **client credentials** exclusively. User sessions are separate and not used for programmatic trading.
 
 ---
 
-## API authentication (client credentials)
+## Client credentials flow
 
-<ApiEndpoint
-  method="POST"
-  path="/oauth/token"
-  sample="oauth-token"
-  try-body='{"grant_type":"client_credentials","client_id":"sf_live_xxxxxxxx","client_secret":"sf_secret_xxxxxxxx","scope":"read write"}'
->
+### 1. Create API key
 
-### Request an access token
+In the OpenFX dashboard:
 
-Exchange your `client_id` and `client_secret` for a short-lived Bearer token.
+1. Navigate to **Settings → API → Create key**
+2. Name the key (e.g., "Production payment service")
+3. Select scopes: `read`, `write`, and optionally `admin`
+4. Copy `client_id` and `client_secret` — the secret is shown **once**
 
-### Token response
+### 2. Exchange for access token
+
+```http
+POST /oauth/token
+Content-Type: application/json
+
+{
+  "grant_type": "client_credentials",
+  "client_id": "ofx_live_xxxxxxxx",
+  "client_secret": "ofx_secret_xxxxxxxx",
+  "scope": "read write"
+}
+```
+
+**Response:**
 
 ```json
 {
-  "access_token": "eyJhbGciOiJSUzI1NiIs...",
+  "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9...",
   "token_type": "Bearer",
   "expires_in": 3600,
   "scope": "read write"
 }
 ```
 
-Use the access token in subsequent requests:
+### 3. Use the token
+
+Include in all API requests:
 
 ```http
-GET /v1/clients
-Authorization: Bearer eyJhbGciOiJSUzI1NiIs...
+Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9...
 ```
 
-</ApiEndpoint>
-
-<ApiEndpoint method="GET" path="/clients" sample="list-clients">
-
-### Authenticated request example
-
-Call a protected endpoint with the token from the previous step.
-
-### Token refresh
-
-Client credential tokens expire after **3600 seconds** (1 hour). Request a new token before expiry. There is no refresh token for machine-to-machine flows. Re-authenticate with `client_credentials`.
-
-</ApiEndpoint>
+Tokens expire after 3600 seconds. Request a new token before expiry — do not cache beyond `expires_in`.
 
 ---
 
 ## Scopes
 
-Request only the scopes you need:
-
 | Scope | Access |
 |-------|--------|
-| `read` | GET resources: clients, accounts, financings, margin events |
-| `write` | POST/PATCH: term sheets, financings, webhooks |
-| `admin` | Firm user management, audit logs |
-| `sandbox` | Sandbox-only utilities |
+| `read` | GET endpoints: balances, quotes, trades, deposits, withdrawals |
+| `write` | POST endpoints: create quotes, execute trades, initiate withdrawals |
+| `admin` | Organization management: users, webhooks, API keys |
 
-Multiple scopes: space-separated (`read write`).
-
----
-
-## User authentication (dashboard)
-
-### Advisor and client login
-
-Dashboard users authenticate through SyntheticFi's hosted login or your firm's SSO integration (SAML 2.0 or OIDC). User sessions are separate from API client credentials.
-
-### Session tokens
-
-Browser sessions use HTTP-only cookies. Do not copy dashboard session tokens into API integrations. Use client credentials instead.
+Request only the scopes your integration needs.
 
 ---
 
-## Brokerage OAuth (account linking)
+## Idempotency
 
-When a client links a brokerage account, SyntheticFi completes an OAuth flow with the custodian. Your application receives a `link_url` from the API and redirects the user to complete authorization.
+For `POST /trades` and `POST /withdrawals`, include an idempotency key to prevent duplicate execution:
 
-Tokens from custodians are stored encrypted and never returned in API responses.
+```http
+Idempotency-Key: unique-key-12345
+```
+
+Duplicate requests with the same key return the original response without re-executing.
+
+---
+
+## Web GUI authentication
+
+Dashboard users authenticate through OpenFX's hosted login or your organization's SSO integration (SAML 2.0 or OIDC). User sessions are separate from API client credentials.
 
 ---
 
 ## Webhook signature verification
 
-Each webhook delivery includes:
+Webhook payloads include a signature header:
 
+```http
+X-OpenFX-Signature: t=1718380800,v1=abc123...
 ```
-X-SyntheticFi-Signature: t=1718380800,v1=abc123...
-```
 
-Verify signatures before processing payloads:
+Verify by:
 
-1. Parse the timestamp `t` and signature `v1` from the header
-2. Compute HMAC-SHA256 of `{t}.{raw_body}` using your signing secret
-3. Compare with constant-time equality check
+1. Extract timestamp `t` and signature `v1` from the header
+2. Concatenate `{timestamp}.{raw_body}`
+3. Compute HMAC-SHA256 with your webhook signing secret
+4. Compare with `v1`
 
-Reject events older than 5 minutes to prevent replay attacks.
+Reject requests with timestamps older than 5 minutes to prevent replay attacks.
 
 ---
 
 ## Security best practices
 
-| Practice | Recommendation |
-|----------|----------------|
-| Secret storage | Use a secrets manager (AWS Secrets Manager, Vault, etc.) |
-| Rotation | Rotate `client_secret` every 90 days |
-| Least privilege | Request minimum scopes |
-| Logging | Never log tokens or secrets |
-| IP allowlisting | Available for enterprise accounts |
-| Idempotency | Use `Idempotency-Key` on financial writes |
+- **Rotate secrets** every 90 days; create a new key before revoking the old one
+- **Never commit secrets** to source control; use environment variables or secret managers
+- **Restrict scopes** to minimum required permissions
+- **Use sandbox credentials** for development; never test against production
+- **Monitor API usage** in the dashboard for anomalous activity
+- **Report incidents** to hello@openfx.com immediately if credentials are compromised
 
 ---
 
-## Common errors
+## Environment URLs
 
-| HTTP | Code | Cause |
-|------|------|-------|
-| 401 | `unauthorized` | Missing or expired token |
-| 403 | `forbidden` | Valid token but insufficient scope |
-| 400 | `invalid_grant` | Bad `client_id` or `client_secret` |
+| Environment | Base URL |
+|-------------|----------|
+| Sandbox | `https://api.sandbox.openfx.com/v1` |
+| Production | `https://api.openfx.com/v1` |
+
+Use sandbox credentials only with the sandbox URL, and production credentials only with the production URL.
 
 ---
 
 ## Next steps
 
-- [API reference](./api-reference.md), Full endpoint catalog
-- [API overview](./api-overview.md), Environments and rate limits
-- [Create a support ticket](../support/create-ticket.md), API / Developer category
+- [API overview](./api-overview.md): Quick start and core resources
+- [API reference](./api-reference.md): Full endpoint catalog
+- [Troubleshooting](../core/troubleshooting.md): Authentication error resolution

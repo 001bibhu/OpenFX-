@@ -1,151 +1,163 @@
 # Use cases
 
-SyntheticFi helps investors and advisors access liquidity for specific needs without selling investment holdings.
-
-Each use case below outlines:
-
-- When to use SyntheticFi
-- How it helps
-- Key considerations
+OpenFX helps institutional clients move money faster, cheaper, and with more control across global corridors. Each use case below outlines when OpenFX fits, how it helps, and key considerations.
 
 ---
 
-## Buying a home
+## Remittance companies
 
 ### When to use
 
-- Investor has significant portfolio value but limited cash for a down payment
-- Selling investments would trigger capital gains or disrupt allocation
+- Global remittance provider scaling payout corridors
+- High-volume cross-border personal payments with pressure on margins
+- Need to eliminate pre-funding and reduce settlement delays
 
-### How SyntheticFi helps
+### How OpenFX helps
 
-- Provides cash for down payment and closing costs
-- Keeps the investment portfolio intact
+- Beat bank FX rates with spreads of 3–5 bps (G20) and 10–12 bps (emerging markets)
+- Settle same-day across corridors — 90% of trades in under 60 minutes
+- Eliminate pre-funding requirements and free working capital
+- Broad multi-currency support with local payout rails
 
 ### Key considerations
 
-- Coordinate with mortgage lender as required
-- Align financing term with home purchase timeline
-- Maintain a buffer above minimum collateral requirements
-- Consult a tax advisor for planning
+- Institutional KYC required; onboarding in ~72 hours
+- Volume-based pricing tiers reward scale
+- Dedicated account manager for corridor expansion
+
+See [Remittance companies](../integrations/remittance-companies.md) for detailed setup.
 
 ---
 
-## Paying taxes
+## Payment service providers
 
 ### When to use
 
-- Large tax payments due (estimated taxes, extensions, or unexpected liabilities)
-- Portfolio contains appreciated assets that are not ideal to sell
+- PSP expected to move money instantly and operate 24/7
+- Legacy infrastructure causing delays, hidden fees, or treasury complexity
+- Need one platform with one integration for broad corridor access
 
-### How SyntheticFi helps
+### How OpenFX helps
 
-- Provides liquidity to meet tax deadlines
-- Avoids immediate realization of capital gains
+- 24/7 payment capabilities with near-instant settlement
+- Full visibility from quote to settlement with automation
+- Clear, competitive rates with zero hidden fees
+- Streamline treasury and reduce balance-sheet strain
 
 ### Key considerations
 
-- Size financing to cover tax amount plus buffer
-- Short-term financing (3–12 months) is common
-- Coordinate with CPA on timing and tax implications
+- API integration for programmatic payment flows
+- Webhooks for real-time settlement notifications
+- Role-based access controls for team management
+
+See [Payment service providers](../integrations/payment-service-providers.md) for detailed setup.
 
 ---
 
-## Business funding
+## On and off ramps
 
 ### When to use
 
-- Investor needs capital for a business investment or operating expenses
-- Portfolio holds long-term or concentrated positions
+- Users expect to fund accounts and withdraw across currencies in seconds
+- Fragmented FX systems and settlement delays behind the scenes
+- Stablecoin-powered infrastructure for emerging markets
 
-### How SyntheticFi helps
+### How OpenFX helps
 
-- Unlocks capital without requiring liquidation of holdings
-- Supports funding for business opportunities
+- Fund accounts and withdraw to native currency in minutes
+- USDC and USDT support for on-ramping and off-ramping
+- Deep liquidity and low fees for high-volume operations
+- API-driven workflows for seamless user experience
 
 ### Key considerations
 
-- Additional disclosures may be required for business use
-- Concentrated positions may reduce borrowing capacity
-- Advisor involvement recommended
+- Fiat and stablecoin rails available on the same platform
+- Crypto deposits settle near real-time
+- Scale toward 24/7 operations across new corridors
+
+See [On and off ramps](../integrations/on-and-off-ramps.md) for detailed setup.
 
 ---
 
-## Bridge financing
+## Treasury optimization
 
 ### When to use
 
-- Temporary gap between financial events (e.g., property sale, bonus, liquidity event)
+- Moving funds between currency accounts frequently
+- Holding idle balances in foreign currencies
+- Need real-time visibility into cross-border cash positions
 
-### How SyntheticFi helps
+### How OpenFX helps
 
-- Provides short-term liquidity with a defined repayment timeline
-
-### Typical scenarios
-
-- Real estate transition: 6–18 months
-- Pending liquidity event: 3–12 months
-- Short-term expenses: 3–6 months
+- Multi-currency account management from a single dashboard
+- Internal fund movements with real-time settlement
+- Reduce need for pre-funded nostro accounts
+- Integrate with existing treasury systems via API and webhooks
 
 ### Key considerations
 
-- Define repayment source before starting
-- Not intended for indefinite financing
+- Works alongside existing ERP and treasury management tools
+- Reporting and analytics for informed liquidity decisions
+- 24/7 access — no banking-hour constraints
 
 ---
 
-## Avoiding stock liquidation
+## Corridor expansion
 
 ### When to use
 
-- Investor wants to retain specific holdings (low-basis stock, employer equity, concentrated positions)
-- Selling would impact long-term strategy or tax efficiency
+- Entering new geographic markets or currency corridors
+- Navigating regional payment networks and regulatory requirements
+- Adding emerging market currencies (PHP, COP, ARS, AED, and more)
 
-### How SyntheticFi helps
+### How OpenFX helps
 
-- Uses the portfolio as collateral
-- Provides cash without selling core positions
+- Banking infrastructure and licenses in US, UK, Europe, UAE, Mexico, Brazil, Southeast Asia
+- Local payment rails and bank account integrations
+- Experts in global banking and regulatory compliance
+- Roadmap continuously expanding geographic coverage
 
 ### Key considerations
 
-- Concentration limits may apply
-- Margin sensitivity may be higher
-- Estate or gifting plans may be affected
+- Beta corridors may have limited availability
+- Compliance requirements vary by market
+- Account manager supports expansion planning
 
 ---
 
 ## Comparison at a glance
 
-| Use case | Typical term | Primary benefit |
-| -------- | ------------ | ----------------------------- |
-| Home purchase | 6–24 months | Down payment without selling assets |
-| Tax payments | 3–12 months | Meet obligations without triggering gains |
-| Business funding | 12–36 months | Access capital while staying invested |
-| Bridge financing | 3–18 months | Cover short-term gaps |
-| Avoid liquidation | Varies | Preserve investment strategy |
+| Use case | Primary benefit | Typical settlement |
+| -------- | --------------- | ------------------ |
+| Remittance | Eliminate pre-funding, beat bank rates | Under 60 minutes |
+| PSP | 24/7 instant settlement, treasury simplification | Under 60 minutes |
+| On/off ramps | Seconds-to-minutes funding and withdrawal | Under 10–60 minutes |
+| Treasury | Multi-currency management, reduce idle balances | Real-time |
+| Corridor expansion | Local rails + compliance in new markets | Varies by corridor |
 
 ---
 
-## Is SyntheticFi right for your situation?
+## Is OpenFX right for your use case?
 
 ### Works best when
 
-- Portfolio value supports the required cash amount
-- Cash need has a defined timeline
-- You can monitor and respond to margin requirements
+- You are an institutional client with cross-border payment volume
+- Speed, cost efficiency, and transparency are priorities
+- You need fiat and/or stablecoin rails with API or GUI access
 
 ### May not be appropriate when
 
-- Portfolio contains mostly illiquid or ineligible assets
-- Cash need is indefinite
-- You cannot tolerate potential collateral actions
+- You need retail or personal transaction services
+- Your use case requires services beyond core FX and money movement
+- You cannot complete institutional KYC requirements
 
 ---
 
 ## Next steps
 
-- [How it works](./how-it-works.md): Mechanics and lifecycle
+- [How it works](./how-it-works.md): Trade and settlement lifecycle
 - [Getting started](./getting-started.md): Onboarding
 - [FAQ](./faq.md): Common questions by scenario
+- [Get a demo](https://www.openfx.com/)
 
-Discuss your specific situation with your financial advisor or [contact support](../support/contact-support.md).
+Discuss your specific situation with your OpenFX account manager or [contact support](../support/contact-support.md).

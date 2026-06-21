@@ -1,109 +1,101 @@
 # Getting started
 
-This guide walks you through onboarding with SyntheticFi. The steps differ slightly for **financial advisors** and **individual investors**. Choose the path that matches your role.
+This guide walks you through onboarding with OpenFX. The steps differ slightly for **engineering teams** building API integrations and **treasury operations** teams using the web platform. Choose the path that matches your role.
 
 ---
 
-## Prerequisites (all users)
+## Prerequisites (all clients)
 
 Before you begin, confirm:
 
-- [ ] Eligible investment account at a [supported brokerage or custodian](../integrations/brokerages.md)
-- [ ] Portfolio meets minimum value requirements (typically $500K+; firm programs may vary)
-- [ ] Account holds predominantly eligible securities (equities, ETFs; restrictions apply to some assets)
-- [ ] Valid government-issued ID and completed KYC/AML verification
-- [ ] U.S. residency or eligibility under applicable program rules
+- [ ] Your organization is an institutional client (remittance company, PSP, fintech, digital bank, broker, or investment platform)
+- [ ] Authorized signatory available for KYC and compliance documentation
+- [ ] Defined currency corridors and expected transaction volumes
+- [ ] Technical contact identified (if integrating via API)
+- [ ] Treasury or finance contact for account funding and operations
 
-**Advisors** additionally need:
-
-- [ ] Firm registered with SyntheticFi (or invitation to join an existing firm)
-- [ ] Appropriate licenses and disclosures for recommending portfolio-based financing
-- [ ] Client authorization for account linking and financing
+OpenFX does not serve personal or retail transactions.
 
 ---
 
-<RoleTabs>
+<RoleTabs :items="[
+  { id: 'engineering', label: 'Engineering & integrations' },
+  { id: 'treasury', label: 'Treasury & operations' },
+]" aria-label="Onboarding by team">
 
-<template #advisors>
+<template #engineering>
 
-### Step 1: Register your firm
+### Step 1: Schedule a demo and sign up
 
-1. Visit the SyntheticFi advisor portal or accept your firm's invitation link
-2. Complete firm profile: legal name, CRD/IARD number, primary contact
-3. Upload compliance documentation (ADV, policies) if requested
-4. Designate admin users and advisor seats
+1. Visit [openfx.com](https://www.openfx.com/) and request a demo
+2. Complete initial KYC with your OpenFX account manager
+3. Receive sandbox API credentials (`client_id`, `client_secret`)
 
-**What to expect:** Firm review typically completes within 2–3 business days.
+**Timeline:** Account setup typically completes within 72 hours.
 
-### Step 2: Connect integrations
+### Step 2: Explore the sandbox
 
-1. Navigate to **Settings → Integrations**
-2. Authorize supported custodians and brokerages used by your clients
-3. Map rep codes and household groupings as needed
+1. Access the personalized sandbox environment
+2. Test quote, trade, deposit, and withdrawal flows
+3. Review [API overview](../platform/api-overview.md) and [Authentication](../platform/authentication.md)
+4. Execute sample trades with sandbox balances
 
-See [Integrations overview](../integrations/overview.md) for supported partners.
+The sandbox uses simulated balances and mock settlements — no real money or market trades.
 
-### Step 3: Complete advisor training
+### Step 3: Integrate the Trading API
 
-SyntheticFi provides required training on:
+1. Implement OAuth client credentials flow for authentication
+2. Build quote → trade → settle → withdraw workflows
+3. Subscribe to [webhooks](../platform/api-overview.md#webhooks) for real-time event notifications
+4. Connect to your existing systems (treasury, ERP, payment orchestration)
 
-- Product mechanics and margin risk
-- Client suitability and disclosures
-- Platform workflows and escalation paths
+See [Integrations overview](../integrations/overview.md) for architecture patterns.
 
-Certification is required before originating client financings.
+### Step 4: Certification and production access
 
-### Step 4: Onboard your first client
+1. Complete integration testing in sandbox
+2. Review production credentials and rate limits with your account manager
+3. Promote to production after certification review
+4. Monitor initial live transactions with dedicated support
 
-1. **Create a client record** in the advisor dashboard
-2. **Send a secure link** for the client to connect their account
-3. **Review eligibility** once holdings sync
-4. **Generate a term sheet**, amount, cost, term, margin thresholds
-5. **Client e-signs** disclosures and term sheet
-6. **Submit for execution**, SyntheticFi structures and delivers cash
-
-**Timeline:** Same-day eligibility review for connected accounts; 1–3 business days to funding after acceptance.
-
-### Step 5: Monitor ongoing relationships
-
-Use the dashboard to:
-
-- View active financings and margin status across clients
-- Receive alerts for margin warnings
-- Export reports for compliance and client meetings
-
-Deep configuration options: [Admin guide](./admin-guide.md)
+**Timeline:** Integration timelines vary by complexity; most API clients go live within 1–2 weeks after sandbox testing.
 
 </template>
 
-<template #investors>
+<template #treasury>
 
-Individual investors typically work **through an advisor** or **direct enrollment** where available.
+### Step 1: Schedule a demo and complete onboarding
 
-### Path A: Through your advisor
+1. Visit [openfx.com](https://www.openfx.com/) and request a demo
+2. Work with your account manager through KYC and account setup
+3. Receive web platform credentials and funding instructions
 
-If your advisor uses SyntheticFi:
+**Timeline:** Onboarding typically completes within 72 hours.
 
-1. Receive a secure onboarding link from your advisor
-2. Connect your brokerage account via OAuth (no password sharing)
-3. Review your eligibility summary and proposed terms
-4. Sign disclosures electronically
-5. Receive cash upon execution
+### Step 2: Fund your account
 
-Your advisor guides suitability, amount, and ongoing monitoring.
+1. Log in to the OpenFX web platform
+2. Navigate to **Deposits** and select your funding rail (fiat or stablecoin)
+3. Send funds to the provided account details
+4. Confirm balance reflects (fiat: ~20 minutes; crypto: near real-time)
 
-### Path B: Direct enrollment
+Supported rails include SEPA Instant, Faster Payments, NPP, and local partner banks.
 
-Where direct access is offered:
+### Step 3: Execute your first trade
 
-1. **Create an account** at [app.syntheticfi.com](https://app.syntheticfi.com) *(placeholder)*
-2. **Verify identity**, ID upload and address confirmation
-3. **Link your brokerage**, Select institution and authorize read/trade access
-4. **Review financing proposal**, Amount, fixed cost, term, margin requirements
-5. **Accept terms** and confirm understanding of margin risk
-6. **Funding**, Cash deposited per your selected destination
+1. Select currency pair and amount
+2. Review the quoted rate (time-lock guarantee applies)
+3. Confirm and execute the trade
+4. Track settlement status in real time
 
-**Timeline:** Identity verification same day; funding 1–5 business days after acceptance.
+Most trades settle within 60 minutes; many within 10 minutes.
+
+### Step 4: Withdraw and manage treasury
+
+1. Withdraw settled funds to your preferred bank account
+2. Set up multi-currency balances for ongoing operations
+3. Configure team roles and permissions (see [Admin guide](./admin-guide.md))
+4. Schedule a business review with your dedicated account manager
 
 </template>
 
@@ -115,20 +107,20 @@ Where direct access is offered:
 
 | Milestone | Description |
 |-----------|-------------|
-| **Welcome email** | Account confirmation and support contacts |
-| **Dashboard access** | View financing status, documents, and alerts |
-| **Monthly statements** | Summary of outstanding balance and collateral |
-| **Margin notifications** | Email + in-app if portfolio value declines |
-| **Annual tax documents** | Issued as applicable (consult your tax professional) |
+| **Welcome email** | Account confirmation, support contacts, and sandbox access |
+| **Dashboard access** | View balances, trades, settlements, and reports |
+| **Dedicated account manager** | Primary point of contact for strategic planning |
+| **24/7 support** | Technical and operational assistance anytime |
+| **Transaction reporting** | Real-time and historical analytics on cross-border activity |
 
 ---
 
-## Checklist before your first financing
+## Checklist before your first live trade
 
-- [ ] Understand [how locking affects your portfolio](./how-it-works.md#step-2-lock-a-portion-of-the-portfolio)
-- [ ] Know your margin thresholds and how to respond
-- [ ] Confirm cash destination (bank account or brokerage)
-- [ ] Review [use cases](./use-cases.md) relevant to your situation
+- [ ] Understand [how settlement works](./how-it-works.md)
+- [ ] Confirm funding rail and destination bank details
+- [ ] Review pricing tiers for your expected volume
+- [ ] Test in sandbox (API clients) or execute a small pilot trade (GUI clients)
 - [ ] Read the [FAQ](./faq.md)
 
 ---
@@ -136,7 +128,7 @@ Where direct access is offered:
 ## Need help?
 
 - **Setup issues:** [Troubleshooting](./troubleshooting.md)
-- **Account linking:** [Brokerage integrations](../integrations/brokerages.md)
+- **API integration:** [API overview](../platform/api-overview.md)
 - **Support ticket:** [Create a ticket](../support/create-ticket.md)
 
-Use the **feedback widget** on any page to tell us if this guide was helpful, we use 👍 👎 responses to improve onboarding content.
+Use the **feedback widget** on any page to tell us if this guide was helpful.

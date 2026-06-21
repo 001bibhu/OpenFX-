@@ -5,23 +5,24 @@ import AiSearch from './AiSearch.vue'
 import SupportTicketForm from './SupportTicketForm.vue'
 
 const guideLinks = [
-  { title: 'SyntheticFi Overview', desc: 'What it is, who uses it, and key concepts', path: '/core/overview' },
-  { title: 'Getting started', desc: 'Onboarding for advisors and investors', path: '/core/getting-started' },
+  { title: 'OpenFX Overview', desc: 'What it is, who uses it, and key concepts', path: '/core/overview' },
+  { title: 'Getting started', desc: 'Onboarding for engineering and treasury teams', path: '/core/getting-started' },
   { title: 'FAQ', desc: 'Quick answers to common questions', path: '/core/faq' },
-  { title: 'Admin guide', desc: 'Firm settings, roles, and compliance', path: '/core/admin-guide' },
-  { title: 'Troubleshooting', desc: 'Resolve linking, margin, and dashboard issues', path: '/core/troubleshooting' },
+  { title: 'Admin guide', desc: 'Organization settings, roles, and compliance', path: '/core/admin-guide' },
+  { title: 'Troubleshooting', desc: 'Resolve trade, settlement, and API issues', path: '/core/troubleshooting' },
 ]
 
 const apiLinks = [
   { title: 'API overview', desc: 'REST concepts, webhooks, and quick start', path: '/platform/api-overview' },
   { title: 'Authentication', desc: 'OAuth, API keys, and scopes', path: '/platform/authentication' },
-  { title: 'API reference', desc: 'Endpoints, payloads, and error codes', path: '/platform/api-reference' },
+  { title: 'API reference', desc: 'Quotes, trades, deposits, and withdrawals', path: '/platform/api-reference' },
 ]
 
 const integrationLinks = [
-  { title: 'Integrations overview', desc: 'Data flow and connection methods', path: '/integrations/overview' },
-  { title: 'Brokerages', desc: 'IBKR, Schwab, Fidelity, and more', path: '/integrations/brokerages' },
-  { title: 'Custodians', desc: 'Institutional setup and rep codes', path: '/integrations/custodians' },
+  { title: 'Solutions overview', desc: 'Integration patterns and data flow', path: '/integrations/overview' },
+  { title: 'Remittance companies', desc: 'Same-day settlement, eliminate pre-funding', path: '/integrations/remittance-companies' },
+  { title: 'Payment service providers', desc: '24/7 payments, treasury simplification', path: '/integrations/payment-service-providers' },
+  { title: 'On and off ramps', desc: 'Instant funding and withdrawal across currencies', path: '/integrations/on-and-off-ramps' },
 ]
 
 function href(path: string) {
@@ -37,33 +38,48 @@ function href(path: string) {
       <div class="sf-hero-inner">
         <p class="sf-hero-eyebrow">Documentation</p>
         <h1>
-          Access portfolio liquidity
-          <span>without selling your investments</span>
+          Move money faster
+          <span>across borders in minutes, not days</span>
         </h1>
         <p class="sf-hero-sub">
-          Guides, API references, and integrations for advisors, investors, and partners
-          building on SyntheticFi.
+          Guides, API references, and solutions for remittance companies, payment service
+          providers, and fintechs building on OpenFX.
         </p>
         <AiSearch />
         <div class="sf-hero-actions">
           <a :href="href('/core/getting-started')" class="sf-btn-primary">Get started</a>
           <a :href="TALK_TO_US_URL" class="sf-btn-secondary" target="_blank" rel="noopener noreferrer">
-            Talk to Us
+            Get a demo
           </a>
           <a :href="href('/core/overview')" class="sf-btn-ghost">Read overview</a>
         </div>
       </div>
     </header>
 
-    <!-- What's new, featured section -->
+    <!-- Developer community CTA -->
+    <section class="sf-whats-new sf-community-cta">
+      <div class="sf-whats-new-inner">
+        <div class="sf-whats-new-copy">
+          <span class="sf-whats-new-badge">Community</span>
+          <h2>Developer Community</h2>
+          <p>
+            Share integration patterns, ask API questions, and learn from developers
+            building on OpenFX. Post, like, and discuss — moderated for quality.
+          </p>
+        </div>
+        <a :href="href('/developer-community/')" class="sf-btn-primary">Join the community</a>
+      </div>
+    </section>
+
+    <!-- What's new -->
     <section class="sf-whats-new">
       <div class="sf-whats-new-inner">
         <div class="sf-whats-new-copy">
           <span class="sf-whats-new-badge">Latest</span>
           <h2>What's new</h2>
           <p>
-            Release notes, product updates, and documentation changes, stay current
-            with SyntheticFi platform improvements and integrations.
+            Release notes, product updates, and documentation changes — stay current
+            with OpenFX platform improvements, new corridors, and API enhancements.
           </p>
         </div>
         <a :href="href('/whats-new/')" class="sf-btn-primary">View release notes</a>
@@ -96,7 +112,7 @@ function href(path: string) {
             <span class="sf-section-icon api">⚡</span>
             <div>
               <h2>API reference</h2>
-              <p>Build integrations with our REST API and webhooks</p>
+              <p>Build integrations with our Trading API and webhooks</p>
             </div>
           </div>
           <ul class="sf-link-cards">
@@ -113,8 +129,8 @@ function href(path: string) {
           <div class="sf-section-head">
             <span class="sf-section-icon integrations">🔗</span>
             <div>
-              <h2>Integrations</h2>
-              <p>Connect brokerages, custodians, and partner systems</p>
+              <h2>Solutions</h2>
+              <p>Remittance, PSP, and on/off ramp integration guides</p>
             </div>
           </div>
           <ul class="sf-link-cards">
@@ -135,13 +151,13 @@ function href(path: string) {
         <div class="sf-support-copy">
           <h2>Need help?</h2>
           <p>
-            Submit a support ticket and our team will respond within one business day.
-            Every documentation page also includes a floating feedback widget, your
-            👍 👎 ratings help us improve content.
+            Submit a support ticket and our team will respond promptly.
+            OpenFX support is available 24/7/365. Every documentation page also
+            includes a floating feedback widget — your 👍 👎 ratings help us improve content.
           </p>
           <div class="sf-support-links">
             <a :href="TALK_TO_US_URL" class="sf-btn-primary" target="_blank" rel="noopener noreferrer">
-              Talk to Us
+              Get a demo
             </a>
           </div>
         </div>
@@ -158,7 +174,7 @@ function href(path: string) {
         <div>
           <h3>Have an idea?</h3>
           <p>
-            Submit feature suggestions and vote on ideas from other firms on the
+            Submit feature suggestions and vote on ideas from other institutions on the
             <a :href="href('/feature-ideas/')">community ideas page</a>.
           </p>
         </div>

@@ -35,7 +35,7 @@ jobs:
         env:
           # Match repo name for GitHub Pages project sites.
           # User/org site or custom domain: set VP_BASE_PATH=/
-          VP_BASE_PATH: /SyntheticFi/
+          VP_BASE_PATH: /OpenFX-/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

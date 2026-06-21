@@ -1,72 +1,70 @@
 # Overview
 
-SyntheticFi is a financial platform that helps investors and advisors access cash using an investment portfolio, without selling the underlying assets.
+OpenFX is a next-generation cross-border payment infrastructure provider. It enables institutions to move money globally with near-instant settlement, deep liquidity, and exceptional cost efficiency.
 
-This page explains what SyntheticFi does, who it is for, and how it works at a high level.
+This page explains what OpenFX does, who it is for, and how it works at a high level.
 
 ---
 
-## What is SyntheticFi?
+## What is OpenFX?
 
-SyntheticFi enables you to turn your investment portfolio into usable cash while keeping your investments intact.
-
-Instead of selling stocks or ETFs, SyntheticFi uses your portfolio as collateral and structures financing through public markets. This allows you to receive cash today and repay it later at a known cost.
+OpenFX combines the reliability of traditional finance with the speed and programmability of modern blockchain rails. Institutions use OpenFX to quote, convert, settle, and withdraw funds across fiat and stablecoin corridors — without the delays, hidden fees, and pre-funding requirements of legacy FX.
 
 In simple terms:
 
-- You need cash
-- You want to stay invested
-- SyntheticFi helps you access liquidity without selling
+- You need to move money across borders quickly
+- You want transparent pricing at any volume
+- OpenFX routes funds through an optimized liquidity network in minutes, not days
 
-The platform handles the full lifecycle, including collateral management, trade execution, and monitoring.
-
-![Turn your portfolio into liquidity with SyntheticFi](/assets/syntheticfi-overview-flow.png)
-
-*Illustration: Use your portfolio as collateral to receive cash today, repay at a known cost, and keep your investments.*
+The platform handles the full lifecycle: quoting, trade execution, settlement tracking, treasury management, and reporting.
 
 ---
 
-## Who uses SyntheticFi?
+## Who uses OpenFX?
 
-SyntheticFi is designed for both financial professionals and investors.
+OpenFX serves **institutional clients only** — remittance companies, fintechs, payment processors, digital banks, brokers, and investment platforms that require real-time settlement across fiat and stablecoin rails.
 
 <OverviewAudienceTabs>
 
-<template #advisors>
+<template #remittance>
 
-- Registered Investment Advisors (RIAs)
-- Wealth managers
-- Broker-dealers
+- Global remittance providers
+- Cross-border payroll platforms
+- Money transfer operators
 
-They use SyntheticFi to:
+They use OpenFX to:
 
-- Offer liquidity solutions to clients
-- Structure financing strategies
-- Monitor collateral and risk
-
-</template>
-
-<template #investors>
-
-- Individuals with large brokerage portfolios
-- High-net-worth investors
-
-They use SyntheticFi to:
-
-- Access cash for major expenses
-- Avoid selling investments
-- Maintain long-term investment strategies
+- Beat bank FX rates with tight, transparent spreads
+- Settle same-day across payout corridors
+- Eliminate pre-funding and free up working capital
 
 </template>
 
-<template #providers>
+<template #psp>
 
-- Mortgage brokers
-- Lending platforms
+- Payment service providers
+- Payment processors
+- Digital banks and neobanks
 
-They use SyntheticFi to:
+They use OpenFX to:
 
-- Integrate portfolio-backed liquidity into financing workflows
+- Ship capital with 24/7 payment capabilities
+- Settle near-instantly with full quote-to-settlement visibility
+- Simplify treasury and reduce balance-sheet strain
+
+</template>
+
+<template #ramps>
+
+- FX on/off ramp providers
+- Neo brokers and trading platforms
+- Stablecoin infrastructure companies
+
+They use OpenFX to:
+
+- Fund accounts and withdraw to native currency in minutes
+- Route liquidity programmatically via API
+- Scale into new corridors without fragmented onboarding
 
 </template>
 
@@ -74,102 +72,77 @@ They use SyntheticFi to:
 
 ---
 
-## Why SyntheticFi exists
+## Why OpenFX exists
 
-Many investors have significant wealth in their portfolios but limited available cash.
+Traditional cross-border FX is slow, opaque, and capital-intensive. Payments pass through multiple intermediaries — each adding fees, delays, and operational risk.
 
-Selling investments can:
+| | Legacy FX | OpenFX |
+|---|-----------|--------|
+| **Settlement** | 2–5 business days | Under 60 minutes (90% of trades) |
+| **Availability** | Banking hours only | 24/7/365 |
+| **Total cost** | 3–5% (fees + FX markup) | 0.01–0.3% all-in pricing |
+| **Pre-funding** | Often required | Eliminated |
 
-- Trigger capital gains taxes
-- Disrupt long-term strategies
-- Create timing risk
-
-SyntheticFi provides a way to access cash while staying invested, helping investors meet short-term needs without changing their long-term plans.
+OpenFX provides a direct route through an optimized liquidity network — one platform, transparent pricing, and real-time settlement.
 
 ---
 
 ## High-level workflow
 
-Here is how SyntheticFi works from start to finish:
+Here is how OpenFX works from start to finish:
 
-1. **Connect portfolio**: Link your brokerage or custodian account
-2. **Review eligibility**: Evaluate portfolio value and financing capacity
-3. **Structure financing**: SyntheticFi sets up a market-based financing strategy
-4. **Receive cash**: Funds are delivered to your account
-5. **Monitor during the term**: Track portfolio value and margin status
-6. **Repay and close**: Repay at the agreed cost and release collateral
+1. **Onboard**: Complete KYC and account setup (typically within 72 hours)
+2. **Fund your account**: Deposit fiat or stablecoin (USDC, USDT)
+3. **Get a quote**: Lock a rate via the web GUI or Trading API
+4. **Execute a trade**: Convert between currencies with time-lock guarantee
+5. **Settle and withdraw**: Funds settle in minutes; withdraw to local rails multiple times per day
+6. **Monitor treasury**: Track balances, deposits, and settlements in real time
 
-![SyntheticFi workflow steps](/assets/syntheticfi-workflow-steps.png)
-
-*Illustration: End-to-end workflow from portfolio connection to repayment.*
-
----
-
-## How SyntheticFi creates financing
-
-SyntheticFi uses public market instruments to structure financing with a predictable outcome.
-
-One of the key strategies used is called a **box spread**.
-
-A box spread combines multiple options contracts to create a fixed future payoff. This payoff behaves like a loan:
-
-- You receive cash today
-- You repay a fixed amount later
-
-Unlike traditional investing, this approach is not based on predicting market direction. It is designed to produce a known outcome regardless of how the market moves.
-
-### Box spread (simplified)
-
-The strategy combines:
-
-- Buying a call option
-- Selling a call option
-- Buying a put option
-- Selling a put option
-
-All positions are set at specific prices and expire at the same time.
-
-Together, they create a fixed difference between what you receive today and what you repay later.
-
-### Visual overview
-
-![Box spread diagram](./assets/box-spread-diagram.svg)
-
-*Illustration: A box spread combines four options positions to create a fixed payoff, similar to a loan.*
+```
+Deposit → Quote → Trade → Settle → Withdraw
+     ↓
+Multi-currency balances + real-time tracking
+```
 
 ---
 
-## Key concepts
+## Platform capabilities
 
 <AccordionGroup>
 
-<AccordionItem title="Liquidity">
+<AccordionItem title="40+ currency pairs">
 
-Access to cash that can be used immediately. SyntheticFi converts portfolio value into usable liquidity.
-
-</AccordionItem>
-
-<AccordionItem title="Collateral">
-
-Your investment portfolio is used to secure the financing.
+Support for major G20 currencies and emerging markets including USD, EUR, GBP, AED, MXN, BRL, PHP, COP, ARS, and more — with local payment rails in 25+ markets.
 
 </AccordionItem>
 
-<AccordionItem title="Locking">
+<AccordionItem title="Fiat and stablecoin rails">
 
-A portion of your portfolio may be restricted while financing is active. This ensures the collateral remains available.
-
-</AccordionItem>
-
-<AccordionItem title="Fixed cost">
-
-The total repayment amount is known upfront based on market conditions at the time of structuring.
+Move value across fiat bank accounts and stablecoins (USDC, USDT). Use stablecoins for on-ramping, off-ramping, and cross-border transfers.
 
 </AccordionItem>
 
-<AccordionItem title="Margin risk">
+<AccordionItem title="Web GUI and Trading API">
 
-If your portfolio value declines significantly, you may need to add collateral or reduce the financing amount.
+Execute trades through a web-based dashboard or embed the REST API into your platform for programmatic quotes, trades, deposits, and withdrawals.
+
+</AccordionItem>
+
+<AccordionItem title="Transparent pricing">
+
+Mid-market rate plus a small spread (3–5 bps for G20, 10–12 bps for emerging markets). Volume-based tiers with no hidden markups.
+
+</AccordionItem>
+
+<AccordionItem title="Real-time settlement">
+
+90% of trades settle in under 60 minutes; 30% in under 10 minutes. T+0 settlement for many transactions.
+
+</AccordionItem>
+
+<AccordionItem title="Treasury management">
+
+Hold multi-currency balances, execute FX conversions, manage internal fund movements, and optimize liquidity from a single dashboard.
 
 </AccordionItem>
 
@@ -179,14 +152,15 @@ If your portfolio value declines significantly, you may need to add collateral o
 
 ## What happens behind the scenes
 
-SyntheticFi manages:
+OpenFX manages:
 
-- Portfolio evaluation
-- Trade execution
-- Collateral management
-- Risk monitoring
+- Dynamic balance sheet allocation across currencies and markets
+- Market-making and automated hedging of currency exposures
+- Liquidity sourcing from banks, FX brokers, and stablecoin OTC desks
+- Compliance and AML/KYC through licensed partners in each market
+- 24/7 platform operations and client support
 
-You do not need to place trades or manage options directly. The platform handles the complexity while you experience a simplified financing flow.
+You interact through quotes, trades, and withdrawals — OpenFX handles liquidity, routing, and settlement complexity.
 
 For a deeper walkthrough of each step, see [How it works](./how-it-works.md).
 
@@ -194,7 +168,7 @@ For a deeper walkthrough of each step, see [How it works](./how-it-works.md).
 
 ## Next steps
 
-- [How it works](./how-it-works.md): Learn how financing is structured end to end
-- [Getting started](./getting-started.md): Set up your account
-- [Use cases](./use-cases.md): Explore real-world scenarios
+- [How it works](./how-it-works.md): Learn the trade and settlement lifecycle
+- [Getting started](./getting-started.md): Onboard and access the sandbox
+- [Use cases](./use-cases.md): Solutions by segment
 - [FAQ](./faq.md): Find quick answers

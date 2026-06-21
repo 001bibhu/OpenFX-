@@ -1,20 +1,20 @@
 # How it works
 
-This page explains how SyntheticFi converts portfolio value into cash, what happens to your holdings during a financing term, and how the process ends.
+This page explains how OpenFX moves money across borders — from funding your account through quote, trade, settlement, and withdrawal.
 
 ---
 
 ## The big picture
 
-SyntheticFi uses your investment portfolio as collateral, structures financing through public markets, and delivers cash while your assets stay invested.
+OpenFX connects your institution to a global liquidity network. You deposit funds, request a quote, execute a trade, and withdraw to local rails — all with near-instant settlement and transparent pricing.
 
 ```
-Portfolio → Collateral → Financing → Cash
-     ↓
-Active term → Repayment → Release
+Fund account → Get quote → Execute trade → Settle → Withdraw
+       ↓
+Real-time tracking from deposit to delivery
 ```
 
-Your portfolio remains invested throughout the term. SyntheticFi pledges eligible holdings as collateral instead of requiring a sale.
+Unlike traditional FX, there are no intermediary banks, hidden markups, or multi-day settlement windows. One network, direct routes, minutes to complete.
 
 ---
 
@@ -22,134 +22,117 @@ Your portfolio remains invested throughout the term. SyntheticFi pledges eligibl
 
 <AccordionGroup>
 
-<AccordionItem title="Step 1: Use your portfolio as collateral" id="step-1-use-your-portfolio-as-collateral">
+<AccordionItem title="Step 1: Onboard and fund your account" id="step-1-onboard-and-fund">
 
-SyntheticFi evaluates your connected brokerage or custodian account to determine financing capacity.
+Getting started takes less than 72 hours — compared to six months or more with traditional FX providers.
 
-**Evaluation criteria:**
+**Onboarding includes:**
 
-- **Portfolio value**, total market value of eligible holdings
-- **Eligibility**, which securities qualify under program rules
-- **Concentration**, limits on single-position weight
-- **Liquidity**, ability to value and monitor holdings reliably
+- KYC and compliance verification
+- Account setup and API credential provisioning (if using the Trading API)
+- Sandbox access for testing before production
 
-Based on this review, SyntheticFi sets the maximum financing amount supported by the portfolio.
+**Funding options:**
 
-### What stays the same
+- **Fiat deposits** — typically reflect within 20 minutes once received. Supported rails include SEPA Instant (EUR), Faster Payments (GBP), NPP (AUD), and local partner banks in key markets.
+- **Crypto deposits** — USDC and USDT settle in near real-time, subject to blockchain speed and congestion.
 
-- You remain the beneficial owner of your investments
-- Dividends and corporate actions generally flow to you (per program terms)
-- Your advisor retains visibility per firm permissions
-
-### What changes
-
-- A defined portion of the portfolio is pledged as collateral
-- Pledged holdings are locked for the financing term
-- Portfolio value must stay above margin requirements
+Once funded, balances appear in your multi-currency dashboard.
 
 </AccordionItem>
 
-<AccordionItem title="Step 2: Lock a portion of the portfolio" id="step-2-lock-a-portion-of-the-portfolio">
+<AccordionItem title="Step 2: Get a quote" id="step-2-get-a-quote">
 
-**Locking** restricts certain actions on pledged holdings while financing is active.
+Request a quote for your currency pair and amount via the web GUI or Trading API.
 
-**What you cannot do:**
+**Quote features:**
 
-- Sell pledged securities
-- Transfer pledged holdings to another account
-- Use pledged holdings as collateral elsewhere without approval
+- **Time-lock guarantee** — the quoted rate is locked for a defined window
+- **Transparent pricing** — mid-market rate plus spread; no hidden fees
+- **Any volume** — pricing stays predictable whether you move $5M or $50M
 
-**What you can still do:**
+Example API request:
 
-- View positions and performance
-- Receive dividends (program-dependent)
-- Add collateral or adjust the structure with your advisor
+```json
+{
+  "buy": "AED",
+  "sell": "MXN",
+  "referenceAmount": 500000,
+  "referencedUnit": "MXN"
+}
+```
 
-Locks are removed after full repayment and closure.
-
-</AccordionItem>
-
-<AccordionItem title="Step 3: Structure the financing" id="step-3-structure-the-financing">
-
-SyntheticFi creates financing using public market instruments. You specify the cash amount, intended use, and preferred term. SyntheticFi matches the request to portfolio capacity and executes the structure.
-
-One common approach is a **box spread**, an options-based strategy that produces a defined cash amount and a defined repayment at term end.
-
-### Box spread (simplified)
-
-A box spread combines four options positions at set prices with the same expiration.
-
-- Buy call
-- Sell call
-- Buy put
-- Sell put
-
-**Outcome:**
-
-- Cash today
-- Fixed repayment later
-
-This structure produces a predictable outcome regardless of market direction.
-
-SyntheticFi and approved counterparties handle execution. You do not place trades yourself.
+Quotes are available 24/7/365.
 
 </AccordionItem>
 
-<AccordionItem title="Step 4: Receive cash" id="step-4-receive-cash">
+<AccordionItem title="Step 3: Execute the trade" id="step-3-execute-the-trade">
 
-After the structure is confirmed and placed, cash is delivered to your designated account (brokerage or linked bank, depending on program setup).
+Confirm the quote to execute the trade. OpenFX routes the conversion through its liquidity network and hedges currency exposure automatically.
 
-**At execution:**
+**Execution channels:**
 
-- Cash delivered
-- Terms disclosed: amount, total cost, term dates, and margin requirements
+- **Web GUI** — manual trades with full visibility
+- **Trading API** — programmatic quotes and execution (REST, streaming)
+- **Automated workflows** — deposit → trade → withdraw sequences
 
-You do not execute trades or manage options directly. Disclosures document what you receive and what you owe.
+Once confirmed, trades cannot be canceled. You may reverse the position by executing a new trade in the opposite direction.
 
-</AccordionItem>
+**Typical settlement times:**
 
-<AccordionItem title="Step 5: Monitor during the term" id="step-5-monitor-during-the-term">
-
-During the active term, SyntheticFi monitors portfolio value and financing status on an ongoing basis.
-
-- Daily or intraday portfolio monitoring
-- Email and in-platform alerts as value approaches thresholds
-- Statements showing outstanding balance and collateral status
-- Advisor dashboard visibility for firm-managed accounts
+| Percentile | Settlement time |
+|------------|-----------------|
+| 30% of trades | Under 10 minutes |
+| 90% of trades | Under 60 minutes |
+| Remaining | Under 120 minutes |
 
 </AccordionItem>
 
-<AccordionItem title="Step 6: Handle market movements" id="step-6-handle-market-movements">
+<AccordionItem title="Step 4: Track settlement in real time" id="step-4-track-settlement">
 
-If portfolio value declines, collateral coverage weakens. SyntheticFi tracks this through a margin framework.
+OpenFX provides complete visibility from quote to settlement.
 
-**Margin states:**
+**Tracking includes:**
 
-- **Healthy**, portfolio comfortably covers the financing
-- **Warning**, coverage approaching minimum; action recommended
-- **Margin call**, coverage below required level; action required
+- Live status updates on deposits, trades, and withdrawals
+- After-hours processing — withdrawals completed in under 60 minutes, even outside banking hours
+- Audit trail from quote through delivery
 
-**User actions:**
+Example trade status flow:
 
-- Add collateral
-- Partial repayment
-- Restructure (where available)
-
-If no action is taken, pledged holdings may be liquidated as a last resort to restore required coverage.
+```
+Requested → Processing → Executed → Settled
+```
 
 </AccordionItem>
 
-<AccordionItem title="Step 7: Repay and close" id="step-7-repay-and-close">
+<AccordionItem title="Step 5: Withdraw to local rails" id="step-5-withdraw">
 
-At term end, you repay the principal plus the agreed fixed cost via ACH, brokerage cash journal, or wire (depending on program terms).
+Withdraw settled funds to your preferred bank account or wallet. OpenFX supports local payout rails across major markets.
 
-**Upon full repayment:**
+**Withdrawal features:**
 
-- **Repayment**, outstanding financing is settled
-- **Structure unwound**, market positions are closed
-- **Collateral unlocked**, pledged holdings return to normal account operations
+- Multiple withdrawals per day
+- Local rails in US, UK, Europe, UAE, Mexico, Brazil, Southeast Asia, and more
+- Near-instant settlement on supported rails (SEPA Instant, FPS, NPP)
 
-Early repayment may be available with adjusted economics. Review terms before originating.
+Funds arrive in the destination currency through the appropriate local payment network.
+
+</AccordionItem>
+
+<AccordionItem title="Step 6: Manage treasury" id="step-6-manage-treasury">
+
+Many clients use OpenFX for ongoing treasury operations beyond individual trades.
+
+**Treasury capabilities:**
+
+- Hold multi-currency balances (USD, EUR, GBP, and more)
+- Execute FX conversions between accounts
+- Move funds between currency accounts quickly and cost-effectively
+- Reduce idle balances in foreign currencies
+- Integrate with existing treasury management systems via API and webhooks
+
+OpenFX becomes a transparent, embedded part of your payments infrastructure — not an external black box.
 
 </AccordionItem>
 
@@ -157,18 +140,33 @@ Early repayment may be available with adjusted economics. Review terms before or
 
 ---
 
+## How OpenFX sources liquidity
+
+OpenFX maintains a dynamic balance sheet allocated across currencies and markets based on predicted client demand. A market-making engine uses advanced algorithms to continuously hedge currency exposures.
+
+**Liquidity sources:**
+
+- Global banks and FX brokers
+- Stablecoin OTC desks
+- Proprietary balance sheet allocation
+
+This architecture enables fulfillment of client requests even in volatile market conditions, with flexible pricing that adjusts spreads as needed during acute liquidity constraints.
+
+---
+
 ## Summary
 
-- Portfolio stays invested for the duration of the term
-- Cash is received upfront against pledged collateral
-- Repayment amount is fixed at origination
-- Risk is managed through ongoing monitoring and margin controls
+- Onboard in hours, not months
+- Quote, trade, and settle 24/7 with transparent pricing
+- 90% of trades settle in under 60 minutes
+- Fiat and stablecoin rails across 40+ currency pairs
+- Full visibility from quote to delivery
 
 ---
 
 ## Next steps
 
-- [Overview](./overview.md), product introduction and key concepts
-- [Getting started](./getting-started.md), onboarding steps
-- [Use cases](./use-cases.md), common financing scenarios
-- [FAQ](./faq.md), quick answers
+- [Overview](./overview.md): Product introduction and key concepts
+- [Getting started](./getting-started.md): Onboarding steps
+- [Use cases](./use-cases.md): Solutions by segment
+- [FAQ](./faq.md): Quick answers
