@@ -16,11 +16,11 @@ OpenFX is a next-generation cross-border payment infrastructure provider. We ena
 
 The main benefits include:
 
-- **Eliminating pre-funding requirements** — access liquidity on demand without nostro accounts in every corridor
-- **Superior speed** — 90% of trades settle in under 60 minutes
-- **Consistent pricing at any volume** — transparent spreads with no hidden markups
-- **Global reach with local compliance** — 40+ currency pairs and 25+ local rails
-- **Treasury optimization** — multi-currency balances, real-time tracking, and internal fund movements
+- **Eliminating pre-funding requirements**, access liquidity on demand without nostro accounts in every corridor
+- **Superior speed**, 90% of trades settle in under 60 minutes
+- **Consistent pricing at any volume**, transparent spreads with no hidden markups
+- **Global reach with local compliance**, 40+ currency pairs and 25+ local rails
+- **Treasury optimization**, multi-currency balances, real-time tracking, and internal fund movements
 
 ### Who can use OpenFX?
 
@@ -36,15 +36,15 @@ No. We are designed for businesses and enterprises. Our current focus is on serv
 
 ### How do I get started?
 
-Schedule a demo at [openfx.com](https://www.openfx.com/), complete KYC, and our team will guide you through onboarding — typically within **72 hours**.
+Schedule a demo at [openfx.com](https://www.openfx.com/), complete KYC, and our team will guide you through onboarding, typically within **72 hours**.
 
 ### What is the onboarding process like?
 
-Our onboarding is straightforward: sign up, complete KYC and compliance verification, receive sandbox access, and begin testing or trading. Most clients go live in under 72 hours — compared to six months or more with traditional FX providers.
+Our onboarding is straightforward: sign up, complete KYC and compliance verification, receive sandbox access, and begin testing or trading. Most clients go live in under 72 hours, compared to six months or more with traditional FX providers.
 
 ### How do you compare to other FX providers?
 
-OpenFX stands out for laser focus on speed, cost-efficiency, and transparency. We do not offer services beyond core FX and money movement, allowing us to maintain a highly specialized platform. Our liquidity management — leveraging stablecoins and dynamic balance sheet allocation — delivers unparalleled pricing and settlement times compared to traditional banks.
+OpenFX stands out for laser focus on speed, cost-efficiency, and transparency. We do not offer services beyond core FX and money movement, allowing us to maintain a highly specialized platform. Our liquidity management, leveraging stablecoins and dynamic balance sheet allocation, delivers unparalleled pricing and settlement times compared to traditional banks.
 
 ### How do I scale my usage as my business grows?
 
@@ -64,7 +64,7 @@ Yes. We support **USDC and USDT** for on-ramping, off-ramping, and cross-border 
 
 ### What is the user experience?
 
-We offer T+0 (same-day) settlement for many transactions. You can execute trades via a **web-based GUI** or **Trading API** (REST, FIX, and streaming quotes) — whichever fits your workflow.
+We offer T+0 (same-day) settlement for many transactions. You can execute trades via a **web-based GUI** or **Trading API** (REST, FIX, and streaming quotes), whichever fits your workflow.
 
 ### What currencies and payment rails do you support?
 
@@ -102,7 +102,7 @@ Yes. We offer APIs, webhooks, and a web-based platform. We work with your team t
 
 ### Can you support treasury management and internal fund movements?
 
-Absolutely. Hold multi-currency balances, execute FX conversions, withdraw to preferred bank accounts, and move funds between currency accounts — all with real-time settlement.
+Absolutely. Hold multi-currency balances, execute FX conversions, withdraw to preferred bank accounts, and move funds between currency accounts, all with real-time settlement.
 
 ### Do you offer reporting or analytics?
 

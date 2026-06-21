@@ -8,7 +8,6 @@ import SupportTicketForm from './SupportTicketForm.vue'
 import FeatureIdeasBoard from './FeatureIdeasBoard.vue'
 import DeveloperCommunity from './DeveloperCommunity.vue'
 import CommunityTopBanner from './CommunityTopBanner.vue'
-import AdminFooterLink from './AdminFooterLink.vue'
 import ApiCodeSamples from './ApiCodeSamples.vue'
 import ApiTryIt from './ApiTryIt.vue'
 import ApiSection from './ApiSection.vue'
@@ -30,7 +29,6 @@ export default {
     app.component('FeatureIdeasBoard', FeatureIdeasBoard)
     app.component('DeveloperCommunity', DeveloperCommunity)
     app.component('CommunityTopBanner', CommunityTopBanner)
-    app.component('AdminFooterLink', AdminFooterLink)
     app.component('ApiCodeSamples', ApiCodeSamples)
     app.component('ApiTryIt', ApiTryIt)
     app.component('ApiSection', ApiSection)
@@ -43,7 +41,7 @@ export default {
   Layout() {
     return h(DefaultTheme.Layout, null, {
       'layout-top': () => h(CommunityTopBanner),
-      'layout-bottom': () => [h(PageTracker), h(FeedbackWidget), h(AdminFooterLink)],
+      'layout-bottom': () => [h(PageTracker), h(FeedbackWidget)],
     })
   },
 }

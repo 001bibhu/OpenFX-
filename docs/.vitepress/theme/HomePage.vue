@@ -64,7 +64,7 @@ function href(path: string) {
           <h2>Developer Community</h2>
           <p>
             Share integration patterns, ask API questions, and learn from developers
-            building on OpenFX. Post, like, and discuss — moderated for quality.
+            building on OpenFX. Post, like, and discuss, moderated for quality.
           </p>
         </div>
         <a :href="href('/developer-community/')" class="sf-btn-primary">Join the community</a>
@@ -78,7 +78,7 @@ function href(path: string) {
           <span class="sf-whats-new-badge">Latest</span>
           <h2>What's new</h2>
           <p>
-            Release notes, product updates, and documentation changes — stay current
+            Release notes, product updates, and documentation changes, stay current
             with OpenFX platform improvements, new corridors, and API enhancements.
           </p>
         </div>
@@ -153,7 +153,7 @@ function href(path: string) {
           <p>
             Submit a support ticket and our team will respond promptly.
             OpenFX support is available 24/7/365. Every documentation page also
-            includes a floating feedback widget — your 👍 👎 ratings help us improve content.
+            includes a floating feedback widget, your 👍 👎 ratings help us improve content.
           </p>
           <div class="sf-support-links">
             <a :href="TALK_TO_US_URL" class="sf-btn-primary" target="_blank" rel="noopener noreferrer">

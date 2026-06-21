@@ -40,7 +40,7 @@ OpenFX does not serve personal or retail transactions.
 3. Review [API overview](../platform/api-overview.md) and [Authentication](../platform/authentication.md)
 4. Execute sample trades with sandbox balances
 
-The sandbox uses simulated balances and mock settlements — no real money or market trades.
+The sandbox uses simulated balances and mock settlements, no real money or market trades.
 
 ### Step 3: Integrate the Trading API
 

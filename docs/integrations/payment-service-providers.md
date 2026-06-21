@@ -1,6 +1,6 @@
 # Payment service providers
 
-Modern PSPs are expected to move money instantly, support diverse currencies, and operate 24/7 — but legacy infrastructure can't keep up. OpenFX helps you eliminate delays, reduce costs, and simplify treasury through one API or interface.
+Modern PSPs are expected to move money instantly, support diverse currencies, and operate 24/7, but legacy infrastructure can't keep up. OpenFX helps you eliminate delays, reduce costs, and simplify treasury through one API or interface.
 
 ---
 
@@ -10,7 +10,7 @@ Modern PSPs are expected to move money instantly, support diverse currencies, an
 |---|---------------------|--------|
 | **Settlement speed** | Hours to multiple business days | Always-on, same-day global settlement |
 | **Reliability** | Rate volatility, hidden fees, no audit trail | Full visibility from quote to settlement with automation |
-| **Setup** | Fragmented onboarding, enterprise gatekeeping | One platform, one integration — fast ramp |
+| **Setup** | Fragmented onboarding, enterprise gatekeeping | One platform, one integration, fast ramp |
 | **Pricing** | Opaque with hidden markups | Clear, competitive rates with zero hidden fees |
 | **Coverage** | Limited corridors | Broad multi-currency with local payout rails |
 | **Trust** | Some operate like a black box | Verified delivery and real-time observability |
@@ -21,7 +21,7 @@ Modern PSPs are expected to move money instantly, support diverse currencies, an
 
 ### Ship capital like code
 
-Embed the Trading API into your payment orchestration layer. Automate quotes, trades, deposits, and withdrawals — no manual steps, no chat-based trading.
+Embed the Trading API into your payment orchestration layer. Automate quotes, trades, deposits, and withdrawals, no manual steps, no chat-based trading.
 
 ### 24/7 payment capabilities
 
@@ -33,7 +33,7 @@ Track every dollar across corridors from a single dashboard. Reduce balance-shee
 
 ### Transparent FX pricing
 
-Mid-market rate plus spread — no hidden markups, no enterprise-only tiers. Pricing stays predictable whether you move $5M or $50M.
+Mid-market rate plus spread, no hidden markups, no enterprise-only tiers. Pricing stays predictable whether you move $5M or $50M.
 
 ---
 
@@ -51,22 +51,22 @@ Payment request → Your orchestration → OpenFX API
 
 ### API-driven payment flow
 
-1. **Payment initiated** — customer or merchant triggers cross-border payment
-2. **Quote requested** — your platform calls `POST /quotes` with currency pair and amount
-3. **Trade executed** — confirm quote via `POST /trades` with time-locked rate
-4. **Settlement tracked** — webhook `trade.settled` triggers downstream processing
-5. **Payout delivered** — `POST /withdrawals` to beneficiary's local rail
-6. **Confirmation** — webhook `withdrawal.completed` closes the payment loop
+1. **Payment initiated**, customer or merchant triggers cross-border payment
+2. **Quote requested**, your platform calls `POST /quotes` with currency pair and amount
+3. **Trade executed**, confirm quote via `POST /trades` with time-locked rate
+4. **Settlement tracked**, webhook `trade.settled` triggers downstream processing
+5. **Payout delivered**, `POST /withdrawals` to beneficiary's local rail
+6. **Confirmation**, webhook `withdrawal.completed` closes the payment loop
 
 ---
 
 ## Key capabilities
 
-- **Enterprise role management** — granular permissions, multiple roles, team access controls
-- **Automated workflows** — deposit → trade → withdraw sequences with full visibility
-- **Real-time tracking** — live updates on every payment from initiation to delivery
-- **Webhook events** — integrate settlement notifications into your existing systems
-- **Reporting and analytics** — transaction history, corridor performance, reconciliation exports
+- **Enterprise role management**, granular permissions, multiple roles, team access controls
+- **Automated workflows**, deposit → trade → withdraw sequences with full visibility
+- **Real-time tracking**, live updates on every payment from initiation to delivery
+- **Webhook events**, integrate settlement notifications into your existing systems
+- **Reporting and analytics**, transaction history, corridor performance, reconciliation exports
 
 ---
 

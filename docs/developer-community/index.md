@@ -8,7 +8,7 @@ sidebar: false
 
 ## Community guidelines
 
-- Be respectful and constructive — this is a professional developer space
+- Be respectful and constructive, this is a professional developer space
 - Share real integration experiences; redact API secrets and account IDs
 - Search existing posts before asking duplicate questions
 - Posts are reviewed by moderators before appearing publicly
@@ -16,6 +16,6 @@ sidebar: false
 
 ## Related
 
-- [API overview](../platform/api-overview.md) — Trading API quick start
-- [Suggest a feature](../feature-ideas/) — Product roadmap voting
-- [Contact support](../support/contact-support.md) — Official OpenFX help
+- [API overview](../platform/api-overview.md), Trading API quick start
+- [Suggest a feature](../feature-ideas/), Product roadmap voting
+- [Contact support](../support/contact-support.md), Official OpenFX help

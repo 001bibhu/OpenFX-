@@ -47,12 +47,12 @@ git commit -m "Add developer community and OpenFX docs"
 git push
 ```
 
-### 2. Turn on GitHub Pages (required — deploy fails without this)
+### 2. Turn on GitHub Pages (required, deploy fails without this)
 
 1. Open your repo on GitHub: **https://github.com/001bibhu/OpenFX-**
 2. Go to **Settings → Pages**
 3. Under **Build and deployment**, set **Source** to **GitHub Actions** (not “Deploy from a branch”)
-4. If you already pushed before doing this, the first deploy will fail — that is normal. After enabling Pages, go to **Actions**, open the failed run, and click **Re-run all jobs**
+4. If you already pushed before doing this, the first deploy will fail, that is normal. After enabling Pages, go to **Actions**, open the failed run, and click **Re-run all jobs**
 
 ### 3. Wait for the workflow
 
@@ -75,7 +75,7 @@ The home page is at that URL. The developer community is at:
 | Problem | Fix |
 |---------|-----|
 | Site shows 404 | Wait 2–5 minutes after the Action completes. Confirm Pages source is **GitHub Actions**. |
-| Broken styles or images | The base path must match the repo name. This repo uses `/OpenFX-/` — already set in the workflow. |
+| Broken styles or images | The base path must match the repo name. This repo uses `/OpenFX-/`, already set in the workflow. |
 | Action failed on **Deploy to GitHub Pages** | Enable Pages first: **Settings → Pages → Source: GitHub Actions**, then re-run the workflow. |
 | Wrong URL path | If you rename the repo, update `VP_BASE_PATH` in `.github/workflows/deploy-docs.yml` to `/{repo-name}/`. |
 
@@ -92,7 +92,7 @@ On the community page, expand **Moderator login** and sign in with password `ope
 | **API reference** | `/platform/*` |
 | **Solutions** | `/integrations/*` |
 | **Support ticket** | Home page + `/support/create-ticket` |
-| **Developer community** | `/developer-community/` — posts, likes, moderator approval |
+| **Developer community** | `/developer-community/`, posts, likes, moderator approval |
 | **Analytics dashboard** | `/admin/analytics` |
 | **Floating feedback** | Every doc page (👍 👎 + comment) |
 

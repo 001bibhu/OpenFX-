@@ -25,7 +25,7 @@ In the OpenFX dashboard:
 1. Navigate to **Settings → API → Create key**
 2. Name the key (e.g., "Production payment service")
 3. Select scopes: `read`, `write`, and optionally `admin`
-4. Copy `client_id` and `client_secret` — the secret is shown **once**
+4. Copy `client_id` and `client_secret`, the secret is shown **once**
 
 ### 2. Exchange for access token
 
@@ -60,7 +60,7 @@ Include in all API requests:
 Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9...
 ```
 
-Tokens expire after 3600 seconds. Request a new token before expiry — do not cache beyond `expires_in`.
+Tokens expire after 3600 seconds. Request a new token before expiry, do not cache beyond `expires_in`.
 
 ---
 

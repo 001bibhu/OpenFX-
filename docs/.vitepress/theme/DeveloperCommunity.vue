@@ -282,7 +282,7 @@ function statusLabel(status: string) {
       <div v-else class="sf-community-form-wrap">
         <h2>Share with the community</h2>
         <p class="sf-ideas-form-lead">
-          Integration tips, API questions, corridor updates — all welcome. Posts appear
+          Integration tips, API questions, corridor updates, all welcome. Posts appear
           after moderator approval.
         </p>
         <form class="sf-ideas-form" @submit.prevent="submit">

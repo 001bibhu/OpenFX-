@@ -163,7 +163,7 @@ export default defineConfig({
     socialLinks: [{ icon: 'globe', link: 'https://www.openfx.com/' }],
 
     footer: {
-      message: 'OpenFX — making money move as freely as data.',
+      message: 'OpenFX - making money move as freely as data.',
       copyright: 'Copyright © 2026 Red Envelope Delta, Inc. (OpenFX)',
     },
 

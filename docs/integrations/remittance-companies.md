@@ -1,6 +1,6 @@
 # Remittance companies
 
-Global remittance providers are under constant pressure to reduce costs, accelerate delivery, and expand payout corridors. Traditional FX rails are slow, opaque, and capital-intensive. OpenFX removes those constraints — helping you move money faster, cheaper, and smarter.
+Global remittance providers are under constant pressure to reduce costs, accelerate delivery, and expand payout corridors. Traditional FX rails are slow, opaque, and capital-intensive. OpenFX removes those constraints, helping you move money faster, cheaper, and smarter.
 
 ---
 
@@ -10,10 +10,10 @@ Global remittance providers are under constant pressure to reduce costs, acceler
 |---|---------------------|--------|
 | **Settlement speed** | Hours to multiple business days | Always-on, same-day global settlement |
 | **Reliability** | Rate volatility, hidden fees, no audit trail | Full visibility from quote to settlement |
-| **Setup** | Fragmented onboarding, enterprise gatekeeping | One platform, one integration — onboard in ~72 hours |
+| **Setup** | Fragmented onboarding, enterprise gatekeeping | One platform, one integration, onboard in ~72 hours |
 | **Pricing** | Opaque with high slippage and markups | Clear, competitive rates with zero hidden fees |
 | **Coverage** | Limited corridors, inconsistent local rails | 40+ currency pairs, 25+ local rails |
-| **Trust** | Varies — some lack transparency | Verified delivery and real-time observability |
+| **Trust** | Varies, some lack transparency | Verified delivery and real-time observability |
 
 ---
 
@@ -25,15 +25,15 @@ Traditional remittance requires pre-funded nostro accounts in each corridor. Ope
 
 ### Beat bank rates
 
-Transparent spreads of 3–5 bps (G20) and 10–12 bps (emerging markets) — significantly lower than the 20–50+ bps typical of expedited bank FX.
+Transparent spreads of 3–5 bps (G20) and 10–12 bps (emerging markets), significantly lower than the 20–50+ bps typical of expedited bank FX.
 
 ### Settle same-day
 
-90% of trades settle in under 60 minutes. Settle multiple times per day at any volume — essential when moving hundreds of millions daily.
+90% of trades settle in under 60 minutes. Settle multiple times per day at any volume, essential when moving hundreds of millions daily.
 
 ### Expand corridors
 
-Access emerging market currencies including PHP, COP, ARS, AED, and more — with local payout rails and ongoing roadmap expansion.
+Access emerging market currencies including PHP, COP, ARS, AED, and more, with local payout rails and ongoing roadmap expansion.
 
 ---
 
@@ -60,11 +60,11 @@ Access emerging market currencies including PHP, COP, ARS, AED, and more — wit
 
 ## Key capabilities
 
-- **High-volume processing** — platform designed for scale without disruption
-- **Consistent pricing at volume** — volume-based tiers reward scale ($30M–$500M monthly at 3–5 bps)
-- **24/7 operations** — weekends, holidays, after-hours — no banking-hour constraints
-- **Real-time tracking** — complete audit trail from quote to delivery
-- **Compliance integration** — AML/KYC through licensed partners; integrate with your existing workflows
+- **High-volume processing**, platform designed for scale without disruption
+- **Consistent pricing at volume**, volume-based tiers reward scale ($30M–$500M monthly at 3–5 bps)
+- **24/7 operations**, weekends, holidays, after-hours, no banking-hour constraints
+- **Real-time tracking**, complete audit trail from quote to delivery
+- **Compliance integration**, AML/KYC through licensed partners; integrate with your existing workflows
 
 ---
 
@@ -72,9 +72,9 @@ Access emerging market currencies including PHP, COP, ARS, AED, and more — wit
 
 > When you move hundreds of millions daily, scale and speed are essential. OpenFX enables us to settle multiple times a day at any volume, with unmatched precision.
 >
-> — Chris Maurice, CEO, Yellow Card
+> - Chris Maurice, CEO, Yellow Card
 
-Yellow Card uses OpenFX for stablecoin-based infrastructure across emerging markets — from payment infrastructure to fiat settlement rails and custody services.
+Yellow Card uses OpenFX for stablecoin-based infrastructure across emerging markets, from payment infrastructure to fiat settlement rails and custody services.
 
 ---
 

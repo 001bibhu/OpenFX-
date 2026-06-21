@@ -15,7 +15,7 @@ OpenFX helps institutional clients move money faster, cheaper, and with more con
 ### How OpenFX helps
 
 - Beat bank FX rates with spreads of 3–5 bps (G20) and 10–12 bps (emerging markets)
-- Settle same-day across corridors — 90% of trades in under 60 minutes
+- Settle same-day across corridors, 90% of trades in under 60 minutes
 - Eliminate pre-funding requirements and free working capital
 - Broad multi-currency support with local payout rails
 
@@ -98,7 +98,7 @@ See [On and off ramps](../integrations/on-and-off-ramps.md) for detailed setup.
 
 - Works alongside existing ERP and treasury management tools
 - Reporting and analytics for informed liquidity decisions
-- 24/7 access — no banking-hour constraints
+- 24/7 access, no banking-hour constraints
 
 ---
 

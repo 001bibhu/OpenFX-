@@ -8,7 +8,7 @@ This page explains what OpenFX does, who it is for, and how it works at a high l
 
 ## What is OpenFX?
 
-OpenFX combines the reliability of traditional finance with the speed and programmability of modern blockchain rails. Institutions use OpenFX to quote, convert, settle, and withdraw funds across fiat and stablecoin corridors — without the delays, hidden fees, and pre-funding requirements of legacy FX.
+OpenFX combines the reliability of traditional finance with the speed and programmability of modern blockchain rails. Institutions use OpenFX to quote, convert, settle, and withdraw funds across fiat and stablecoin corridors, without the delays, hidden fees, and pre-funding requirements of legacy FX.
 
 In simple terms:
 
@@ -22,7 +22,7 @@ The platform handles the full lifecycle: quoting, trade execution, settlement tr
 
 ## Who uses OpenFX?
 
-OpenFX serves **institutional clients only** — remittance companies, fintechs, payment processors, digital banks, brokers, and investment platforms that require real-time settlement across fiat and stablecoin rails.
+OpenFX serves **institutional clients only**, remittance companies, fintechs, payment processors, digital banks, brokers, and investment platforms that require real-time settlement across fiat and stablecoin rails.
 
 <OverviewAudienceTabs>
 
@@ -74,7 +74,7 @@ They use OpenFX to:
 
 ## Why OpenFX exists
 
-Traditional cross-border FX is slow, opaque, and capital-intensive. Payments pass through multiple intermediaries — each adding fees, delays, and operational risk.
+Traditional cross-border FX is slow, opaque, and capital-intensive. Payments pass through multiple intermediaries, each adding fees, delays, and operational risk.
 
 | | Legacy FX | OpenFX |
 |---|-----------|--------|
@@ -83,7 +83,7 @@ Traditional cross-border FX is slow, opaque, and capital-intensive. Payments pas
 | **Total cost** | 3–5% (fees + FX markup) | 0.01–0.3% all-in pricing |
 | **Pre-funding** | Often required | Eliminated |
 
-OpenFX provides a direct route through an optimized liquidity network — one platform, transparent pricing, and real-time settlement.
+OpenFX provides a direct route through an optimized liquidity network, one platform, transparent pricing, and real-time settlement.
 
 ---
 
@@ -112,7 +112,7 @@ Multi-currency balances + real-time tracking
 
 <AccordionItem title="40+ currency pairs">
 
-Support for major G20 currencies and emerging markets including USD, EUR, GBP, AED, MXN, BRL, PHP, COP, ARS, and more — with local payment rails in 25+ markets.
+Support for major G20 currencies and emerging markets including USD, EUR, GBP, AED, MXN, BRL, PHP, COP, ARS, and more, with local payment rails in 25+ markets.
 
 </AccordionItem>
 
@@ -160,7 +160,7 @@ OpenFX manages:
 - Compliance and AML/KYC through licensed partners in each market
 - 24/7 platform operations and client support
 
-You interact through quotes, trades, and withdrawals — OpenFX handles liquidity, routing, and settlement complexity.
+You interact through quotes, trades, and withdrawals, OpenFX handles liquidity, routing, and settlement complexity.
 
 For a deeper walkthrough of each step, see [How it works](./how-it-works.md).
 

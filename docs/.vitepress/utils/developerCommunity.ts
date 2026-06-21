@@ -74,7 +74,7 @@ See the Authentication doc for HMAC verification. Happy to share our Node.js mid
   },
   {
     id: 'seed-php-corridor',
-    title: 'PHP corridor is live — anyone testing USD → PHP yet?',
+    title: 'PHP corridor is live, anyone testing USD → PHP yet?',
     body: `OpenFX just launched PHP (Philippine Peso) with local payout rails. We're piloting a remittance corridor and seeing sub-60-minute settlement on most trades.
 
 Tips from our sandbox testing:
@@ -82,7 +82,7 @@ Tips from our sandbox testing:
 - Withdrawals to local PHP rails need verified destination in Settings
 - Beta corridors may have occasional spread widening during low-liquidity hours
 
-Curious what rates others are seeing at $500K+ monthly volume. Our account manager quoted 10–12 bps for emerging markets — matches docs.`,
+Curious what rates others are seeing at $500K+ monthly volume. Our account manager quoted 10–12 bps for emerging markets, matches docs.`,
     author: 'Marco D.',
     email: 'dev@remitfast.example',
     company: 'RemitFast',
@@ -104,7 +104,7 @@ Current approach:
 - If expired, re-quote and compare rate drift against a configurable threshold (we use 2 bps)
 - Alert treasury if drift exceeds threshold instead of auto-executing
 
-Would love to hear how others handle this — especially for after-hours batches when OpenFX is still 24/7 but our ops team isn't.`,
+Would love to hear how others handle this, especially for after-hours batches when OpenFX is still 24/7 but our ops team isn't.`,
     author: 'Alex T.',
     email: 'platform@paystream.example',
     company: 'PayStream',
@@ -126,7 +126,7 @@ Would love to hear how others handle this — especially for after-hours batches
 - [ ] Idempotency-Key on every POST /trades and /withdrawals
 - [ ] Webhook endpoint returns 2xx within timeout
 - [ ] Error handling for \`quote_expired\` and \`insufficient_balance\`
-- [ ] Separate credentials — never use sandbox secrets in prod
+- [ ] Separate credentials, never use sandbox secrets in prod
 
 **Day-one monitoring**
 - Watch first 10 trades manually in dashboard + API
@@ -146,12 +146,12 @@ Certification review with account manager took ~3 business days. Worth doing a r
   },
   {
     id: 'seed-sepa-instant',
-    title: 'SEPA Instant EUR deposits — timing expectations?',
+    title: 'SEPA Instant EUR deposits, timing expectations?',
     body: `Docs say fiat deposits typically reflect within 20 minutes. For SEPA Instant specifically, we've seen near-instant credits in most cases, but one counterparty sent via standard SEPA and it took 4 hours.
 
 Question for the community: do you maintain separate funding instructions per rail (Instant vs standard)? Our treasury team wants a single IBAN on file but ops keeps getting confused when senders pick the wrong rail.
 
-Also — anyone using EUR as a hub currency for EM payouts (EUR → AED, EUR → MXN)?`,
+Also, anyone using EUR as a hub currency for EM payouts (EUR → AED, EUR → MXN)?`,
     author: 'Sofia R.',
     email: 'treasury@fxbridge.example',
     company: 'FX Bridge',
@@ -173,9 +173,9 @@ Example:
 Idempotency-Key: batch_20260614-bene_8842
 \`\`\`
 
-OpenFX returns the original response on duplicate keys — exactly what we needed. We log the trade ID from first response and skip if we see a 409-style conflict.
+OpenFX returns the original response on duplicate keys, exactly what we needed. We log the trade ID from first response and skip if we see a 409-style conflict.
 
-Pair this with webhook \`withdrawal.completed\` for final confirmation. Don't mark paid on HTTP 201 alone — wait for settlement event.`,
+Pair this with webhook \`withdrawal.completed\` for final confirmation. Don't mark paid on HTTP 201 alone, wait for settlement event.`,
     author: 'Wei C.',
     email: 'dev@yellowcard.example',
     company: 'Yellow Card',
@@ -189,7 +189,7 @@ Pair this with webhook \`withdrawal.completed\` for final confirmation. Don't ma
   },
   {
     id: 'seed-stablecoin-onramp',
-    title: 'USDC on-ramp latency vs fiat — real numbers?',
+    title: 'USDC on-ramp latency vs fiat, real numbers?',
     body: `Building an on/off ramp and testing both funding paths:
 
 | Rail | Typical credit time |
@@ -223,7 +223,7 @@ Would a WebSocket or SSE streaming endpoint help others here? Our use case:
 - Live rate updates every 1–2 seconds while they review
 - Lock on "Confirm" with final POST /trades
 
-Upvote if this matters to you — also posted on the feature ideas page. Workaround today: cache quotes for 3 seconds and re-fetch on user action.`,
+Upvote if this matters to you, also posted on the feature ideas page. Workaround today: cache quotes for 3 seconds and re-fetch on user action.`,
     author: 'Dev Team',
     email: 'dev@neobroker.example',
     company: 'NeoBroker LATAM',

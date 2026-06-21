@@ -132,7 +132,7 @@ export function aiAnswer(query: string): { answer: string; sources: DocResult[] 
   if (q.includes('settle') || q.includes('speed') || q.includes('fast') || q.includes('how long')) {
     return {
       answer:
-        'OpenFX settles 90% of trades in under 60 minutes, with 30% in under 10 minutes — significantly faster than the 2–7 day timelines typical of traditional FX providers. Many transactions qualify for T+0 (same-day) settlement. The platform operates 24/7/365, including weekends and holidays.',
+        'OpenFX settles 90% of trades in under 60 minutes, with 30% in under 10 minutes, significantly faster than the 2–7 day timelines typical of traditional FX providers. Many transactions qualify for T+0 (same-day) settlement. The platform operates 24/7/365, including weekends and holidays.',
       sources: sources.length ? sources : [HOW_IT_WORKS, FAQ],
     }
   }
@@ -148,7 +148,7 @@ export function aiAnswer(query: string): { answer: string; sources: DocResult[] 
   if (q.includes('price') || q.includes('fee') || q.includes('cost') || q.includes('spread') || q.includes('pricing')) {
     return {
       answer:
-        'OpenFX pricing is based on the mid-market rate plus a small spread: 3–5 bps for G20 currencies and 10–12 bps for emerging markets. There are no hidden fees or markups. Traditional banks often charge 20–50+ bps for expedited settlement. Volume-based tiers reward scale — clients doing $30–500M monthly typically see spreads in the 3–5 bps range.',
+        'OpenFX pricing is based on the mid-market rate plus a small spread: 3–5 bps for G20 currencies and 10–12 bps for emerging markets. There are no hidden fees or markups. Traditional banks often charge 20–50+ bps for expedited settlement. Volume-based tiers reward scale, clients doing $30–500M monthly typically see spreads in the 3–5 bps range.',
       sources: sources.length ? sources : [FAQ],
     }
   }
@@ -156,7 +156,7 @@ export function aiAnswer(query: string): { answer: string; sources: DocResult[] 
   if (q.includes('onboard') || q.includes('start') || q.includes('sandbox') || q.includes('get started')) {
     return {
       answer:
-        'Getting started takes less than 72 hours — compared to six months or more with traditional FX providers. Schedule a demo at openfx.com, complete KYC, and access a personalized sandbox to test quotes, trades, and withdrawals. Integrate via the web GUI or Trading API. See Getting started for engineering and treasury onboarding paths.',
+        'Getting started takes less than 72 hours, compared to six months or more with traditional FX providers. Schedule a demo at openfx.com, complete KYC, and access a personalized sandbox to test quotes, trades, and withdrawals. Integrate via the web GUI or Trading API. See Getting started for engineering and treasury onboarding paths.',
       sources: sources.length ? sources : [GETTING_STARTED, FAQ],
     }
   }
@@ -164,7 +164,7 @@ export function aiAnswer(query: string): { answer: string; sources: DocResult[] 
   if (q.includes('pre-fund') || q.includes('prefund') || q.includes('nostro') || q.includes('working capital')) {
     return {
       answer:
-        'A key benefit of OpenFX is eliminating pre-funding requirements. Instead of holding idle balances in nostro accounts across corridors, clients access deep liquidity on demand through OpenFX\'s network — freeing working capital and simplifying treasury.',
+        'A key benefit of OpenFX is eliminating pre-funding requirements. Instead of holding idle balances in nostro accounts across corridors, clients access deep liquidity on demand through OpenFX\'s network, freeing working capital and simplifying treasury.',
       sources: sources.length ? sources : [FAQ, DOC_INDEX[13]],
     }
   }
@@ -204,7 +204,7 @@ export function aiAnswer(query: string): { answer: string; sources: DocResult[] 
   if (q.includes('treasury') || q.includes('multi-currency') || q.includes('balance')) {
     return {
       answer:
-        'OpenFX supports multi-currency account management from a single dashboard. Hold balances across USD, EUR, GBP, and more; execute FX conversions; move funds between currency accounts; and withdraw multiple times per day — all with real-time settlement tracking.',
+        'OpenFX supports multi-currency account management from a single dashboard. Hold balances across USD, EUR, GBP, and more; execute FX conversions; move funds between currency accounts; and withdraw multiple times per day, all with real-time settlement tracking.',
       sources: sources.length ? sources : [FAQ, DOC_INDEX[4]],
     }
   }

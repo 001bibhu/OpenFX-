@@ -1,6 +1,6 @@
 # Admin guide
 
-This guide is for **organization administrators** and compliance leads managing OpenFX at the enterprise level — treasury heads, operations managers, and compliance officers at remittance companies, PSPs, and fintechs.
+This guide is for **organization administrators** and compliance leads managing OpenFX at the enterprise level, treasury heads, operations managers, and compliance officers at remittance companies, PSPs, and fintechs.
 
 ---
 
@@ -25,10 +25,10 @@ Assign roles under **Settings → Team → Invite user**.
 
 ### Initial configuration
 
-1. **Organization profile** — Legal entity, registered address, primary contacts
-2. **Compliance contacts** — Designated compliance officer email
-3. **Approval workflows** — Optional second approver for trades above threshold
-4. **Spending limits** — Per-user and per-role trade limits
+1. **Organization profile**, Legal entity, registered address, primary contacts
+2. **Compliance contacts**, Designated compliance officer email
+3. **Approval workflows**, Optional second approver for trades above threshold
+4. **Spending limits**, Per-user and per-role trade limits
 
 ### API credential management
 

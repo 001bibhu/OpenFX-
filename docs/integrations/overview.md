@@ -39,10 +39,10 @@ Cross-border payment operations require **accurate, timely execution** across cu
 
 Primary integration path for programmatic workflows:
 
-- **Quotes** — lock rates with time-lock guarantee
-- **Trades** — execute conversions
-- **Deposits & withdrawals** — fund accounts and pay out
-- **Balances** — query multi-currency positions
+- **Quotes**, lock rates with time-lock guarantee
+- **Trades**, execute conversions
+- **Deposits & withdrawals**, fund accounts and pay out
+- **Balances**, query multi-currency positions
 
 See [API overview](../platform/api-overview.md) and [API reference](../platform/api-reference.md).
 
@@ -70,7 +70,7 @@ For treasury teams that prefer a dashboard:
 - Multi-currency account management
 - Role-based team access
 
-Many clients use **both** API and GUI — API for automated flows, GUI for oversight and exception handling.
+Many clients use **both** API and GUI, API for automated flows, GUI for oversight and exception handling.
 
 ---
 
@@ -101,10 +101,10 @@ Our goal is to become a transparent, embedded part of your treasury and payments
 
 ## Sandbox and certification
 
-1. **Sandbox access** — personalized environment with simulated balances
-2. **Integration testing** — execute sample quote/trade/withdraw flows
-3. **Certification review** — validate error handling, webhook processing, idempotency
-4. **Production promotion** — receive production credentials and rate limits
+1. **Sandbox access**, personalized environment with simulated balances
+2. **Integration testing**, execute sample quote/trade/withdraw flows
+3. **Certification review**, validate error handling, webhook processing, idempotency
+4. **Production promotion**, receive production credentials and rate limits
 
 Typical timeline: 1–2 weeks from sandbox access to production go-live.
 

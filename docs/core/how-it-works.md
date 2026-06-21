@@ -1,12 +1,12 @@
 # How it works
 
-This page explains how OpenFX moves money across borders — from funding your account through quote, trade, settlement, and withdrawal.
+This page explains how OpenFX moves money across borders, from funding your account through quote, trade, settlement, and withdrawal.
 
 ---
 
 ## The big picture
 
-OpenFX connects your institution to a global liquidity network. You deposit funds, request a quote, execute a trade, and withdraw to local rails — all with near-instant settlement and transparent pricing.
+OpenFX connects your institution to a global liquidity network. You deposit funds, request a quote, execute a trade, and withdraw to local rails, all with near-instant settlement and transparent pricing.
 
 ```
 Fund account → Get quote → Execute trade → Settle → Withdraw
@@ -24,7 +24,7 @@ Unlike traditional FX, there are no intermediary banks, hidden markups, or multi
 
 <AccordionItem title="Step 1: Onboard and fund your account" id="step-1-onboard-and-fund">
 
-Getting started takes less than 72 hours — compared to six months or more with traditional FX providers.
+Getting started takes less than 72 hours, compared to six months or more with traditional FX providers.
 
 **Onboarding includes:**
 
@@ -34,8 +34,8 @@ Getting started takes less than 72 hours — compared to six months or more with
 
 **Funding options:**
 
-- **Fiat deposits** — typically reflect within 20 minutes once received. Supported rails include SEPA Instant (EUR), Faster Payments (GBP), NPP (AUD), and local partner banks in key markets.
-- **Crypto deposits** — USDC and USDT settle in near real-time, subject to blockchain speed and congestion.
+- **Fiat deposits**, typically reflect within 20 minutes once received. Supported rails include SEPA Instant (EUR), Faster Payments (GBP), NPP (AUD), and local partner banks in key markets.
+- **Crypto deposits**, USDC and USDT settle in near real-time, subject to blockchain speed and congestion.
 
 Once funded, balances appear in your multi-currency dashboard.
 
@@ -47,9 +47,9 @@ Request a quote for your currency pair and amount via the web GUI or Trading API
 
 **Quote features:**
 
-- **Time-lock guarantee** — the quoted rate is locked for a defined window
-- **Transparent pricing** — mid-market rate plus spread; no hidden fees
-- **Any volume** — pricing stays predictable whether you move $5M or $50M
+- **Time-lock guarantee**, the quoted rate is locked for a defined window
+- **Transparent pricing**, mid-market rate plus spread; no hidden fees
+- **Any volume**, pricing stays predictable whether you move $5M or $50M
 
 Example API request:
 
@@ -72,9 +72,9 @@ Confirm the quote to execute the trade. OpenFX routes the conversion through its
 
 **Execution channels:**
 
-- **Web GUI** — manual trades with full visibility
-- **Trading API** — programmatic quotes and execution (REST, streaming)
-- **Automated workflows** — deposit → trade → withdraw sequences
+- **Web GUI**, manual trades with full visibility
+- **Trading API**, programmatic quotes and execution (REST, streaming)
+- **Automated workflows**, deposit → trade → withdraw sequences
 
 Once confirmed, trades cannot be canceled. You may reverse the position by executing a new trade in the opposite direction.
 
@@ -95,7 +95,7 @@ OpenFX provides complete visibility from quote to settlement.
 **Tracking includes:**
 
 - Live status updates on deposits, trades, and withdrawals
-- After-hours processing — withdrawals completed in under 60 minutes, even outside banking hours
+- After-hours processing, withdrawals completed in under 60 minutes, even outside banking hours
 - Audit trail from quote through delivery
 
 Example trade status flow:
@@ -132,7 +132,7 @@ Many clients use OpenFX for ongoing treasury operations beyond individual trades
 - Reduce idle balances in foreign currencies
 - Integrate with existing treasury management systems via API and webhooks
 
-OpenFX becomes a transparent, embedded part of your payments infrastructure — not an external black box.
+OpenFX becomes a transparent, embedded part of your payments infrastructure, not an external black box.
 
 </AccordionItem>
 

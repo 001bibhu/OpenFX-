@@ -1,6 +1,6 @@
 # On and off ramps
 
-As a modern neo broker or FX ramp provider, your users expect to fund accounts and withdraw across currencies in seconds, not days. Behind the scenes, fragmented FX systems and settlement delays slow you down. OpenFX gives you the tools to move money globally — instantly, transparently, and with complete control.
+As a modern neo broker or FX ramp provider, your users expect to fund accounts and withdraw across currencies in seconds, not days. Behind the scenes, fragmented FX systems and settlement delays slow you down. OpenFX gives you the tools to move money globally, instantly, transparently, and with complete control.
 
 ---
 
@@ -33,7 +33,7 @@ Fund accounts and withdraw across currencies without the 2–5 day delays of tra
 
 ### API-first integration
 
-Embed quotes, trades, deposits, and withdrawals into your user-facing platform. Programmatic workflows built for reliability — REST API with streaming quote support.
+Embed quotes, trades, deposits, and withdrawals into your user-facing platform. Programmatic workflows built for reliability, REST API with streaming quote support.
 
 ---
 
@@ -65,11 +65,11 @@ User requests withdrawal → Quote locked → Trade executed → Local rail payo
 
 ## Key capabilities
 
-- **Fiat and stablecoin rails** — USDC, USDT, and major fiat currencies on one platform
-- **Multi-currency balances** — hold USD, EUR, GBP, and corridor currencies simultaneously
-- **Local payout rails** — SEPA Instant, Faster Payments, NPP, and emerging market rails
-- **Time-lock quotes** — rate guaranteed for defined window during user checkout
-- **Real-time status** — users track deposit, trade, and withdrawal progress live
+- **Fiat and stablecoin rails**, USDC, USDT, and major fiat currencies on one platform
+- **Multi-currency balances**, hold USD, EUR, GBP, and corridor currencies simultaneously
+- **Local payout rails**, SEPA Instant, Faster Payments, NPP, and emerging market rails
+- **Time-lock quotes**, rate guaranteed for defined window during user checkout
+- **Real-time status**, users track deposit, trade, and withdrawal progress live
 
 ---
 
@@ -77,9 +77,9 @@ User requests withdrawal → Quote locked → Trade executed → Local rail payo
 
 > OpenFX has made our trading operations significantly easier and more cost-efficient. Their API integration has streamlined our liquidity routing, and settlements are now faster and more reliable. With the ability to scale toward 24/7 operations, we're excited to expand into new corridors with OpenFX.
 >
-> — Hongyi Tang, VP LATAM, VelaFi
+> - Hongyi Tang, VP LATAM, VelaFi
 
-VelaFi operates stablecoin-powered cross-border financial infrastructure across LATAM, the US, and Asia — supporting hundreds of enterprises with collections, payouts, treasury, and settlement.
+VelaFi operates stablecoin-powered cross-border financial infrastructure across LATAM, the US, and Asia, supporting hundreds of enterprises with collections, payouts, treasury, and settlement.
 
 ---
 
