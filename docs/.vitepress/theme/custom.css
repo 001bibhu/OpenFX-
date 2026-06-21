@@ -64,7 +64,7 @@
   width: auto !important;
 }
 
-/* OpenFX nav brand (replaces default SyntheticFi/VitePress title) */
+/* OpenFX nav brand */
 .VPNavBar .title > .VPNavBarTitle,
 .VPNavScreenMenu .VPNavBarTitle {
   display: none !important;
