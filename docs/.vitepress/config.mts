@@ -34,6 +34,7 @@ export default defineConfig({
     nav: [
       { text: "What's new", link: '/whats-new/' },
       { text: 'Developer Community', link: '/developer-community/' },
+      { text: 'Admin analytics', link: '/admin/analytics' },
       {
         text: 'Guides',
         items: [

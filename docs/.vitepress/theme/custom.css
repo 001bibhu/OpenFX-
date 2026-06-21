@@ -1543,7 +1543,19 @@
 }
 
 /* ─── Top community banner (all pages) ─── */
+:root {
+  --vp-layout-top-height: 2.75rem;
+}
+
 .sf-community-top-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--vp-z-index-layout-top);
+  height: var(--vp-layout-top-height);
+  display: flex;
+  align-items: center;
   background: linear-gradient(90deg, #0277c9 0%, #0392f1 50%, #0284d4 100%);
   color: #fff;
   font-size: 0.875rem;
@@ -1624,7 +1636,8 @@
 }
 
 /* Highlight Developer Community in nav */
-.VPNavBar .VPNavBarMenuLink a[href*='developer-community'] {
+.VPNavBar .VPNavBarMenuLink a[href*='developer-community'],
+.VPNavScreen .VPNavScreenMenuLink a[href*='developer-community'] {
   color: var(--sf-brand) !important;
   font-weight: 700 !important;
   background: rgba(3, 146, 241, 0.1);
@@ -1633,8 +1646,27 @@
   margin: 0 0.15rem;
 }
 
-.dark .VPNavBar .VPNavBarMenuLink a[href*='developer-community'] {
+.dark .VPNavBar .VPNavBarMenuLink a[href*='developer-community'],
+.dark .VPNavScreen .VPNavScreenMenuLink a[href*='developer-community'] {
   background: rgba(3, 146, 241, 0.18);
+}
+
+/* Admin analytics in nav (red pill) */
+.VPNavBar .VPNavBarMenuLink a[href*='admin/analytics'],
+.VPNavScreen .VPNavScreenMenuLink a[href*='admin/analytics'] {
+  color: #fff !important;
+  font-weight: 700 !important;
+  background: #dc2626 !important;
+  border: 1px solid #b91c1c;
+  border-radius: 999px;
+  padding: 0.25rem 0.75rem !important;
+  margin: 0 0.15rem;
+}
+
+.VPNavBar .VPNavBarMenuLink a[href*='admin/analytics']:hover,
+.VPNavScreen .VPNavScreenMenuLink a[href*='admin/analytics']:hover {
+  background: #b91c1c !important;
+  color: #fff !important;
 }
 
 .sf-community-cta {
